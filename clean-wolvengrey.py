@@ -40,16 +40,18 @@ class Row:
         self._keys = tuple(header)
         self._values = list(row)
 
-    def __getattr__(self, name: str) -> object:
+    def __getattr__(self, name: str):
         return self._values[self._getindex(name)]
 
-    def __setattr__(self, name: str, value: Any) -> object:
+    def __setattr__(self, name: str, value):
+        if name in type(self).__slots__:
+            return super().__setattr__(name, value)
         i = self._getindex(name)
         self._values[i] = value
 
     def _getindex(self, name: str) -> int:
         try:
-            i = self._keys.index(name)
+            return self._keys.index(name)
         except ValueError:
             raise AttributeError(name)
 
@@ -77,8 +79,8 @@ def clean_wolvengrey(wolvengrey_csv, output_file):
 
     # Special case the header.
     rows = iter(reader)
-    header = next(rows)
-    writer.writerow(fix_header(header))
+    header = fix_header(next(rows))
+    writer.writerow(header)
 
     for row_values in rows:
         row = Row(header, row_values)
@@ -123,7 +125,7 @@ def fix_cans(row: Row) -> Row:
     return new_row
 
 
-if __name__ '__main__':
-    with open('Wolvengrey.csv', 'r') as wolvengrey_file,\
-         open('Wolvengrey-fixed.csv') as output_file:
+if __name__ == '__main__':
+    with open('Wolvengrey.csv', 'rt') as wolvengrey_csv,\
+         open('Wolvengrey-fixed.csv', 'wt') as output_file:
         clean_wolvengrey(wolvengrey_csv, output_file)
