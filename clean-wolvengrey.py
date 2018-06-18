@@ -71,7 +71,7 @@ class Row:
     def __repr__(self) -> 'str':
         clsname = type(self).__qualname__
         pairs = ' '.join(f"{name}={contents!r}"
-                         for name, contents in self._row)
+                         for name, contents in zip(self._keys, self._values))
         return f"<{clsname} {pairs}>"
 
 
