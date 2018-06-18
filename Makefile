@@ -15,16 +15,13 @@
 
 CLEAN_WOLVENGREY := ./clean-wolvengrey.py
 FIXED_CSVs = Wolvengrey.fixed.csv Wolvengrey.crk.fixed.csv
-PATCHES = $(FIXED_CSVs:.csv=.csv.patch)
-
-DIFFFLAGS = --minimal
 
 
 .PHONY: all clean
-all: $(FIXED_CSVs) $(PATCHES)
+all: $(FIXED_CSVs)
 
 clean:
-	rm $(FIXED_CSVs) $(PATCHES)
+	rm $(FIXED_CSVs)
 
 
 Wolvengrey.fixed.csv: Wolvengrey.csv $(CLEAN_WOLVENGREY)
@@ -32,9 +29,3 @@ Wolvengrey.fixed.csv: Wolvengrey.csv $(CLEAN_WOLVENGREY)
 
 Wolvengrey.crk.fixed.csv: Wolvengrey.csv $(CLEAN_WOLVENGREY)
 	$(CLEAN_WOLVENGREY) --plains-cree > $@
-
-%.csv.patch: %.csv Wolvengrey.csv
-	diff --text --ed $(DIFFFLAGS) Wolvengrey.csv $< > $@
-
-
-
