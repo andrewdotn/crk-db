@@ -154,6 +154,10 @@ def fix_dialect(row: Row) -> Row:
     return new_row
 
 
+def is_plains_cree(row: Row) -> bool:
+    return 'pC' in row.dl
+
+
 def nfc(text: str) -> str:
     return unicodedata.normalize('NFC', text)
 
@@ -182,4 +186,4 @@ if __name__ == '__main__':
 
     # Do the actual conversion now.
     with open(WOLVENGREY_FILENAME, 'rt') as wolvengrey_csv:
-        clean_wolvengrey(wolvengrey_csv, sys.stdou)
+        clean_wolvengrey(wolvengrey_csv, sys.stdout)
