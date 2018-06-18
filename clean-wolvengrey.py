@@ -18,7 +18,7 @@
 
 """
 Cleans issues with Wolvengrey.csv — the tab-separated values copy of Arok
-Wolvengrey's “Nêhiýawêwin: Itwêwina" Cree-English dictionary.
+Wolvengrey's “Nêhiýawêwin: Itwêwina” Cree-English dictionary.
 """
 
 import csv
