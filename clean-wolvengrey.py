@@ -44,6 +44,7 @@ CANADIAN_SYLLABICS_FINAL_PLUS = '\u1429'  # ᐩ
 
 SRO_ALPHABET = 'achikmnopstwyâêîô'
 ALLOWABLE_SRO = SRO_ALPHABET + ' !?-'
+ALLOWABLE_SRO += 'r'  # Used in loan words like "kihcihtwâwi-mêriy-"
 SYLLABICS = (
     'ᐁᐃᐄᐅᐆᐊᐋᐍᐏᐑᐓᐕᐘᐚ'  # WV
     'ᐯᐱᐲᐳᐴᐸᐹᐻᐽᐿᑁᑃᑅᑇ'  # pWV
@@ -56,7 +57,8 @@ SYLLABICS = (
     'ᔦᔨᔩᔪᔫᔭᔮᔰᔲᔴᔶᔸᔺᔼ'  # yWV
     'ᑊᐟᐠᐨᒼᐣᐢᕀᐤᐦᕽ'     # finals
 )
-ALLOWABLE_SYLLABICS = SYLLABICS + ' -'
+ALLOWABLE_SYLLABICS = SYLLABICS + ' -?'
+ALLOWABLE_SYLLABICS += 'ᕒ'  # Used in loan words like "ᑭᐦᒋᐦᑤᐏ ᒣᕒᐃᕀ"
 
 
 syllable_to_w = {
@@ -144,11 +146,13 @@ def clean_wolvengrey(wolvengrey_csv, output_file):
     for row_values in rows:
         row = Row(header, row_values)
 
-        # Fix: erroneous Cans characters.
+        # Fix erroneous Cans characters.
         row = fix_cans(row)
 
-        # Fix: how wê/wi/wî/wo/wô/wa/wâ are written.
+        # Fix how CwV and wV are written
         row = fix_middle_dot_w(row)
+        # Fix how /VCw / is written.
+        row = fix_middle_dot_coda(row)
 
         if plains_cree_fixers:
             if not is_plains_cree(row):
@@ -260,13 +264,41 @@ def fix_middle_dot_w(row: Row) -> Row:
     )
 
 
+def fix_middle_dot_coda(row: Row) -> Row:
+    """
+    There are words that have a Cw coda followed by a space.  The 'w' is
+    represented as a final middle dot, which is Not A Plains Cree Thing™, so I
+    replace it with the final ring.
+
+    Examples:
+
+        - kîkw-âya          ᑮᐠᐤ ᐋᔭ
+        - kîkw-âyi          ᑮᐠᐤ ᐋᔨ
+        - mamôhcw-âyihtiw   ᒪᒨᐦᐨᐤ ᐋᔨᐦᑎᐤ
+        - mostosw-âya       ᒧᐢᑐ
+
+    Honestly, I have no idea if this is appropriate, and I need to consult with
+    somebody that knows more about this than me.
+    """
+    if CANADIAN_SYLLABICS_FINAL_MIDDLE_DOT not in row.syl:
+        return row
+
+    # XXX: FIGURE OUT IF THIS IS CORRECT!
+    return row.clone_with(
+            syl=re.sub(f'{CANADIAN_SYLLABICS_FINAL_MIDDLE_DOT}\\s',
+                       "ᐤ ",
+                       row.syl)
+    )
+
+
 def fix_errata(row: Row) -> Row:
     """
-    Fix additional errata
+    Fix additional errata...
     """
 
     errata = (
         # SRO           # Fixing function
+        # XXX: I'm not really sure how to write these two!
     )
 
     for sro, fixer in errata:
