@@ -30,11 +30,29 @@ import unicodedata
 WOLVENGREY_FILENAME = 'Wolvengrey.csv'
 WOLVENGREY_SHA384 = '818c51dbbb08fe47d4b5ee0c02630746338c052e6d8c8e43b63368bbd8f0c5fe3f7052d8134b2c714c79ed6e11019de6'  # noqa
 
+SRO_ALPHABET = 'achikmnopstwyâêîô'
+ALLOWABLE_SRO = SRO_ALPHABET + ' !?-'
+SYLLABICS = (
+    'ᐁᐃᐄᐅᐆᐊᐋᐍᐏᐑᐓᐕᐘᐚ'  # WV
+    'ᐯᐱᐲᐳᐴᐸᐹᐻᐽᐿᑁᑃᑅᑇ'  # pWV
+    'ᑌᑎᑏᑐᑑᑕᑖᑘᑚᑜᑞᑠᑢᑤ'  # tWV
+    'ᑫᑭᑮᑯᑰᑲᑳᑵᑷᑹᑻᑽᑿᒁ'  # kWV
+    'ᒉᒋᒌᒍᒎᒐᒑᒓᒕᒗᒙᒛᒝᒟ'  # cWV
+    'ᒣᒥᒦᒧᒨᒪᒫᒭᒯᒱᒳᒵᒷᒹ'  # mWV
+    'ᓀᓂᓃᓄᓅᓇᓈᓊᓌᓎ'      # nWV (only nwê, nwa, and nwâ are used in Plains Cree)
+    'ᓭᓯᓰᓱᓲᓴᓵᓷᓹᓻᓽᓿᔁᔃ'  # sWV
+    'ᔦᔨᔩᔪᔫᔭᔮᔰᔲᔴᔶᔸᔺᔼ'  # yWV
+    'ᑊᐟᐠᐨᒼᐣᐢᐩᐤᐦᕽ'     # finals
+)
+ALLOWABLE_SYLLABICS = SYLLABICS + ' -'
+
 
 class Row:
     """
-    Not all headers are unique in Wolvengrey.csv, so create a special class to
-    combine them all.
+    Unsettlingly, not all column names are unique in Wolvengrey.csv, so we
+    can't use DictReader or something like that.
+    This special class keeps all headers and values in order, so that no data
+    is lost, while being able to access well-behaving columns via attributes.
     """
     __slots__ = '_keys', '_values'
 
@@ -96,6 +114,17 @@ def clean_wolvengrey(wolvengrey_csv, output_file):
             if not is_plains_cree(row):
                 continue
             row = fix_dialect(row)
+
+        # Do some sanity checks:
+        assert row.sro == nfc(row.sro), (
+            f'The SRO is not NFC normalized in: {row!r}'
+        )
+        assert all(c in ALLOWABLE_SRO for c in row.sro), (
+            f'Found characters outside alphabet in {row!r}'
+        )
+        assert all(c in ALLOWABLE_SYLLABICS for c in row.syl), (
+            f'Found characters outside Plains Cree syllabics in {row!r}'
+        )
 
         writer.writerow(row)
 
