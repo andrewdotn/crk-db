@@ -142,6 +142,13 @@ def fix_dialect(row: Row) -> Row:
     """
     Converts 'ý' and 'ń' in the Standard Roman Orthography with their Plains
     Cree appropriate letters.
+
+    Excerpt from Wolvengrey 2001, pp. xix:
+
+        ...the symbol **ý** [...] occurs in Plains Cree words to indicate a
+        corresponding Woods **th** or Swampy **n**. Similarly, for those few
+        Swampy words cited specifically, the symbol **ñ** [sic] [...] is used
+        when Plains will have **y** and Woods **th**.
     """
 
     LATIN_SMALL_LETTER_Y_WITH_ACUTE = '\u00FD'
@@ -150,7 +157,7 @@ def fix_dialect(row: Row) -> Row:
     new_row = row.clone()
     new_row.sro = nfc(row.sro).\
         replace(LATIN_SMALL_LETTER_Y_WITH_ACUTE, 'y').\
-        replace(LATIN_SMALL_LETTER_N_WITH_ACUTE, 'n')
+        replace(LATIN_SMALL_LETTER_N_WITH_ACUTE, 'y')
     return new_row
 
 
