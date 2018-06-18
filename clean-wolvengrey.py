@@ -31,6 +31,15 @@ import unicodedata
 WOLVENGREY_FILENAME = 'Wolvengrey.csv'
 WOLVENGREY_SHA384 = '818c51dbbb08fe47d4b5ee0c02630746338c052e6d8c8e43b63368bbd8f0c5fe3f7052d8134b2c714c79ed6e11019de6'  # noqa
 
+# bona fide Plains Cree characters
+CANADIAN_SYLLABICS_WEST_CREE_M = '\u14BC'  # ᒼ
+CANADIAN_SYLLABICS_HK = '\u157D'  # ᕽ
+
+# Dubious lookalikes:
+CANADIAN_SYLLABICS_SAYISI_YI = '\u1541'  # ᕁ
+CANADIAN_SYLLABICS_T = '\u1466'  # ᑦ
+CANADIAN_SYLLABICS_FINAL_MIDDLE_DOT = '\u1427'  # ᐧ
+
 SRO_ALPHABET = 'achikmnopstwyâêîô'
 ALLOWABLE_SRO = SRO_ALPHABET + ' !?-'
 SYLLABICS = (
@@ -43,9 +52,26 @@ SYLLABICS = (
     'ᓀᓂᓃᓄᓅᓇᓈᓊᓌᓎ'      # nWV (only nwê, nwa, and nwâ are used in Plains Cree)
     'ᓭᓯᓰᓱᓲᓴᓵᓷᓹᓻᓽᓿᔁᔃ'  # sWV
     'ᔦᔨᔩᔪᔫᔭᔮᔰᔲᔴᔶᔸᔺᔼ'  # yWV
-    'ᑊᐟᐠᐨᒼᐣᐢᐩᐤᐦᕽ'     # finals
+    'ᑊᐟᐠᐨᒼᐣᐢᕀᐤᐦᕽ'     # finals
 )
 ALLOWABLE_SYLLABICS = SYLLABICS + ' -'
+
+
+syllable_to_w = {
+        'ᐁ': 'ᐍ', 'ᐃ': 'ᐏ', 'ᐄ': 'ᐑ', 'ᐅ': 'ᐓ', 'ᐆ': 'ᐕ', 'ᐊ': 'ᐘ', 'ᐋ': 'ᐚ',
+        'ᐯ': 'ᐻ', 'ᐱ': 'ᐽ', 'ᐲ': 'ᐿ', 'ᐳ': 'ᑁ', 'ᐴ': 'ᑃ', 'ᐸ': 'ᑅ', 'ᐹ': 'ᑇ',
+        'ᑌ': 'ᑘ', 'ᑎ': 'ᑚ', 'ᑏ': 'ᑜ', 'ᑐ': 'ᑞ', 'ᑑ': 'ᑠ', 'ᑕ': 'ᑢ', 'ᑖ': 'ᑤ',
+        'ᑫ': 'ᑵ', 'ᑭ': 'ᑷ', 'ᑮ': 'ᑹ', 'ᑯ': 'ᑻ', 'ᑰ': 'ᑽ', 'ᑲ': 'ᑿ', 'ᑳ': 'ᒁ',
+        'ᒉ': 'ᒓ', 'ᒋ': 'ᒕ', 'ᒌ': 'ᒗ', 'ᒍ': 'ᒙ', 'ᒎ': 'ᒛ', 'ᒐ': 'ᒝ', 'ᒑ': 'ᒟ',
+        'ᒣ': 'ᒭ', 'ᒥ': 'ᒯ', 'ᒦ': 'ᒱ', 'ᒧ': 'ᒳ', 'ᒨ': 'ᒵ', 'ᒪ': 'ᒷ', 'ᒫ': 'ᒹ',
+        'ᓀ': 'ᓊ', 'ᓇ': 'ᓌ', 'ᓈ': 'ᓎ',
+        'ᓭ': 'ᓷ', 'ᓯ': 'ᓹ', 'ᓰ': 'ᓻ', 'ᓱ': 'ᓽ', 'ᓲ': 'ᓿ', 'ᓴ': 'ᔁ', 'ᓵ': 'ᔃ',
+        'ᔦ': 'ᔰ', 'ᔨ': 'ᔲ', 'ᔩ': 'ᔴ', 'ᔪ': 'ᔶ', 'ᔫ': 'ᔸ', 'ᔭ': 'ᔺ', 'ᔮ': 'ᔼ',
+}
+non_w_syllables = ''.join(syllable_to_w.keys())
+w_pattern = re.compile(
+    f'([{non_w_syllables}]){CANADIAN_SYLLABICS_FINAL_MIDDLE_DOT}'
+)
 
 
 class Row:
@@ -120,7 +146,7 @@ def clean_wolvengrey(wolvengrey_csv, output_file):
         row = fix_cans(row)
 
         # Fix: how wê/wi/wî/wo/wô/wa/wâ are written.
-        row = fix_we_wi_wo_wa(row)
+        row = fix_middle_dot_w(row)
 
         if plains_cree_fixers:
             if not is_plains_cree(row):
@@ -171,10 +197,6 @@ def fix_cans(row: Row) -> Row:
           <U+14BC, CANADIAN SYLLABICS WEST-CREE M>
         - Wolvengrey.csv uses 'ᑦ' <U+1466, CANADIAN SYLLABICS T>
     """
-    CANADIAN_SYLLABICS_SAYISI_YI = '\u1541'
-    CANADIAN_SYLLABICS_HK = '\u157D'
-    CANADIAN_SYLLABICS_T = '\u1466'
-    CANADIAN_SYLLABICS_WEST_CREE_M = '\u14BC'
 
     new_row = row.clone()
     new_row.syl = row.syl.\
@@ -206,38 +228,27 @@ def fix_dialect(row: Row) -> Row:
     return new_row
 
 
-def fix_we_wi_wo_wa(row: Row) -> Row:
+def fix_middle_dot_w(row: Row) -> Row:
     """
-    Converts V followed by CANADIAN SYLLABICS MIDDLE DOT to a wV syllabic.
+    Converts a syllable followed by CANADIAN SYLLABICS MIDDLE DOT to the
+    appropriate /C?wV/ syllabic.
 
-    That is, where in Wolvengrey.csv, syllables that begin with 'w' are
-    notated as the vowel, followed by a middle dot, this function converts the
-    two characters into one character, which is a 'WEST-CREE W' character.
+    That is, where in Wolvengrey.csv, syllables that begin contain a 'w' dot
+    are notated as the syllable without the 'w' dot, followed by a FINAL
+    MIDDLE DOT, this function converts the two characters into one character,
+    which is a 'WEST-CREE W' character.
     """
-    CANADIAN_SYLLABICS_FINAL_MIDDLE_DOT = 'ᐧ'
 
     # Skip it if unaffected.
     if CANADIAN_SYLLABICS_FINAL_MIDDLE_DOT not in row.syl:
         return row
 
-    vowel_to_wvowel = {
-            'ᐁ': 'ᐍ',
-            'ᐃ': 'ᐏ',
-            'ᐄ': 'ᐑ',
-            'ᐅ': 'ᐓ',
-            'ᐆ': 'ᐕ',
-            'ᐊ': 'ᐘ',
-            'ᐋ': 'ᐚ'
-    }
-    vowels = ''.join(vowel_to_wvowel.keys())
-
     def to_correct_syllabic(match):
-        return vowel_to_wvowel[match.group(1)]
+        return syllable_to_w[match.group(1)]
 
     # find a vowel, followed by the middle dot
-    pat = re.compile(f'([{vowels}]){CANADIAN_SYLLABICS_FINAL_MIDDLE_DOT}')
     return row.clone_with(
-            syl=pat.sub(to_correct_syllabic, row.syl)
+            syl=w_pattern.sub(to_correct_syllabic, row.syl)
     )
 
 
@@ -248,8 +259,6 @@ def fix_errata(row: Row) -> Row:
 
     errata = (
         # SRO           # Fixing function
-
-        # Original tries to combine <I> with a final middle dot to create <WI>
     )
 
     for sro, fixer in errata:
