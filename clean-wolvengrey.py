@@ -80,11 +80,19 @@ class Row:
         return iter(self._values)
 
     def clone(self) -> 'Row':
-        # "Unzip" the _row to create a clone.
+        """
+        Create a shallow copy of this row.
+        """
         return type(self)(self._keys, self._values)
 
-    def to_seq(self):
-        return tuple(self._values)
+    def clone_with(self, **kwargs) -> 'Row':
+        """
+        Create a copy of this row with the given attributes changed.
+        """
+        new_row = self.clone()
+        for attr, value in kwargs.items():
+            setattr(new_row, attr, value)
+        return new_row
 
     def __repr__(self) -> 'str':
         clsname = type(self).__qualname__
@@ -114,6 +122,9 @@ def clean_wolvengrey(wolvengrey_csv, output_file):
             if not is_plains_cree(row):
                 continue
             row = fix_dialect(row)
+
+        # Fix entry-specific errata.
+        row = fix_errata(row)
 
         # Do some sanity checks:
         assert row.sro == nfc(row.sro), (
@@ -188,6 +199,24 @@ def fix_dialect(row: Row) -> Row:
         replace(LATIN_SMALL_LETTER_Y_WITH_ACUTE, 'y').\
         replace(LATIN_SMALL_LETTER_N_WITH_ACUTE, 'y')
     return new_row
+
+
+def fix_errata(row: Row) -> Row:
+    """
+    Fix additional errata
+    """
+
+    errata = (
+        # SRO           # Fixing function
+
+        # Original tries to combine <I> with a final middle dot to create <WI>
+        ('acâhkosiwiw', lambda r: r.clone_with(syl='ᐊᒑᐦᑯᓯᐏᐤ')),
+    )
+
+    for sro, fixer in errata:
+        if sro == row.sro:
+            row = fixer(row)
+    return row
 
 
 def is_plains_cree(row: Row) -> bool:
