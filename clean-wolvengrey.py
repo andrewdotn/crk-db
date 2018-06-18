@@ -33,12 +33,14 @@ WOLVENGREY_SHA384 = '818c51dbbb08fe47d4b5ee0c02630746338c052e6d8c8e43b63368bbd8f
 
 # bona fide Plains Cree characters
 CANADIAN_SYLLABICS_WEST_CREE_M = '\u14BC'  # ᒼ
+CANADIAN_SYLLABICS_WEST_CREE_Y = '\u1540'  # ᕀ
 CANADIAN_SYLLABICS_HK = '\u157D'  # ᕽ
 
 # Dubious lookalikes:
 CANADIAN_SYLLABICS_SAYISI_YI = '\u1541'  # ᕁ
 CANADIAN_SYLLABICS_T = '\u1466'  # ᑦ
 CANADIAN_SYLLABICS_FINAL_MIDDLE_DOT = '\u1427'  # ᐧ
+CANADIAN_SYLLABICS_FINAL_PLUS = '\u1429'  # ᐩ
 
 SRO_ALPHABET = 'achikmnopstwyâêîô'
 ALLOWABLE_SRO = SRO_ALPHABET + ' !?-'
@@ -196,12 +198,18 @@ def fix_cans(row: Row) -> Row:
         + The correct character for "m" is 'ᒼ'
           <U+14BC, CANADIAN SYLLABICS WEST-CREE M>
         - Wolvengrey.csv uses 'ᑦ' <U+1466, CANADIAN SYLLABICS T>
+
+        + The correct character for "y" is 'ᕀ'
+          <U+1540 CANADIAN SYLLABICS WEST-CREE Y>
+        - Wolvengrey.csv sometimes uses 'ᐩ'
+          <U+1429, CANADIAN SYLLABICS FINAL PLUS>
     """
 
     new_row = row.clone()
     new_row.syl = row.syl.\
         replace(CANADIAN_SYLLABICS_SAYISI_YI, CANADIAN_SYLLABICS_HK).\
-        replace(CANADIAN_SYLLABICS_T, CANADIAN_SYLLABICS_WEST_CREE_M)
+        replace(CANADIAN_SYLLABICS_T, CANADIAN_SYLLABICS_WEST_CREE_M).\
+        replace(CANADIAN_SYLLABICS_FINAL_PLUS, CANADIAN_SYLLABICS_WEST_CREE_Y)
     return new_row
 
 
