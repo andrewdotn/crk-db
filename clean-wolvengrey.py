@@ -17,8 +17,8 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 """
-Cleans issues with Wolvengrey.csv — the tab-separated values copy of Arok
-Wolvengrey's “Nêhiýawêwin: Itwêwina” Cree-English dictionary.
+Cleans issues with Wolvengrey.csv — the tab-separated values copy of
+Dr. Arok Wolvengrey's “nēhiýawēwin: itwēwina” Cree-English dictionary.
 """
 
 import csv
@@ -140,7 +140,7 @@ def fix_cans(row: Row) -> Row:
 
 def fix_dialect(row: Row) -> Row:
     """
-    Converts 'ý' and 'ń' in the Standard Roman Orthography with thier Plains
+    Converts 'ý' and 'ń' in the Standard Roman Orthography with their Plains
     Cree appropriate letters.
     """
 

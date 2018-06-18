@@ -2,7 +2,7 @@ clean-wolvengrey
 ================
 
 Cleans the tab-separated value copy of Dr. Arok Wolvengrey's
-“Nêhiýawêwin: Itwêwina” Cree-English dictionary.
+“nēhiýawēwin: itwēwina” Cree-English dictionary.
 
 Requirements
 ------------
@@ -37,5 +37,5 @@ License
 
 Code is licensed under the GNU General Public License v3;
 Copyright © 2018 Eddie Antonio Santos.
-`Wolvengrey.csv` is Copyright © 2001 Arok Wolvengrey;
+`Wolvengrey.csv` is copyright © 2001 Arok Wolvengrey;
 All rights reserved.
