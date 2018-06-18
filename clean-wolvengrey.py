@@ -23,6 +23,7 @@ Dr. Arok Wolvengrey's “nēhiýawēwin: itwēwina” Cree-English dictionary.
 
 import csv
 import hashlib
+import re
 import sys
 import unicodedata
 
@@ -118,6 +119,9 @@ def clean_wolvengrey(wolvengrey_csv, output_file):
         # Fix: erroneous Cans characters.
         row = fix_cans(row)
 
+        # Fix: how wê/wi/wî/wo/wô/wa/wâ are written.
+        row = fix_we_wi_wo_wa(row)
+
         if plains_cree_fixers:
             if not is_plains_cree(row):
                 continue
@@ -130,9 +134,10 @@ def clean_wolvengrey(wolvengrey_csv, output_file):
         assert row.sro == nfc(row.sro), (
             f'The SRO is not NFC normalized in: {row!r}'
         )
-        assert all(c in ALLOWABLE_SRO for c in row.sro), (
-            f'Found characters outside alphabet in {row!r}'
-        )
+        if plains_cree_fixers:
+            assert all(c in ALLOWABLE_SRO for c in row.sro), (
+                f'Found characters outside alphabet in {row!r}'
+            )
         assert all(c in ALLOWABLE_SYLLABICS for c in row.syl), (
             f'Found characters outside Plains Cree syllabics in {row!r}'
         )
@@ -201,6 +206,41 @@ def fix_dialect(row: Row) -> Row:
     return new_row
 
 
+def fix_we_wi_wo_wa(row: Row) -> Row:
+    """
+    Converts V followed by CANADIAN SYLLABICS MIDDLE DOT to a wV syllabic.
+
+    That is, where in Wolvengrey.csv, syllables that begin with 'w' are
+    notated as the vowel, followed by a middle dot, this function converts the
+    two characters into one character, which is a 'WEST-CREE W' character.
+    """
+    CANADIAN_SYLLABICS_FINAL_MIDDLE_DOT = 'ᐧ'
+
+    # Skip it if unaffected.
+    if CANADIAN_SYLLABICS_FINAL_MIDDLE_DOT not in row.syl:
+        return row
+
+    vowel_to_wvowel = {
+            'ᐁ': 'ᐍ',
+            'ᐃ': 'ᐏ',
+            'ᐄ': 'ᐑ',
+            'ᐅ': 'ᐓ',
+            'ᐆ': 'ᐕ',
+            'ᐊ': 'ᐘ',
+            'ᐋ': 'ᐚ'
+    }
+    vowels = ''.join(vowel_to_wvowel.keys())
+
+    def to_correct_syllabic(match):
+        return vowel_to_wvowel[match.group(1)]
+
+    # find a vowel, followed by the middle dot
+    pat = re.compile(f'([{vowels}]){CANADIAN_SYLLABICS_FINAL_MIDDLE_DOT}')
+    return row.clone_with(
+            syl=pat.sub(to_correct_syllabic, row.syl)
+    )
+
+
 def fix_errata(row: Row) -> Row:
     """
     Fix additional errata
@@ -210,7 +250,6 @@ def fix_errata(row: Row) -> Row:
         # SRO           # Fixing function
 
         # Original tries to combine <I> with a final middle dot to create <WI>
-        ('acâhkosiwiw', lambda r: r.clone_with(syl='ᐊᒑᐦᑯᓯᐏᐤ')),
     )
 
     for sro, fixer in errata:
