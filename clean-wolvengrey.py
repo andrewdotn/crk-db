@@ -18,13 +18,16 @@
 
 """
 Cleans issues with Wolvengrey.csv — the tab-separated values copy of Arok
-Wolvengrey's “Nêhiȳawêwin: Itwêwina" Cree-English dictionary.
+Wolvengrey's “Nêhiýawêwin: Itwêwina" Cree-English dictionary.
 """
 
 import csv
 import hashlib
+import sys
+import unicodedata
 
 
+WOLVENGREY_FILENAME = 'Wolvengrey.csv'
 WOLVENGREY_SHA384 = '818c51dbbb08fe47d4b5ee0c02630746338c052e6d8c8e43b63368bbd8f0c5fe3f7052d8134b2c714c79ed6e11019de6'  # noqa
 
 
@@ -73,6 +76,7 @@ class Row:
 
 
 def clean_wolvengrey(wolvengrey_csv, output_file):
+    global plains_cree_fixers
     reader = csv.reader(wolvengrey_csv, delimiter='\t')
     writer = csv.writer(output_file, delimiter='\t',
                         quotechar='"', quoting=csv.QUOTE_MINIMAL)
@@ -87,6 +91,11 @@ def clean_wolvengrey(wolvengrey_csv, output_file):
 
         # Fix: erroneous Cans characters.
         row = fix_cans(row)
+
+        if plains_cree_fixers:
+            if not is_plains_cree(row):
+                continue
+            row = fix_dialect(row)
 
         writer.writerow(row)
 
@@ -117,15 +126,60 @@ def fix_cans(row: Row) -> Row:
           <U+14BC, CANADIAN SYLLABICS WEST-CREE M>
         - Wolvengrey.csv uses 'ᑦ' <U+1466, CANADIAN SYLLABICS T>
     """
+    CANADIAN_SYLLABICS_SAYISI_YI = '\u1541'
+    CANADIAN_SYLLABICS_HK = '\u157D'
+    CANADIAN_SYLLABICS_T = '\u1466'
+    CANADIAN_SYLLABICS_WEST_CREE_M = '\u14BC'
 
     new_row = row.clone()
     new_row.syl = row.syl.\
-        replace('\u1541', '\u157D').\
-        replace('\u1466', '\u14BC')
+        replace(CANADIAN_SYLLABICS_SAYISI_YI, CANADIAN_SYLLABICS_HK).\
+        replace(CANADIAN_SYLLABICS_T, CANADIAN_SYLLABICS_WEST_CREE_M)
     return new_row
 
 
+def fix_dialect(row: Row) -> Row:
+    """
+    Converts 'ý' and 'ń' in the Standard Roman Orthography with thier Plains
+    Cree appropriate letters.
+    """
+
+    LATIN_SMALL_LETTER_Y_WITH_ACUTE = '\u00FD'
+    LATIN_SMALL_LETTER_N_WITH_ACUTE = '\u0144'
+
+    new_row = row.clone()
+    new_row.sro = nfc(row.sro).\
+        replace(LATIN_SMALL_LETTER_Y_WITH_ACUTE, 'y').\
+        replace(LATIN_SMALL_LETTER_N_WITH_ACUTE, 'n')
+    return new_row
+
+
+def nfc(text: str) -> str:
+    return unicodedata.normalize('NFC', text)
+
+
+def verify_integrity(wolvengrey_file) -> None:
+    """
+    Checks the SHA-384 hash of the input CSV file.
+    """
+    m = hashlib.sha384()
+    m.update(wolvengrey_file.read())
+    actual_hash = m.hexdigest()
+    if actual_hash != WOLVENGREY_SHA384:
+        print(WOLVENGREY_FILENAME, 'does not have correct SHA-384 hash.',
+              '\nExpected', WOLVENGREY_SHA384, '\nGot', actual_hash,
+              '\nDid you provide the correct file?',
+              file=sys.stderr)
+        sys.exit(2)
+
+
 if __name__ == '__main__':
-    with open('Wolvengrey.csv', 'rt') as wolvengrey_csv,\
-         open('Wolvengrey-fixed.csv', 'wt') as output_file:
-        clean_wolvengrey(wolvengrey_csv, output_file)
+    plains_cree_fixers = '--plains-cree' in sys.argv
+
+    # Make sure we're dealing with the file we think we are first.
+    with open(WOLVENGREY_FILENAME, 'rb') as wolvengrey_file:
+        verify_integrity(wolvengrey_file)
+
+    # Do the actual conversion now.
+    with open(WOLVENGREY_FILENAME, 'rt') as wolvengrey_csv:
+        clean_wolvengrey(wolvengrey_csv, sys.stdou)
