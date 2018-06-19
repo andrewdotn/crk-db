@@ -135,7 +135,7 @@ class Row:
 def clean_wolvengrey(wolvengrey_csv, output_file):
     global plains_cree_fixers
     reader = csv.reader(wolvengrey_csv, delimiter='\t')
-    writer = csv.writer(output_file, delimiter='\t',
+    writer = csv.writer(output_file, delimiter='\t', lineterminator='\n',
                         quotechar='"', quoting=csv.QUOTE_MINIMAL)
 
     # Special case the header.
@@ -338,5 +338,5 @@ if __name__ == '__main__':
         verify_integrity(wolvengrey_file)
 
     # Do the actual conversion now.
-    with open(WOLVENGREY_FILENAME, 'rt') as wolvengrey_csv:
+    with open(WOLVENGREY_FILENAME, 'rt', newline='') as wolvengrey_csv:
         clean_wolvengrey(wolvengrey_csv, sys.stdout)
