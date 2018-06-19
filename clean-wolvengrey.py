@@ -293,12 +293,15 @@ def fix_middle_dot_coda(row: Row) -> Row:
 
 def fix_errata(row: Row) -> Row:
     """
-    Fix additional errata...
+    Fix any additional errata and typos I know about.
     """
 
     errata = (
-        # SRO           # Fixing function
-        # XXX: I'm not really sure how to write these two!
+        # (SRO, fixing function)
+        ('nêwotâpânâskw',  # Typo: errnoneous 'w'; cf. Wolvengrey 2001, pp. 131
+            lambda r: r.clone_with(sro='nêwotâpânâsk')),
+        ('wîpicisîs',  # Alt. form of 'wîpicîsis' uses other's syllabics.
+            lambda r: r.clone_with(syl='ᐑᐱᒋᓰᐢ')),
     )
 
     for sro, fixer in errata:
