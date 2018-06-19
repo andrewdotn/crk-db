@@ -125,7 +125,7 @@ class Row:
             setattr(new_row, attr, value)
         return new_row
 
-    def __repr__(self) -> 'str':
+    def __repr__(self) -> str:
         clsname = type(self).__qualname__
         pairs = ' '.join(f"{name}={contents!r}"
                          for name, contents in zip(self._keys, self._values))
@@ -275,7 +275,7 @@ def fix_middle_dot_coda(row: Row) -> Row:
         - kîkw-âya          ᑮᐠᐤ ᐋᔭ
         - kîkw-âyi          ᑮᐠᐤ ᐋᔨ
         - mamôhcw-âyihtiw   ᒪᒨᐦᐨᐤ ᐋᔨᐦᑎᐤ
-        - mostosw-âya       ᒧᐢᑐ
+        - mostosw-âya       ᒧᐢᑐᐢᐤ ᐋᔭ
 
     Honestly, I have no idea if this is appropriate, and I need to consult with
     somebody that knows more about this than me.
