@@ -60,7 +60,13 @@ SYLLABICS = (
 ALLOWABLE_SYLLABICS = SYLLABICS + ' -?'
 ALLOWABLE_SYLLABICS += 'ᕒ'  # Used in loan words like "ᑭᐦᒋᐦᑤᐏ ᒣᕒᐃᕀ"
 
-
+# Series of tables generated from: syllabics.tsv
+# https://github.com/UAlbertaALTLab/nehiyawewin-syllabics/blob/master/syllabics.tsv
+#
+# Most of this was cobbled together using awk.
+# Do this to get a list of column numbers:
+#
+#   (head -1  | tr $'\t' $'\n' | nl ) < syllabics.tsv
 syllable_to_w = {
         'ᐁ': 'ᐍ', 'ᐃ': 'ᐏ', 'ᐄ': 'ᐑ', 'ᐅ': 'ᐓ', 'ᐆ': 'ᐕ', 'ᐊ': 'ᐘ', 'ᐋ': 'ᐚ',
         'ᐯ': 'ᐻ', 'ᐱ': 'ᐽ', 'ᐲ': 'ᐿ', 'ᐳ': 'ᑁ', 'ᐴ': 'ᑃ', 'ᐸ': 'ᑅ', 'ᐹ': 'ᑇ',
@@ -72,6 +78,24 @@ syllable_to_w = {
         'ᓭ': 'ᓷ', 'ᓯ': 'ᓹ', 'ᓰ': 'ᓻ', 'ᓱ': 'ᓽ', 'ᓲ': 'ᓿ', 'ᓴ': 'ᔁ', 'ᓵ': 'ᔃ',
         'ᔦ': 'ᔰ', 'ᔨ': 'ᔲ', 'ᔩ': 'ᔴ', 'ᔪ': 'ᔶ', 'ᔫ': 'ᔸ', 'ᔭ': 'ᔺ', 'ᔮ': 'ᔼ',
 }
+syllabic_to_sro = {
+        'ᐁ': 'ê', 'ᐃ': 'i', 'ᐄ': 'î', 'ᐅ': 'o', 'ᐆ': 'ô', 'ᐊ': 'a', 'ᐋ': 'â',
+        'ᐟ': 't', 'ᐠ': 'k', 'ᐢ': 's', 'ᐣ': 'n', 'ᐤ': 'w',
+        'ᐦ': 'h', 'ᐨ': 'c', 'ᑊ': 'p', 'ᒼ': 'm', 'ᕀ': 'y',
+        'ᓬ': 'l', 'ᕒ': 'r', 'ᕽ': 'hk',
+}
+sro_to_w = {
+    'ê': 'ᐍ', 'i': 'ᐏ', 'î': 'ᐑ', 'o': 'ᐓ', 'ô': 'ᐕ', 'a': 'ᐘ', 'â': 'ᐚ',
+    'pê': 'ᐻ', 'pi': 'ᐽ', 'pî': 'ᐿ', 'po': 'ᑁ', 'pô': 'ᑃ', 'pa': 'ᑅ', 'pâ': 'ᑇ',
+    'tê': 'ᑘ', 'ti': 'ᑚ', 'tî': 'ᑜ', 'to': 'ᑞ', 'tô': 'ᑠ', 'ta': 'ᑢ', 'tâ': 'ᑤ',
+    'kê': 'ᑵ', 'ki': 'ᑷ', 'kî': 'ᑹ', 'ko': 'ᑻ', 'kô': 'ᑽ', 'ka': 'ᑿ', 'kâ': 'ᒁ',
+    'cê': 'ᒓ', 'ci': 'ᒕ', 'cî': 'ᒗ', 'co': 'ᒙ', 'cô': 'ᒛ', 'ca': 'ᒝ', 'câ': 'ᒟ',
+    'mê': 'ᒭ', 'mi': 'ᒯ', 'mî': 'ᒱ', 'mo': 'ᒳ', 'mô': 'ᒵ', 'ma': 'ᒷ', 'mâ': 'ᒹ',
+    'nê': 'ᓊ', 'na': 'ᓌ', 'nâ': 'ᓎ',
+    'sê': 'ᓷ', 'si': 'ᓹ', 'sî': 'ᓻ', 'so': 'ᓽ', 'sô': 'ᓿ', 'sa': 'ᔁ', 'sâ': 'ᔃ',
+    'yê': 'ᔰ', 'yi': 'ᔲ', 'yî': 'ᔴ', 'yo': 'ᔶ', 'yô': 'ᔸ', 'ya': 'ᔺ', 'yâ': 'ᔼ',
+}
+
 non_w_syllables = ''.join(syllable_to_w.keys())
 w_pattern = re.compile(
     f'([{non_w_syllables}]){CANADIAN_SYLLABICS_FINAL_MIDDLE_DOT}'
@@ -151,8 +175,8 @@ def clean_wolvengrey(wolvengrey_csv, output_file):
 
         # Fix how CwV and wV are written
         row = fix_middle_dot_w(row)
-        # Fix how /VCw / is written.
-        row = fix_middle_dot_coda(row)
+        # Fix how /Cw-V/ is written.
+        row = fix_sandhi(row)
 
         if plains_cree_fixers:
             if not is_plains_cree(row):
@@ -264,31 +288,46 @@ def fix_middle_dot_w(row: Row) -> Row:
     )
 
 
-def fix_middle_dot_coda(row: Row) -> Row:
+def fix_sandhi(row: Row) -> Row:
     """
-    There are words that have a Cw coda followed by a space.  The 'w' is
-    represented as a final middle dot, which is Not A Plains Cree Thing™, so I
-    replace it with the final ring.
+    Fixes the syllabic rendering of "sandhi". Occurs in Plains Cree when a
+    particle or pre-verb that ends with a consonantal coda is followed by a
+    vowel.
+
+    E.g.,
+
+        kikw-âya
+            Should be: ᑭᒁᔭ
+            Actually:  ᑮᐠᐧᐋᔭ
+
+    The 'w' is represented as a standalone FINAL MIDDLE DOT, which is Not A
+    Plains Cree Thing™. The solution is to combine it with the next syllabic.
 
     Examples:
 
-        - kîkw-âya          ᑮᐠᐤ ᐋᔭ
-        - kîkw-âyi          ᑮᐠᐤ ᐋᔨ
-        - mamôhcw-âyihtiw   ᒪᒨᐦᐨᐤ ᐋᔨᐦᑎᐤ
-        - mostosw-âya       ᒧᐢᑐᐢᐤ ᐋᔭ
+    >>> fix_sandhi(Row(('sro', 'syl'), ['kîkw-âyi', 'ᑮᐠᐧ ᐋᔭ']))
+    <Row sro='kîkw-âyi' syl='ᑮᒁᔭ'>
+    >>> fix_sandhi(Row(('sro', 'syl'), ['mamôhcw-âyihtiw', 'ᒪᒨᐦᐨᐧ ᐋᔨᐦᑎᐤ']))
+    <Row sro='mamôhcw-âyihtiw' syl='ᒪᒨᐦᒟᔨᐦᑎᐤ'>
+    >>> fix_sandhi(Row(('sro', 'syl'), ['kîkw-âyi', 'ᑮᐠᐧ ᐋᔨ']))
+    <Row sro='kîkw-âyi' syl='ᑮᒁᔨ'>
+    >>> fix_sandhi(Row(('sro', 'syl'), ['mostosw-âya', 'ᒧᐢᑐᐢᐧ ᐋᔭ']))
+    <Row sro='mostosw-âya' syl='ᒧᐢᑐᔃᔭ'>
 
-    Honestly, I have no idea if this is appropriate, and I need to consult with
-    somebody that knows more about this than me.
+    See: Wolvengrey 2001, pp. TODO: PAGE NUMBER
     """
     if CANADIAN_SYLLABICS_FINAL_MIDDLE_DOT not in row.syl:
         return row
 
-    # XXX: FIGURE OUT IF THIS IS CORRECT!
-    return row.clone_with(
-            syl=re.sub(f'{CANADIAN_SYLLABICS_FINAL_MIDDLE_DOT}\\s',
-                       "ᐤ ",
-                       row.syl)
-    )
+    pattern = re.compile(f'(.){CANADIAN_SYLLABICS_FINAL_MIDDLE_DOT}\\s(.)')
+
+    def to_CwV_syllabic(match) -> str:
+        consonant = syllabic_to_sro[match.group(1)]
+        vowel = syllabic_to_sro[match.group(2)]
+        return sro_to_w[consonant + vowel]
+
+    fixed = pattern.sub(to_CwV_syllabic, row.syl)
+    return row.clone_with(syl=fixed)
 
 
 def fix_errata(row: Row) -> Row:
