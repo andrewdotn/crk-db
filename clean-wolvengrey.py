@@ -175,15 +175,15 @@ def clean_wolvengrey(wolvengrey_csv, output_file):
     for row_values in rows:
         row = Row(header, row_values)
 
-        # Fix erroneous Cans characters.
+        # Fix erroneous syllabics characters.
         row = fix_cans(row)
-
         # Fix how CwV and wV are written
         row = fix_middle_dot_w(row)
         # Fix how /Cw-V/ is written.
         row = fix_sandhi(row)
 
         if use_plains_cree_fixers:
+            # Omit non-nêhiyawêwin words.
             if not is_plains_cree(row):
                 continue
             row = fix_dialect(row)
