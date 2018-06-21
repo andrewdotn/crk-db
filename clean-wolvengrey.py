@@ -107,6 +107,12 @@ w_pattern = re.compile(
 )
 
 
+class InvalidRowError(ValueError):
+    """
+    Raised when a row doesn't look right.
+    """
+
+
 class Row:
     """
     Unsettlingly, not all column names are unique in Wolvengrey.csv, so we
@@ -117,7 +123,13 @@ class Row:
     __slots__ = '_keys', '_values'
 
     def __init__(self, header, row) -> None:
-        assert len(header) >= len(row)
+        if len(header) != len(row):
+            if len(header) > len(row):
+                message = "Not enough values"
+            else:
+                message = "Too mant values"
+            message = f"{message}: {len(row)}/{len(header)}"
+            raise InvalidRowError(message)
         self._keys = tuple(header)
         self._values = list(row)
 
@@ -172,8 +184,12 @@ def clean_wolvengrey(wolvengrey_csv, output_file):
     header = fix_header(next(rows))
     writer.writerow(header)
 
-    for row_values in rows:
-        row = Row(header, row_values)
+    for line_no, row_values in enumerate(rows, start=2):
+        try:
+            row = Row(header, row_values)
+        except InvalidRowError as err:
+            print(f"Invalid row: line {line_no}: ", err, file=sys.stderr)
+            continue
 
         # Fix erroneous syllabics characters.
         row = fix_cans(row)
