@@ -175,9 +175,14 @@ class Row:
 
 def clean_wolvengrey(wolvengrey_csv, output_file):
     global use_plains_cree_fixers
-    reader = csv.reader(wolvengrey_csv, delimiter='\t')
+    # The source files do not quote fields, so do not let the reader attempt
+    # to unquote them.
+    reader = csv.reader(wolvengrey_csv, delimiter='\t',
+                        quoting=csv.QUOTE_NONE)
+    # For compatibility with the source files, ALWAYS use Unix-style line
+    # endings and never insert any quotes.
     writer = csv.writer(output_file, delimiter='\t', lineterminator='\n',
-                        quotechar='"', quoting=csv.QUOTE_MINIMAL)
+                        quoting=csv.QUOTE_NONE, quotechar='')
 
     # Special case the header.
     rows = iter(reader)
@@ -217,6 +222,10 @@ def clean_wolvengrey(wolvengrey_csv, output_file):
             )
         assert all(c in ALLOWABLE_SYLLABICS for c in row.syl), (
             f'Found characters outside Plains Cree syllabics in {row!r}'
+        )
+        # Make sure there are no tabs in the row:
+        assert all("\t" not in field for field in row), (
+            f'Found a tab character inside a field in line {line_no}:{row!r}'
         )
 
         writer.writerow(row)
