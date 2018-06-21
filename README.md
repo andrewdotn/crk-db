@@ -14,7 +14,8 @@ Usage
 -----
 
 Make sure you have downloaded the original `Wolvengrey.csv` in the
-current directory.
+current directory. You may also download `Wolvengrey_eng2crk.csv` in the
+current directory, however this is optional.
 
 Type `make` in the current directory. It will create:
 
@@ -31,6 +32,11 @@ Same as `Wolvengrey.fixed.csv`, but includes only words in Plains Cree.
 The orthography changes all dialect-variable characters to their Plains
 Cree specifics.
 
+---
+
+If you have downloaded `Wolvengrey_eng2crk.csv`, `make` will create
+similar `Wolvengrey_eng2crk.fixed.csv` and
+`Wolvengrey_eng2crk.crk.fixed.csv`, just as above.
 
 License
 -------
