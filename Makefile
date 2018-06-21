@@ -14,8 +14,11 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 CLEAN_WOLVENGREY := ./clean-wolvengrey.py
-FIXED_CSVs = Wolvengrey.fixed.csv Wolvengrey.crk.fixed.csv \
-			 Wolvengrey_eng2crk.fixed.csv Wolvengrey_eng2crk.crk.fixed.csv
+ORIGINAL := Wolvengrey.csv
+# Using wildcard to make it okay for this file to NOT exist.
+UPDATED := $(wildcard Wolvengrey_eng2crk.csv)
+CSVs := $(ORIGINAL) $(UPDATED)
+FIXED_CSVs = $(CSVs:.csv=.fixed.csv) $(CSVs:.csv=.crk.fixed.csv)
 
 
 .PHONY: all clean
