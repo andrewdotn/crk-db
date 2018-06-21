@@ -21,15 +21,20 @@ Cleans issues with Wolvengrey.csv — the tab-separated values copy of
 Dr. Arok Wolvengrey's “nēhiýawēwin: itwēwina” Cree-English dictionary.
 """
 
+import argparse
 import csv
 import hashlib
 import re
 import sys
 import unicodedata
+from pathlib import Path
 
 
 WOLVENGREY_FILENAME = 'Wolvengrey.csv'
-WOLVENGREY_SHA384 = '818c51dbbb08fe47d4b5ee0c02630746338c052e6d8c8e43b63368bbd8f0c5fe3f7052d8134b2c714c79ed6e11019de6'  # noqa
+SHA384_HASH = {
+        'Wolvengrey': '818c51dbbb08fe47d4b5ee0c02630746338c052e6d8c8e43b63368bbd8f0c5fe3f7052d8134b2c714c79ed6e11019de6',  # noqa
+        'Wolvengrey_eng2crk': '74a0914fbeb73e3736676a67b521ab083c0e03ec50dd2932383a439580155a3c961569d424942d2c5186a0b5f2c4d120',  # noqa
+}
 
 # bona fide Plains Cree characters
 CANADIAN_SYLLABICS_WEST_CREE_M = '\u14BC'  # ᒼ
@@ -112,7 +117,7 @@ class Row:
     __slots__ = '_keys', '_values'
 
     def __init__(self, header, row) -> None:
-        assert len(header) == len(row)
+        assert len(header) >= len(row)
         self._keys = tuple(header)
         self._values = list(row)
 
@@ -157,7 +162,7 @@ class Row:
 
 
 def clean_wolvengrey(wolvengrey_csv, output_file):
-    global plains_cree_fixers
+    global use_plains_cree_fixers
     reader = csv.reader(wolvengrey_csv, delimiter='\t')
     writer = csv.writer(output_file, delimiter='\t', lineterminator='\n',
                         quotechar='"', quoting=csv.QUOTE_MINIMAL)
@@ -178,7 +183,7 @@ def clean_wolvengrey(wolvengrey_csv, output_file):
         # Fix how /Cw-V/ is written.
         row = fix_sandhi(row)
 
-        if plains_cree_fixers:
+        if use_plains_cree_fixers:
             if not is_plains_cree(row):
                 continue
             row = fix_dialect(row)
@@ -190,7 +195,7 @@ def clean_wolvengrey(wolvengrey_csv, output_file):
         assert row.sro == nfc(row.sro), (
             f'The SRO is not NFC normalized in: {row!r}'
         )
-        if plains_cree_fixers:
+        if use_plains_cree_fixers:
             assert all(c in ALLOWABLE_SRO for c in row.sro), (
                 f'Found characters outside alphabet in {row!r}'
             )
@@ -357,28 +362,43 @@ def nfc(text: str) -> str:
     return unicodedata.normalize('NFC', text)
 
 
-def verify_integrity(wolvengrey_file) -> None:
+def verify_integrity(filename: Path) -> None:
     """
     Checks the SHA-384 hash of the input CSV file.
     """
+    short_name = filename.stem
+    expected_hash = SHA384_HASH[short_name]
+    if short_name not in SHA384_HASH:
+        print("Expected a file called one of:", *SHA384_HASH.keys(),
+              file=sys.stderr)
+        sys.exit(2)
+
     m = hashlib.sha384()
-    m.update(wolvengrey_file.read())
+    with open(filename, 'rb') as wolvengrey_file:
+        m.update(wolvengrey_file.read())
     actual_hash = m.hexdigest()
-    if actual_hash != WOLVENGREY_SHA384:
-        print(WOLVENGREY_FILENAME, 'does not have correct SHA-384 hash.',
-              '\nExpected', WOLVENGREY_SHA384, '\nGot', actual_hash,
+
+    if actual_hash != expected_hash:
+        print('Input does not have correct SHA-384 hash.',
+              '\nExpected :', expected_hash,
+              '\nGot      :', actual_hash,
               '\nDid you provide the correct file?',
               file=sys.stderr)
         sys.exit(2)
 
 
 if __name__ == '__main__':
-    plains_cree_fixers = '--plains-cree' in sys.argv
+    parser = argparse.ArgumentParser()
+    parser.add_argument('filename', type=Path)
+    parser.add_argument('--plains-cree', action='store_true')
+    args = parser.parse_args()
+
+    filename = args.filename
+    use_plains_cree_fixers = args.plains_cree
 
     # Make sure we're dealing with the file we think we are first.
-    with open(WOLVENGREY_FILENAME, 'rb') as wolvengrey_file:
-        verify_integrity(wolvengrey_file)
+    verify_integrity(filename)
 
     # Do the actual conversion now.
-    with open(WOLVENGREY_FILENAME, 'rt', newline='') as wolvengrey_csv:
+    with open(filename, 'rt', newline='') as wolvengrey_csv:
         clean_wolvengrey(wolvengrey_csv, sys.stdout)

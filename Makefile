@@ -14,18 +14,20 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 CLEAN_WOLVENGREY := ./clean-wolvengrey.py
-FIXED_CSVs = Wolvengrey.fixed.csv Wolvengrey.crk.fixed.csv
+FIXED_CSVs = Wolvengrey.fixed.csv Wolvengrey.crk.fixed.csv \
+			 Wolvengrey_eng2crk.fixed.csv Wolvengrey_eng2crk.crk.fixed.csv
 
 
 .PHONY: all clean
 all: $(FIXED_CSVs)
 
 clean:
-	rm $(FIXED_CSVs)
+	rm -f $(FIXED_CSVs)
 
 
-Wolvengrey.fixed.csv: Wolvengrey.csv $(CLEAN_WOLVENGREY)
-	$(CLEAN_WOLVENGREY) > $@
+.DELETE_ON_ERROR:
+%.fixed.csv: %.csv $(CLEAN_WOLVENGREY)
+	$(CLEAN_WOLVENGREY) $< > $@
 
-Wolvengrey.crk.fixed.csv: Wolvengrey.csv $(CLEAN_WOLVENGREY)
-	$(CLEAN_WOLVENGREY) --plains-cree > $@
+%.crk.fixed.csv: %.csv $(CLEAN_WOLVENGREY)
+	$(CLEAN_WOLVENGREY) --plains-cree $< > $@
