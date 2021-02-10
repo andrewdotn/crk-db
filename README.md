@@ -34,7 +34,7 @@ The process for aggregating the sources is as follows:
 
 ## Project Requirements
 
-* The field data from the original dictionaries should be retained in its original form, and preferably even incorporated into ALTLab's database in an unobtrusive way.
+* The field data from the original dictionaries should be retained in its original form, and preferably even incorporated into ALTLab's database in an unobtrusive way. Each entry in ALTLab's database should include information about the source(s) for each entry, and the source for each sense.
 
 * The order that sources are imported should commutative (i.e. irrelevant; the script should output the same result regardless of the order the databases are imported).
 
