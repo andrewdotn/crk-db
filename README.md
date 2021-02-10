@@ -17,9 +17,9 @@ _This repository is a work in progress._
 
 ALTLab's dictionary database is / will be aggregated from the following sources:
 
-* [Arok Wolvengrey][Arok]'s _Cree Words_ (`CW`)
-* _[Maskwacîs][Maskwacis] Dictionary of Cree Words_ (`MD`)
-* _Alberta Elder's Cree Dictionary_ (`AECD`)
+* [Arok Wolvengrey][Arok]'s [_nêhiyawêwin: itwêwina / Cree: Words_][CreeWords] (`CW`)
+* [Maskwacîs][Maskwacis] [_Nehiyawêwina Pîkiskwewinisa / Dictionary of Cree Words_][MaskwacîsDictionary] (`MD`)
+* _Alberta Elders' Cree Dictionary_ (`AECD` or `AE`)
 * [Albert Lacombe][Lacombe]'s _Dictionnaire de la langue des Cris_ (`DLC`)
 
 ## Process
@@ -34,7 +34,7 @@ The process for aggregating the sources is as follows:
 
 ## Project Requirements
 
-* The field data from the original dictionaries should be retained in its original form, and preferably even incorporated into ALTLab's database in an unobtrusive way. Each entry in ALTLab's database should include information about the source(s) for each entry, and the source for each sense.
+* The field data from the original dictionaries should be retained in its original form, and preferably even incorporated into ALTLab's database in an unobtrusive way.
 
 * The order that sources are imported should commutative (i.e. irrelevant; the script should output the same result regardless of the order the databases are imported).
 
@@ -47,3 +47,5 @@ The process for aggregating the sources is as follows:
 [Itwewina]:  https://sapir.artsrn.ualberta.ca/cree-dictionary/
 [Lacombe]:   https://en.wikipedia.org/wiki/Albert_Lacombe
 [Maskwacis]: https://en.wikipedia.org/wiki/Maskwacis
+[CreeWords]: https://uofrpress.ca/Books/C/Cree-Words
+[MaskwacîsDictionary]: https://www.altlab.dev/maskwacis/dictionary.html
