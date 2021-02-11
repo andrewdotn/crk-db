@@ -40,6 +40,8 @@ The process for aggregating the sources is as follows:
 
 * Manual input should not be required for aggregating entries. Entries can however be flagged for manual inspection.
 
+* An earlier, still relevant overall background document can be found here: https://docs.google.com/document/d/1uBJtG8WxRbUIBSdeNBynksKQoRImXJoCbEVFcW9HIJw/edit
+
 <!-- Links -->
 [ALTLab]:    https://github.com/UAlbertaALTLab
 [Arok]:      https://www.fnuniv.ca/academic/faculty/dr-arok-wolvengrey/
