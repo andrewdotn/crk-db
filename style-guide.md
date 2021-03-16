@@ -1,17 +1,3 @@
-<style>
-  q {
-    quotes: '‘' '’' '“' '”';
-  }
-
-  q::before {
-    content: open-quote;
-  }
-
-  q::after {
-    content: close-quote;
-  }
-</style>
-
 # Style Guide
 
 This style guide documents the lexicographical conventions used in the ALT Lab Plains Cree dictionary database.
