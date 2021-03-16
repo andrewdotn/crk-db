@@ -39,5 +39,8 @@
       "name": "Aida Radu",
       "url": "https://github.com/aradu12"
     }
-  ]
+  ],
+  "devDependencies": {
+    "eslint": "^7.22.0"
+  }
 }
