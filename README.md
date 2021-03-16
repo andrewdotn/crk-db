@@ -12,7 +12,7 @@ _This repository is a work in progress._
 - [Sources](#sources)
 - [Project Requirements](#project-requirements)
 - [Process](#process)
-- [Styleguide](#styleguide)
+- [Style Guide](#style-guide)
 
 <!-- /TOC -->
 
@@ -51,9 +51,9 @@ At a high level, the process for aggregating the sources is as follows:
 4. create the **sqlite3** database
 5. create the **FST** LEXC files
 
-## Styleguide
+## Style Guide
 
-Please see the [styleguide](./styleguide.md) (with glossary) for documentation of the lexicographical conventions used in this database.
+Please see the [style guide](./style guide.md) (with glossary) for documentation of the lexicographical conventions used in this database.
 
 <!-- Links -->
 [ALTLab]:     https://github.com/UAlbertaALTLab
