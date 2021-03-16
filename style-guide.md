@@ -12,9 +12,9 @@
   }
 </style>
 
-# Styleguide
+# Style Guide
 
-This styleguide documents the lexicographical conventions used in the ALT Lab Plains Cree dictionary database.
+This style guide documents the lexicographical conventions used in the ALT Lab Plains Cree dictionary database.
 
 ## Glossary
 
