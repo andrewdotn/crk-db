@@ -35,7 +35,7 @@ ALTLab's dictionary database is / will be aggregated from the following sources:
 
 * The field data from the original dictionaries should be retained in its original form, and preferably even incorporated into ALTLab's database in an unobtrusive way.
 
-* The order that sources are imported should commutative (i.e. irrelevant; the script should output the same result regardless of the order the databases are imported).
+* The order that sources are imported should be commutative (i.e. irrelevant; the script should output the same result regardless of the order the databases are imported).
 
 * Manual input should not be required for aggregating entries. Entries can however be flagged for manual inspection.
 
