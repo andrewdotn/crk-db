@@ -41,6 +41,7 @@
     }
   ],
   "devDependencies": {
+    "@digitallinguistics/toolbox2json": "^1.0.2",
     "eslint": "^7.22.0"
   }
 }

@@ -106,3 +106,4 @@ dist
 # Custom
 /scratch
 /data
+.eslintrc.yml
