@@ -55,6 +55,10 @@ At a high level, the process for aggregating the sources is as follows:
 
 Please see the [style guide](./style-guide.md) (with glossary) for documentation of the lexicographical conventions used in this database.
 
+## Building the Database
+
+1. Download the original data source. Currently the only data source that this database parses is the _Cree: Words_ (CW) database, stored in `Wolvengrey.toolbox`. **Do not commit this file to git.**
+
 <!-- Links -->
 [ALTLab]:     https://github.com/UAlbertaALTLab
 [Arok]:       https://www.fnuniv.ca/academic/faculty/dr-arok-wolvengrey/
