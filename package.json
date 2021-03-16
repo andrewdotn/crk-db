@@ -1,0 +1,43 @@
+{
+  "name": "@altlab/dictionary-database",
+  "version": "0.1.0",
+  "description": "Managing ALTLab's Plains Cree dictionary database",
+  "author": "University of Alberta Language Technology Lab",
+  "homepage": "https://github.com/UAlbertaALTLab/dictionary-database",
+  "bugs": "https://github.com/UAlbertaALTLab/dictionary-database/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UAlbertaALTLab/dictionary-database.git"
+  },
+  "license": "GPL-3.0",
+  "keywords": [
+    "Cree",
+    "lexicography",
+    "dictionary",
+    "Digital Linguistics"
+  ],
+  "private": true,
+  "engines": {
+    "node": ">=14.0"
+  },
+  "type": "module",
+  "scripts": {},
+  "contributors": [
+    {
+      "name": "Eddie Antonio Santos",
+      "url": "https://github.com/eddieantonio"
+    },
+    {
+      "name": "Antti Arppe",
+      "url": "https://github.com/aarppe"
+    },
+    {
+      "name": "Daniel W. Hieber",
+      "url": "https://danielhieber.com"
+    },
+    {
+      "name": "Aida Radu",
+      "url": "https://github.com/aradu12"
+    }
+  ]
+}
