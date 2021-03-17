@@ -1,0 +1,32 @@
+{
+  "name": "dictionary-database",
+  "version": "0.1.0",
+  "description": "The repository contains scripts and documentation for managing the multiple data sources for [ALTLab's][ALTLab] [Plains Cree][Cree] dictionary, which can be viewed online [here][itwewina]. This repository does _not_ (and should not) contain the actual data.",
+  "main": "lib/convert.js",
+  "directories": {
+    "doc": "docs",
+    "lib": "lib"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@digitallinguistics/toolbox2json": "^1.0.2",
+    "eslint": "^7.22.0"
+  },
+  "type": "module",
+  "scripts": {
+    "convert": "node lib/import.js"
+  },
+  "engines": {
+    "node": ">=14.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UAlbertaALTLab/dictionary-database.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UAlbertaALTLab/dictionary-database/issues"
+  },
+  "homepage": "https://github.com/UAlbertaALTLab/dictionary-database#readme"
+}
