@@ -55,6 +55,10 @@ A definition for the entry.
 * definitions divided by semicolons: should be considered two separate senses
 * definitions divided by commas: should be considered two separate subsenses (probably don't need a distinct object for these)
 * The definition field includes cross-references, **ex:** `[see êkwa]`. These cross-references should be extracted into their own field.
+* The definition field includes encyclopedic / usage notes `[in brackets]` as well. These should also be parsed into separate fields, when possible.
+* Literal translations are shown with `[lit. XXX]` or `[lit: XXX]`.
+* Latin terms are shown with `[Lt. XXX]`, but sometimes just in `[brackets]` without the `Lt.` leader.
+* Some objects are given in parentheses, **ex:** "(s.t.)"
 
 ## `\dl` **dialect**
 
