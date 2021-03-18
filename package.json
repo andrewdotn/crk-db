@@ -1,32 +1,49 @@
 {
-  "name": "dictionary-database",
+  "name": "@altlab/dictionary-database",
   "version": "0.1.0",
-  "description": "The repository contains scripts and documentation for managing the multiple data sources for [ALTLab's][ALTLab] [Plains Cree][Cree] dictionary, which can be viewed online [here][itwewina]. This repository does _not_ (and should not) contain the actual data.",
-  "main": "lib/convert.js",
-  "directories": {
-    "doc": "docs",
-    "lib": "lib"
+  "description": "Managing ALTLab's Plains Cree dictionary database",
+  "author": "University of Alberta Language Technology Lab",
+  "homepage": "https://github.com/UAlbertaALTLab/dictionary-database",
+  "bugs": "https://github.com/UAlbertaALTLab/dictionary-database/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UAlbertaALTLab/dictionary-database.git"
   },
-  "dependencies": {},
-  "devDependencies": {
-    "@digitallinguistics/toolbox2json": "^1.0.2",
-    "eslint": "^7.22.0"
+  "license": "GPL-3.0",
+  "keywords": [
+    "Cree",
+    "lexicography",
+    "dictionary",
+    "Digital Linguistics"
+  ],
+  "private": true,
+  "engines": {
+    "node": ">=14.0"
   },
   "type": "module",
   "scripts": {
     "convert": "node lib/import.js"
   },
-  "engines": {
-    "node": ">=14.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/UAlbertaALTLab/dictionary-database.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/UAlbertaALTLab/dictionary-database/issues"
-  },
-  "homepage": "https://github.com/UAlbertaALTLab/dictionary-database#readme"
+  "devDependencies": {
+    "@digitallinguistics/toolbox2json": "^1.0.2",
+    "eslint": "^7.22.0"
+  }
+  "contributors": [
+    {
+      "name": "Eddie Antonio Santos",
+      "url": "https://github.com/eddieantonio"
+    },
+    {
+      "name": "Antti Arppe",
+      "url": "https://github.com/aarppe"
+    },
+    {
+      "name": "Daniel W. Hieber",
+      "url": "https://danielhieber.com"
+    },
+    {
+      "name": "Aida Radu",
+      "url": "https://github.com/aradu12"
+    }
+  ]
 }
