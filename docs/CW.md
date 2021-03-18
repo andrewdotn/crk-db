@@ -35,7 +35,7 @@ This database lives in the ALTLab repo at `/crk/dicts/Wolvengrey.toolbox`. Do **
 
 A field for outstanding questions and uncertainties, used by Arok to make notes to himself.
 
-## `\alt` **alternative form**
+## `\alt` **alternative form** [multiple]
 
 Alternative forms of the word, such as reduced forms or spelling variants.
 
@@ -44,6 +44,8 @@ Arok is considering dividing this into `\alt` and `\alt-sp` (spelling variants).
 ## `\cat` **usage categories**
 
 Categories of usage, **ex:** `baby talk`, `traditional`, `borrowing`, `Christian term`.
+
+[Currently this is a multiple field, but I'm asking Arok to combine the one case this happens.]
 
 ## `\def` **definition** [multiple]
 
@@ -54,16 +56,23 @@ A definition for the entry.
 * definitions divided by commas: should be considered two separate subsenses (probably don't need a distinct object for these)
 * The definition field includes cross-references, **ex:** `[see êkwa]`. These cross-references should be extracted into their own field.
 
-## `\drv` **derivation**
+## `\dl` **dialect**
+
+Lists the dialects that the entry belongs to.
+
+[Currently this is a multiple field, but I'm asking Arok to combine the 9 cases this happens.]
+
+## `\drv` **derivation** [multiple]
 
 A list of forms showing the derivational breakdown of the word, each separated by ` + `.
 
+* Unclear why there can sometimes be multiple derivation fields.
 * Only shows the topmost layer of derivational structure (**ex:** primary stem + secondary derivation).
 * Almost always contains a reference to another entry, except for TI-2 stems (see [part of speech](#\ps-part-of-speech) below).
 * `/word-/` indicates a stem (primary or secondary), to which inflection is added.
 * `/-affix/` indicates a derivational suffix (primary or secondary).
 
-## `\gr1` **grammatical information**
+## `\gr1` **grammatical information** [multiple]
 
 A structured field containing information about the grammatical categories of the entry, **ex:** `singular`, `diminutive`.
 
@@ -78,6 +87,8 @@ A freeform field for any other grammatical notes about the entry.
 ## `\his` **historical note**
 
 Historical notes about the entry.
+
+[Currently this is a multiple field, but I'm asking Arok to combine the 2 cases this happens.]
 
 ## `\mrp` **morphemes** [multiple]
 
@@ -94,7 +105,7 @@ Arok is in the process of adding this field to the database. [2021/03/16] This f
 
 It's unclear how this field is to be interpreted when there are multiple morphemes in `\mrp`. A good default assumption is that `\mrp2` only shows the morpheme breakdown for the stem in `\mrp` (so `\mrp2` is essentially the stem components—initial, medial, and final).
 
-## `\ps` **part of speech**
+## `\ps` **part of speech** [multiple]
 
 This field really combines information on part of speech, morpheme type, and inflectional class.
 
@@ -116,7 +127,7 @@ INM  | indeclinable nominal
   - **Example:** `INM < NA-1 + NEG + VAI-1`
   - Note that in the above example, `NEG` is used, even though this part of speech isn't used in entries. Arok is being more specific here than his usual part-of-speech classification.
 
-## `\rel` **relation / related to**
+## `\rel` **relation / related to** [multiple]
 
 Used for items that are either more obscurely derivationally-related, OR closely-related synonyms.
 
@@ -125,6 +136,9 @@ For now this field is functioning as a general cross-reference field.
 ## `\rw` **rapid words**
 
 Semantic classification of the entry according to the [Rapid Words][RapidWords] semantic hierarchy.
+
+* This may not actually be present in certain versions of this database.
+* The data in this field comes from Daniel Dacanay's semantic classification.
 
 ## `\sem` **semantic category** [multiple]
 
@@ -136,11 +150,12 @@ Arok thinks most of the data in this field is obsolete and can be replaced with 
 
 Where the information in the entry comes from. May contain multiple sources. Usually publications, sometimes speaker codes (less common).
 
-## `\stm` **stem**
+## `\stm` **stem** [multiple]
 
 Lists the outermost stem of the word.
 
 * The Plains Cree FST typically uses this field to determine the stem used by the FST. However, there are ~1,000 entries for which the FST stem has to be specified manually. It's important to retain this data, and use it instead of the data in the `\stm` field in these cases.
+* This field is occasionally duplicated (in 22 entries) when the headword is a multi-word phrase (`INM`).
 
 ## `\syl` **syllabics**
 
