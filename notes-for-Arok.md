@@ -16,3 +16,4 @@
   - Just confirm that these should be separate entries.
   - What to do with the definitions in these cases?
   - Or should they just be combined?
+  - Ideally, POS field should pertain to the entire lexical entry.

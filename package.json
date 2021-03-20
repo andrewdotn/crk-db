@@ -22,12 +22,12 @@
   },
   "type": "module",
   "scripts": {
-    "convert": "node lib/import.js"
+    "convert": "node lib/convert.js"
   },
   "devDependencies": {
     "@digitallinguistics/toolbox2json": "^1.0.2",
     "eslint": "^7.22.0"
-  }
+  },
   "contributors": [
     {
       "name": "Eddie Antonio Santos",

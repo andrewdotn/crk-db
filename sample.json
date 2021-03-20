@@ -1,7 +1,5 @@
 [{
-  "sro": [
-    "acâhkos y"
-  ],
+  "sro": "acâhkos y",
   "syl": "ᐊᒑᐦᑯᐢ",
   "ps": "NA-1",
   "def": "star, little star",
@@ -33,9 +31,7 @@
   "src": "AE, W&A",
   "dt": "04/Jun/2016"
 },{
-  "sro": [
-    "acâhkos êkâ kâ-âhcît"
-  ],
+  "sro": "acâhkos êkâ kâ-âhcît",
   "syl": "ᐊᒑᐦᑯᐢ  ᐁᑳ  ᑳ ᐋᐦᒌᐟ",
   "ps": "INM",
   "def": "North Star, Polaris; literally: \"star that does not move\"",
@@ -78,9 +74,7 @@
   ],
   "dt": "20/Nov/2019"
 },{
-  "sro": [
-    "acâhkos kâ-osôsit"
-  ],
+  "sro": "acâhkos kâ-osôsit",
   "syl": "ᐊᒑᐦᑯᐢ  ᑳ ᐅᓲᓯᐟ",
   "ps": "INM",
   "def": "comet, tailed star",
