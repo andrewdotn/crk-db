@@ -76,6 +76,10 @@ A list of forms showing the derivational breakdown of the word, each separated b
 * `/word-/` indicates a stem (primary or secondary), to which inflection is added.
 * `/-affix/` indicates a derivational suffix (primary or secondary).
 
+## `\fststem` **FST stem**
+
+This field is _not_ in the Toolbox database. This data only lives in the TSV version of this file. There are somewhere in the range of ~1,500 entries total where this information has been added. This data should be retrieved and added to the main entry in the dictionary database.
+
 ## `\gr1` **grammatical information** [multiple]
 
 A structured field containing information about the grammatical categories of the entry, **ex:** `singular`, `diminutive`.
@@ -96,12 +100,22 @@ Historical notes about the entry.
 
 ## `\mrp` **morphemes** [multiple]
 
- Each `\mrp` field shows one of the morphemes contained in the entry, regardless of whether that morpheme is part of the primary or secondary stem, or derivational or inflectional.
+Each `\mrp` field shows one of the morphemes contained in the entry, regardless of whether that morpheme is part of the primary or secondary stem, or derivational or inflectional.
 
 * `stem-`: "free" stems (like bound nouns)
 * `/initial-/` (also `/stem-/`?)
 * `/-medial-/`
 * `/-final/`
+
+The following idiosyncrasies will need to be handled when parsing this field, where `morpheme` stands for the form of the morpheme.
+
+* `morpheme**`
+* `""morpheme""`
+* `"morpheme`
+* `morpheme OR morpheme`
+* `morph(eme)`
+* `<T>` (historical T)
+* `morpheme [note]`
 
 ## `\mrp2` **morphemes** [multiple]
 
@@ -160,6 +174,7 @@ Lists the outermost stem of the word.
 
 * The Plains Cree FST typically uses this field to determine the stem used by the FST. However, there are ~1,000 entries for which the FST stem has to be specified manually. It's important to retain this data, and use it instead of the data in the `\stm` field in these cases.
 * This field is occasionally duplicated (in 22 entries) when the headword is a multi-word phrase (`INM`).
+* Some entries do not have a final hyphen, even when it seems like they should. It's not clear whether this difference is meaningful or accidental.
 
 ## `\syl` **syllabics**
 
