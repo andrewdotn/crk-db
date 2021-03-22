@@ -168,6 +168,10 @@ Arok thinks most of the data in this field is obsolete and can be replaced with 
 
 Where the information in the entry comes from. May contain multiple sources. Usually publications, sometimes speaker codes (less common).
 
+## `\sro` **Standard Roman Orthography (SRO)**
+
+The transcription of the lemma in Standard Roman Orthography (SRO).
+
 ## `\stm` **stem** [multiple]
 
 Lists the outermost stem of the word.

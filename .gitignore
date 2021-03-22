@@ -104,7 +104,6 @@ dist
 .tern-port
 
 # Repository-Specific
-.eslintrc.yml
 Wolvengrey.toolbox
 /scratch
 /data

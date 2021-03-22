@@ -1,0 +1,13 @@
+[{
+  "test": "NFC normalizes",
+  "sro": "ê"
+},{
+  "test": "converts <ý> to <y>",
+  "sro": "y"
+},{
+  "test": "converts <ń> to <y>",
+  "sro": "y"
+},{
+  "name": "ParseError",
+  "message": "Character <z> at position 0 is invalid"
+}]

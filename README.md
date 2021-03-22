@@ -2,7 +2,7 @@
 
 The repository contains scripts and documentation for managing the multiple data sources for [ALTLab's][ALTLab] [Plains Cree][Cree] dictionary, which can be viewed online [here][itwewina]. This repository does _not_ (and should not) contain the actual data.
 
-The database uses the [Data Format for Digital Linguistics][DaFoDiL] (<abbr title='Data Format for Digital Linguistics'>DaFoDiL</abbr>) as its underlying data format, a set of recommendations for storing linguistic data in JSON.
+The database uses the [Data Format for Digital Linguistics][DaFoDiL] (DaFoDiL) as its underlying data format, a set of recommendations for storing linguistic data in JSON.
 
 _This repository is a work in progress._
 
@@ -45,7 +45,7 @@ ALTLab's dictionary database is / will be aggregated from the following sources:
 
 At a high level, the process for aggregating the sources is as follows:
 
-1. **convert** dictionary from original format to a standard one (CSV, TSV, JSON)
+1. **convert** data source from original format to [DaFoDiL][DaFoDiL]
 2. **clean** and normalize the data, while retaining the original data
 3. **import** the data into ALTLab's database using an aggregation algorithm
 4. create the **sqlite3** database
@@ -53,11 +53,11 @@ At a high level, the process for aggregating the sources is as follows:
 
 ## Style Guide
 
-Please see the [style guide](./style-guide.md) (with glossary) for documentation of the lexicographical conventions used in this database.
+Please see the [style guide](./docs/style-guide.md) (with glossary) for documentation of the lexicographical conventions used in this database.
 
 ## Building the Database
 
-1. Download the original data source. Currently the only data source that this database parses is the _Cree: Words_ (CW) database, stored in `Wolvengrey.toolbox`. **Do not commit this file to git.**
+1. Download the original data source. Currently the only data source that this repo parses is the _Cree: Words_ (CW) database, stored in `Wolvengrey.toolbox`. **Do not commit this file to git.**
 
 <!-- Links -->
 [ALTLab]:     https://github.com/UAlbertaALTLab
