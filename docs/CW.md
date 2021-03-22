@@ -8,12 +8,27 @@ This database lives in the ALTLab repo at `/crk/dicts/Wolvengrey.toolbox`. Do **
 <!-- TOC -->
 
 - [General Notes](#general-notes)
-- [`\drv` **derivation**](#\drv-derivation)
+- [`\??` **question**](#\-question)
+- [`\alt` **alternative form** [multiple]](#\alt-alternative-form-multiple)
+- [`\cat` **usage categories**](#\cat-usage-categories)
+- [`\def` **definition** [multiple]](#\def-definition-multiple)
+- [`\dl` **dialect**](#\dl-dialect)
+- [`\drv` **derivation** [multiple]](#\drv-derivation-multiple)
+- [`\fststem` **FST stem**](#\fststem-fst-stem)
+- [`\gr1` **grammatical information** [multiple]](#\gr1-grammatical-information-multiple)
+- [`\gr2` **grammatical information (freeform)**](#\gr2-grammatical-information-freeform)
+- [`\his` **historical note**](#\his-historical-note)
 - [`\mrp` **morphemes** [multiple]](#\mrp-morphemes-multiple)
-- [`\ps`: **part of speech**](#\ps-part-of-speech)
+- [`\mrp2` **morphemes** [multiple]](#\mrp2-morphemes-multiple)
+- [`\ps` **part of speech** [multiple]](#\ps-part-of-speech-multiple)
   - [Notes on specific parts of speech](#notes-on-specific-parts-of-speech)
+- [`\rel` **relation / related to** [multiple]](#\rel-relation--related-to-multiple)
 - [`\rw` **rapid words**](#\rw-rapid-words)
-- [`\src`: **data source**](#\src-data-source)
+- [`\sem` **semantic category** [multiple]](#\sem-semantic-category-multiple)
+- [`\src` **data source**](#\src-data-source)
+- [`\sro` **Standard Roman Orthography (SRO)**](#\sro-standard-roman-orthography-sro)
+- [`\stm` **stem** [multiple]](#\stm-stem-multiple)
+- [`\syl` **syllabics**](#\syl-syllabics)
 
 <!-- /TOC -->
 
@@ -56,15 +71,20 @@ A definition for the entry.
 * definitions divided by commas: should be considered two separate subsenses (probably don't need a distinct object for these)
 * The definition field includes cross-references, **ex:** `[see êkwa]`. These cross-references should be extracted into their own field.
 * The definition field includes encyclopedic / usage notes `[in brackets]` as well. These should also be parsed into separate fields, when possible.
-* Literal translations are shown with `[lit. XXX]` or `[lit: XXX]`.
+* Literal translations are shown with `[lit. XXX]` or `[lit: XXX]` or `literally: XXX` (this last one following a semicolon).
 * Latin terms are shown with `[Lt. XXX]`, but sometimes just in `[brackets]` without the `Lt.` leader.
-* Some objects are given in parentheses, **ex:** "(s.t.)"
+* Some objects are given in parentheses, **ex:** `(s.t.)`
 
-## `\dl` **dialect**
+## `\dl` **dialect** [multiple]
 
 Lists the dialects that the entry belongs to.
 
-[Currently this is a multiple field, but I'm asking Arok to combine the 9 cases this happens.]
+Abbreviation | Dialect              | Glottocode | ISO 639-3
+-------------|----------------------|------------|----------
+`npC`        | Northern Plains Cree | `nort2960` | `crk`
+`pC`         | Plains Cree          | `plai1258` | `crk`
+`sC`         | Swampy Cree          | `swam1239` | `csw`
+`wC`         | Woods Cree           | `wood1236` | `cwd`
 
 ## `\drv` **derivation** [multiple]
 

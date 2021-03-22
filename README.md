@@ -4,8 +4,6 @@ The repository contains scripts and documentation for managing the multiple data
 
 The database uses the [Data Format for Digital Linguistics][DaFoDiL] (DaFoDiL) as its underlying data format, a set of recommendations for storing linguistic data in JSON.
 
-_This repository is a work in progress._
-
 ## Contents
 <!-- TOC -->
 
@@ -13,6 +11,7 @@ _This repository is a work in progress._
 - [Project Requirements](#project-requirements)
 - [Process](#process)
 - [Style Guide](#style-guide)
+- [Building the Database](#building-the-database)
 
 <!-- /TOC -->
 
@@ -39,8 +38,6 @@ ALTLab's dictionary database is / will be aggregated from the following sources:
 
 * Manual input should not be required for aggregating entries. Entries can however be flagged for manual inspection.
 
-* An earlier, still relevant overall background document can be found here: https://docs.google.com/document/d/1uBJtG8WxRbUIBSdeNBynksKQoRImXJoCbEVFcW9HIJw/edit
-
 ## Process
 
 At a high level, the process for aggregating the sources is as follows:
@@ -57,7 +54,17 @@ Please see the [style guide](./docs/style-guide.md) (with glossary) for document
 
 ## Building the Database
 
-1. Download the original data source. Currently the only data source that this repo parses is the _Cree: Words_ (CW) database, stored in `Wolvengrey.toolbox`. **Do not commit this file to git.**
+1. Download the original data source. Currently the only data source that this repo parses is the _Cree: Words_ (CW) database, stored in `crk/dicts/Wolvengrey.toolbox` in the ALTLab repo. **Do not commit this file to git.**
+
+2. Install the dependencies for this repo: `npm install`.
+
+3. Once installed, you can convert individual data sources by running `convert-* <inputPath> <outPath>` from the command line, where `*` stands for the abbreviation of the data source, ex. `convert-cw Wolvengrey.toolbox CW.json`.
+
+4. You can also convert individual data sources by running the conversion scripts as modules. Each conversion script is located in `lib/convert.{ABBR}.js`, where `{ABBR}` stands for the abbreviation of the data source. Each module exports a function which takes two arguments: the path to the data source and the path where you would like the converted data saved (this should have a `.json` extension).
+
+## Tests
+
+Test for this repository are written using Mocha + Chai. The tests check that the conversion scripts are working properly, and test for all known edge cases. The test spec for each conversion script is located alongside that conversion script in `lib`, with the extension `.test.js`. You can run the entire test suite with `npm test`.
 
 <!-- Links -->
 [ALTLab]:     https://github.com/UAlbertaALTLab
