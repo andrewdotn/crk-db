@@ -1,13 +1,11 @@
 # ESLint v7.3.1
 parserOptions:
-  ecmaVersion: 2021
-  ecmaFeatures:
-    impliedStrict: true
-  sourceType: module
+  ecmaVersion:   2021
+  impliedStrict: true
+  sourceType:    module
 env:
-  browser: false
-  es6:     true
-  node:    true
+  mocha:  true
+  es2021: true
 reportUnusedDisableDirectives: true
 rules:
   id-blacklist:
