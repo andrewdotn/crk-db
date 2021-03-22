@@ -28,9 +28,7 @@ rules:
     arraysInArrays: false
   array-callback-return: warn
   array-element-newline: 'off'
-  arrow-body-style:
-  - warn
-  - as-needed
+  arrow-body-style: off
   arrow-parens:
   - error
   - as-needed
