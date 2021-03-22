@@ -1,4 +1,5 @@
 * miscikokamikos: typo: `diminuitve` > `diminutive`
+* môskotêhêw: typo: `/iterally` > `literally`
 * Two cases of double `\his`: acâhkos, mîkis
 * One case of double `\cat`: kisê-manitow
 * 9 cases of multiple `\dl`:
