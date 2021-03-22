@@ -46,6 +46,13 @@ This database lives in the ALTLab repo at `/crk/dicts/Wolvengrey.toolbox`. Do **
   - `\gl oh\ngl\hah` (no backslash on second `gl`)
   - entry for 'broth'
 
+## Fields Needing Documentation
+
+* `gl`
+* `dt`
+* `new`
+* `altsp`
+
 ## `\??` **question**
 
 A field for outstanding questions and uncertainties, used by Arok to make notes to himself.
