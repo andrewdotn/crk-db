@@ -10,16 +10,20 @@ This database lives in the ALTLab repo at `/crk/dicts/Wolvengrey.toolbox`. Do **
 - [General Notes](#general-notes)
 - [`\??` **question**](#\-question)
 - [`\alt` **alternative form** [multiple]](#\alt-alternative-form-multiple)
+- [`\altsp` **spelling alternants**](#\altsp-spelling-alternants)
 - [`\cat` **usage categories**](#\cat-usage-categories)
 - [`\def` **definition** [multiple]](#\def-definition-multiple)
-- [`\dl` **dialect**](#\dl-dialect)
+- [`\dl` **dialect** [multiple]](#\dl-dialect-multiple)
 - [`\drv` **derivation** [multiple]](#\drv-derivation-multiple)
+- [`\dt` **date**](#\dt-date)
 - [`\fststem` **FST stem**](#\fststem-fst-stem)
+- [`\gl` **gloss** [multiple]](#\gl-gloss-multiple)
 - [`\gr1` **grammatical information** [multiple]](#\gr1-grammatical-information-multiple)
 - [`\gr2` **grammatical information (freeform)**](#\gr2-grammatical-information-freeform)
 - [`\his` **historical note**](#\his-historical-note)
 - [`\mrp` **morphemes** [multiple]](#\mrp-morphemes-multiple)
 - [`\mrp2` **morphemes** [multiple]](#\mrp2-morphemes-multiple)
+- [`\new` **neologism** [multiple]](#\new-neologism-multiple)
 - [`\ps` **part of speech** [multiple]](#\ps-part-of-speech-multiple)
   - [Notes on specific parts of speech](#notes-on-specific-parts-of-speech)
 - [`\rel` **relation / related to** [multiple]](#\rel-relation--related-to-multiple)
@@ -46,13 +50,6 @@ This database lives in the ALTLab repo at `/crk/dicts/Wolvengrey.toolbox`. Do **
   - `\gl oh\ngl\hah` (no backslash on second `gl`)
   - entry for 'broth'
 
-## Fields Needing Documentation
-
-* `gl`
-* `dt`
-* `new`
-* `altsp`
-
 ## `\??` **question**
 
 A field for outstanding questions and uncertainties, used by Arok to make notes to himself.
@@ -62,6 +59,12 @@ A field for outstanding questions and uncertainties, used by Arok to make notes 
 Alternative forms of the word, such as reduced forms or spelling variants.
 
 Arok is considering dividing this into `\alt` and `\alt-sp` (spelling variants). [2021/03/16]
+
+Arok has in fact occasionally used `\altsp` (10 times). See below.
+
+## `\altsp` **spelling alternants**
+
+Alternative spellings of the word.
 
 ## `\cat` **usage categories**
 
@@ -76,11 +79,52 @@ A definition for the entry.
 * multiple definition fields: should be considered two separate entries
 * definitions divided by semicolons: should be considered two separate senses
 * definitions divided by commas: should be considered two separate subsenses (probably don't need a distinct object for these)
-* The definition field includes cross-references, **ex:** `[see êkwa]`. These cross-references should be extracted into their own field.
+* The definition field includes cross-references, which should be extracted into their own field.
+  - **ex:** `[see XXX]` (only use first word following `see` as the entry)
+  - **ex:** `[see XXX …]`: general note
+  - **ex:** `…; see {also} XXX\n`
+  - **ex:** `[cf. XXX]`
+  - **ex:** `[cf. XXX "definition"]`
 * The definition field includes encyclopedic / usage notes `[in brackets]` as well. These should also be parsed into separate fields, when possible.
-* Literal translations are shown with `[lit. XXX]` or `[lit: XXX]` or `literally: XXX` (this last one following a semicolon).
-* Latin terms are shown with `[Lt. XXX]`, but sometimes just in `[brackets]` without the `Lt.` leader.
 * Some objects are given in parentheses, **ex:** `(s.t.)`
+* Definitions contain various kinds of notes in `[brackets]`:
+  - There can be multiple notes, each contained within the same set of brackets, and separated by semicolons.
+  - Each note has a leader:
+    - `e.g. XXX "definition"`: example
+    - `figuratively,`: figurative sense
+    - `i.e.`: general note
+    - `lit.`: literal definition
+    - `lit:`: literal definition
+    - `lit.:`: literal definition
+    - `literally`: literal definition
+    - `literally:` literal definition
+    - `/iterally:`: literal definition (typo)
+  - Items with no leader are general notes.
+  - Sometimes literal definitions are not placed in brackets, and simply given with `…; literally: XXX`
+  - Literal definitions may or may not be wrapped in quotes (usually double quotes).
+  - Latin terms for items apply to just the current semicolon-delineated definition:
+    - `[Lt. XXX]`
+    - `[Lt: XXX]`
+    - `[Latin: XXX]`
+  - Items with a `Lt.` leader apply to just the current semicolon-delimited definition, and refers to the Latin term for the item.
+  - Other items which end with a colon (`[description:]`) apply to just the current semicolon-delimited definition. These can be extracted into a `usages` field. Some examples:
+    - `archaic:` archaic sense
+    - `Christian:` Christian sense
+    - `in jest:` humorous sense
+    - `in numeral phrases:` sense in numeral phrases
+    - `emphatic:` emphatic sense
+    - `fig:` figurative sense
+    - `figurative:` figurative sense
+    - `figuratively:` figurative sense
+    - `historically:` historic sense
+    - `pl:` sense in the plural
+    - `plural:` sense in the plural
+    - `predicative:` predicative sense
+    - `sg:` sense in the singular
+    - `singular:` sense in the singular
+    - `slang:` sense when used as slang
+  - Other notes containing a semicolon are a usage + definition, **ex:** `typically in negative: "s/he has a not good disease, s/he has a bad disease"`
+  - Some notes apply to just the current definition rather than the entire entry
 
 ## `\dl` **dialect** [multiple]
 
@@ -103,9 +147,17 @@ A list of forms showing the derivational breakdown of the word, each separated b
 * `/word-/` indicates a stem (primary or secondary), to which inflection is added.
 * `/-affix/` indicates a derivational suffix (primary or secondary).
 
+## `\dt` **date**
+
+The date that the entry was last updated.
+
 ## `\fststem` **FST stem**
 
 This field is _not_ in the Toolbox database. This data only lives in the TSV version of this file. There are somewhere in the range of ~1,500 entries total where this information has been added. This data should be retrieved and added to the main entry in the dictionary database.
+
+## `\gl` **gloss** [multiple]
+
+The gloss fields are really just used for English reversal entries.
 
 ## `\gr1` **grammatical information** [multiple]
 
@@ -149,6 +201,12 @@ The following idiosyncrasies will need to be handled when parsing this field, wh
 Arok is in the process of adding this field to the database. [2021/03/16] This field will show a morpheme breakdown for the morphemes in `\mrp`.
 
 It's unclear how this field is to be interpreted when there are multiple morphemes in `\mrp`. A good default assumption is that `\mrp2` only shows the morpheme breakdown for the stem in `\mrp` (so `\mrp2` is essentially the stem components—initial, medial, and final).
+
+## `\new` **neologism** [multiple]
+
+The value of this field is always `new` (with perhaps one exception; see below). This field seems to function as a Boolean, indicating (presumably) that the entry is a neologism. It might also be a field Arok uses for himself, to keep track of which entries are new.
+
+In at least one case, this field appears multiple times, with one of the fields blank, and the other containing `new`.
 
 ## `\ps` **part of speech** [multiple]
 
