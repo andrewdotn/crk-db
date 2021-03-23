@@ -76,22 +76,20 @@ Categories of usage, **ex:** `baby talk`, `traditional`, `borrowing`, `Christian
 
 A definition for the entry.
 
+* Some objects are given in parentheses, **ex:** `(s.t.)`
 * multiple definition fields: should be considered two separate entries
 * definitions divided by semicolons: should be considered two separate senses
 * definitions divided by commas: should be considered two separate subsenses (probably don't need a distinct object for these)
-* The definition field includes cross-references, which should be extracted into their own field.
-  - **ex:** `[see XXX]` (only use first word following `see` as the entry)
-  - **ex:** `[see XXX …]`: general note
-  - **ex:** `…; see {also} XXX\n`
-  - **ex:** `[cf. XXX]`
-  - **ex:** `[cf. XXX "definition"]`
+* [x] The definition field includes cross-references, which should be extracted into their own field.
+  - [x] **ex:** `[see XXX]` (only use first word following `see` as the entry)
+  - [x] **ex:** `[see XXX …]`: general note
+  - [x] **ex:** `…; see {also} XXX\n` [there are only 6 instances of these, and they either can't be done programmatically, or we wouldn't want to]
+  - [x] **ex:** `[cf. XXX]` [this only occurs 1x - not worth handling programmatically]
+  - [x] **ex:** `[cf. XXX "definition"]` [this only occurs in the grammar fields, not definitions]
 * The definition field includes encyclopedic / usage notes `[in brackets]` as well. These should also be parsed into separate fields, when possible.
-* Some objects are given in parentheses, **ex:** `(s.t.)`
-* Definitions contain various kinds of notes in `[brackets]`:
   - There can be multiple notes, each contained within the same set of brackets, and separated by semicolons.
   - Each note has a leader:
     - `e.g. XXX "definition"`: example
-    - `figuratively,`: figurative sense
     - `i.e.`: general note
     - `lit.`: literal definition
     - `lit:`: literal definition
@@ -106,7 +104,6 @@ A definition for the entry.
     - `[Lt. XXX]`
     - `[Lt: XXX]`
     - `[Latin: XXX]`
-  - Items with a `Lt.` leader apply to just the current semicolon-delimited definition, and refers to the Latin term for the item.
   - Other items which end with a colon (`[description:]`) apply to just the current semicolon-delimited definition. These can be extracted into a `usages` field. Some examples:
     - `archaic:` archaic sense
     - `Christian:` Christian sense
@@ -115,6 +112,7 @@ A definition for the entry.
     - `emphatic:` emphatic sense
     - `fig:` figurative sense
     - `figurative:` figurative sense
+    - `figuratively,`: figurative sense
     - `figuratively:` figurative sense
     - `historically:` historic sense
     - `pl:` sense in the plural
@@ -123,8 +121,7 @@ A definition for the entry.
     - `sg:` sense in the singular
     - `singular:` sense in the singular
     - `slang:` sense when used as slang
-  - Other notes containing a semicolon are a usage + definition, **ex:** `typically in negative: "s/he has a not good disease, s/he has a bad disease"`
-  - Some notes apply to just the current definition rather than the entire entry
+  - Other notes containing a semicolon are a usage + definition, **ex:** `typically in negative: "s/he has a not good disease, s/he has a bad disease"`.
 
 ## `\dl` **dialect** [multiple]
 

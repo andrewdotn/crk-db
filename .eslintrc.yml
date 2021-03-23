@@ -4,8 +4,8 @@ parserOptions:
   impliedStrict: true
   sourceType:    module
 env:
-  mocha:  true
   es2021: true
+  mocha:  true
 reportUnusedDisableDirectives: true
 rules:
   id-blacklist:
@@ -370,6 +370,7 @@ rules:
     - event
     - resolve
     - reject
+    - test
   no-shadow-restricted-names: error
   no-sparse-arrays: warn
   no-sync: error
