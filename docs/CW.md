@@ -84,7 +84,7 @@ A definition for the entry.
   - [x] **ex:** `[see XXX]` (only use first word following `see` as the entry)
   - [x] **ex:** `[see XXX …]`: general note
   - [x] **ex:** `…; see {also} XXX\n` [there are only 6 instances of these, and they either can't be done programmatically, or we wouldn't want to]
-  - [x] **ex:** `[cf. XXX]` [this only occurs 1x - not worth handling programmatically]
+  - [x] **ex:** `[cf. XXX]` [this only occurs 1x]
   - [x] **ex:** `[cf. XXX "definition"]` [this only occurs in the grammar fields, not definitions]
 * The definition field includes encyclopedic / usage notes `[in brackets]` as well. These should also be parsed into separate fields, when possible.
   - There can be multiple notes, each contained within the same set of brackets, and separated by semicolons.
@@ -96,7 +96,6 @@ A definition for the entry.
     - `lit.:`: literal definition
     - `literally`: literal definition
     - `literally:` literal definition
-    - `/iterally:`: literal definition (typo)
   - Items with no leader are general notes.
   - Sometimes literal definitions are not placed in brackets, and simply given with `…; literally: XXX`
   - Literal definitions may or may not be wrapped in quotes (usually double quotes).
