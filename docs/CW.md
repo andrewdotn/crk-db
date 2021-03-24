@@ -111,7 +111,6 @@ A definition for the entry.
     - `emphatic:` emphatic sense
     - `fig:` figurative sense
     - `figurative:` figurative sense
-    - `figuratively,`: figurative sense
     - `figuratively:` figurative sense
     - `historically:` historic sense
     - `pl:` sense in the plural

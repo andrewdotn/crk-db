@@ -22,9 +22,7 @@
   },
   "type": "module",
   "scripts": {
-    "convert-cw": "node lib/convert.CW.js",
-    "test": "mocha lib/*.test.js",
-    "start": "npm run test"
+    "test": "mocha lib/*.test.js"
   },
   "bin": {
     "convert-cw": "./bin/convert.CW.js"

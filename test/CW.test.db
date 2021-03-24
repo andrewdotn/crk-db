@@ -35,14 +35,17 @@
 \test extracts Latin terms
 \def  black ash [Lt. Fraximus nigra]
 
-\test extracts multiple parentheticals across definitions
+\test extracts multiple parentheticals
 \def  young macôhow, Bad Owl's son [male name]; [plural:] Bad Owl's family, members of Bad Owl's family
 
-\test extracts multiple parentheticals within definitions
+\test extracts multiple notes from a parenthetical
 \def  dock [Lt. Rumex sp.; literally: "yellow-root"]
 
 \test extracts unbracketed literal definitions
 \def  Christmas moon; December; literally: "God-day moon, Christmas moon"
+
+\test extracts usage notes
+\def  insistently; [in negative clauses:] (not) necessarily
 
 \test NFC normalizes
 \sro  ê
