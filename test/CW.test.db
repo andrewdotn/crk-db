@@ -20,8 +20,29 @@
 \test copies the original definition field verbatim
 \def  North Star, Polaris; [lit: "star that does not move"]
 
+\test extracts compare relations: [cf. XXX]
+\def  not [cf. nama]
+
 \test extracts cross-references: [see XXX]
 \def  aside, off to one side [see yîkatê-]
+
+\test extracts extended cross-references as notes: [see XXX …]
+\def  greatly, extremely, overwhelmingly, tremendously, to an extraordinary extent; with startled surprise [see kakwâýaki- for further derivatives]
+
+\test extracts general notes
+\def  if only it were so, if only; of course not, not any, not even; [i.e. foregone conclusion that something is not the case]
+
+\test extracts Latin terms
+\def  black ash [Lt. Fraximus nigra]
+
+\test extracts multiple parentheticals across definitions
+\def  young macôhow, Bad Owl's son [male name]; [plural:] Bad Owl's family, members of Bad Owl's family
+
+\test extracts multiple parentheticals within definitions
+\def  dock [Lt. Rumex sp.; literally: "yellow-root"]
+
+\test extracts unbracketed literal definitions
+\def  Christmas moon; December; literally: "God-day moon, Christmas moon"
 
 \test NFC normalizes
 \sro  ê
@@ -29,5 +50,5 @@
 \test produces an error object for invalid SRO characters
 \sro  z
 
-\test extracts extended cross-references as notes: [see XXX …]
-\def  greatly, extremely, overwhelmingly, tremendously, to an extraordinary extent; with startled surprise [see kakwâýaki- for further derivatives]
+\test separates definitions by semicolons
+\def  it is a star; s/he is a star (e.g. in movies, sports, music, etc.)
