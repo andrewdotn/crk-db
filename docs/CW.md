@@ -80,12 +80,12 @@ A definition for the entry.
 * multiple definition fields: should be considered two separate entries
 * definitions divided by semicolons: should be considered two separate senses
 * definitions divided by commas: should be considered two separate subsenses (probably don't need a distinct object for these)
-* [x] The definition field includes cross-references, which should be extracted into their own field.
-  - [x] **ex:** `[see XXX]` (only use first word following `see` as the entry)
-  - [x] **ex:** `[see XXX …]`: general note
-  - [x] **ex:** `…; see {also} XXX\n` [there are only 6 instances of these, and they either can't be done programmatically, or we wouldn't want to]
-  - [x] **ex:** `[cf. XXX]` [this only occurs 1x]
-  - [x] **ex:** `[cf. XXX "definition"]` [this only occurs in the grammar fields, not definitions]
+* The definition field includes cross-references, which should be extracted into their own field.
+  - **ex:** `[see XXX]` (only use first word following `see` as the entry)
+  - **ex:** `[see XXX …]`: general note
+  - **ex:** `…; see {also} XXX\n` [there are only 6 instances of these, and they either can't be done programmatically, or we wouldn't want to]
+  - **ex:** `[cf. XXX]` [this only occurs 1x]
+  - **ex:** `[cf. XXX "definition"]` [this only occurs in the grammar fields, not definitions]
 * The definition field includes encyclopedic / usage notes `[in brackets]` as well. These should also be parsed into separate fields, when possible.
   - There can be multiple notes, each contained within the same set of brackets, and separated by semicolons.
   - Each note has a leader:
@@ -119,7 +119,7 @@ A definition for the entry.
     - `sg:` sense in the singular
     - `singular:` sense in the singular
     - `slang:` sense when used as slang
-  - Other notes containing a semicolon are a usage + definition, **ex:** `typically in negative: "s/he has a not good disease, s/he has a bad disease"`.
+  - Other notes containing a semicolon are a usage + definition, but can be stored as general notes, **ex:** `typically in negative: "s/he has a not good disease, s/he has a bad disease"`.
 
 ## `\dl` **dialect** [multiple]
 
