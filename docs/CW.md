@@ -213,8 +213,6 @@ This field really combines information on part of speech, morpheme type, and inf
 3. inflectional class
    - Tells you the specific morphological exponents.
 
-This field should be parsed into distinct POS and inflectional category fields, which will be used by the itwêwina database. There should be a clear definition of the mappings between POS and inflectional class. This should be a basic JSON file that maps these, that can be used by multiple systems.
-
 Code | Description
 ---- | -----------
 INM  | indeclinable nominal  
