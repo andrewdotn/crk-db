@@ -148,11 +148,11 @@ The date that the entry was last updated.
 
 ## `\fststem` **FST stem**
 
-This field is _not_ in the Toolbox database. This data only lives in the TSV version of this file. There are somewhere in the range of ~1,500 entries total where this information has been added. This data should be retrieved and added to the main entry in the dictionary database.
+This field is _not_ in the Toolbox database. This data only lives in the TSV version of this file. There are somewhere in the range of ~1,500 entries total where this information has been added. This data should be retrieved and added to the main entry in the dictionary database. Forms marked as "CHECK" are ones that need FST stems.
 
 ## `\gl` **gloss** [multiple]
 
-The gloss fields are really just used for English reversal entries.
+The gloss fields are really just used for English reversal entries. The FST relies on this field for diminutives. This information should be extracted into its own field.
 
 ## `\gr1` **grammatical information** [multiple]
 
@@ -212,6 +212,8 @@ This field really combines information on part of speech, morpheme type, and inf
    - Only tells you the inflectional class in the abstract. The surface form cannot be determined with this information alone.
 3. inflectional class
    - Tells you the specific morphological exponents.
+
+This field should be parsed into distinct POS and inflectional category fields, which will be used by the itwêwina database. There should be a clear definition of the mappings between POS and inflectional class. This should be a basic JSON file that maps these, that can be used by multiple systems.
 
 Code | Description
 ---- | -----------
