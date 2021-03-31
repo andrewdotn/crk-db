@@ -32,7 +32,8 @@
     "chai": "^4.3.4",
     "commander": "^7.2.0",
     "eslint": "^7.22.0",
-    "mocha": "^8.3.2"
+    "mocha": "^8.3.2",
+    "ndjson": "^2.0.0"
   },
   "contributors": [
     {
