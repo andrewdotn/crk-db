@@ -106,6 +106,6 @@ dist
 # Repository-Specific
 /scratch
 /data
-.eslintrc.yml
+.eslintrc.js
 Maskwacis.tsv
 Wolvengrey.toolbox
