@@ -108,5 +108,7 @@ dist
 /data
 .eslintrc.js
 nodemon.json
+Maskwacis.json
 Maskwacis.tsv
+Wolvengrey.json
 Wolvengrey.toolbox
