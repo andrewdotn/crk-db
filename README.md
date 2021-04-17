@@ -54,6 +54,13 @@ At a high level, the process for aggregating the sources is as follows:
 
 Please see the [style guide](./docs/style-guide.md) (with glossary) for documentation of the lexicographical conventions used in this database.
 
+## The Database
+
+The database is located in the private ALTLab repo at `crk/dicts/database-{hash}.ndjson`, where `{hash}` is an SHA1 hash of the database. This repo includes the following JavaScript utilities for working with the database, both located in `lib/utlities`.
+
+* `loadEntries.js`: Reads all the entries from the database (or any NDJSON file) into memory and returns a Promise that resolves to an Array of the entries for further querying and manipulation.
+* `saveDatabase.js`: Accepts an Array of database entries and saves it to the specified path as an NDJSON file with a trailing SHA1 hash. Note that by default the hash will be inserted into the provided filename: passing `database.ndjson` as the first argument to `saveDatabase.js` will save the file to `database-{hash}.ndjson`. You can disable this by passing `hash: false` as an option (in the options hash as the third argument to the function).
+
 ## Building the Database
 
 1. Download the original data sources. These are stored in the private ALTLab repo in `crk/dicts`. **Do not commit these files to git.**
@@ -64,9 +71,9 @@ Please see the [style guide](./docs/style-guide.md) (with glossary) for document
 
 2. Install the dependencies for this repo: `npm install`. This will also add the conversion scripts to the PATH (see next step).
 
-3. Once installed, you can convert individual data sources by running `convert-* <inputPath> <outPath>` from the command line, where `*` stands for the abbreviation of the data source, ex. `convert-cw Wolvengrey.toolbox CW.json`.
+3. Once installed, you can convert individual data sources by running `convert-* <inputPath> <outPath>` from the command line, where `*` stands for the abbreviation of the data source, ex. `convert-cw Wolvengrey.toolbox CW.ndjson`.
 
-4. You can also convert individual data sources by running the conversion scripts as modules. Each conversion script is located in `lib/convert.{ABBR}.js`, where `{ABBR}` stands for the abbreviation of the data source. Each module exports a function which takes two arguments: the path to the data source and optionally the path where you would like the converted data saved (this should have a `.json` extension). Each module returns an array of the converted entries as well.
+4. You can also convert individual data sources by running the conversion scripts as modules. Each conversion script is located in `lib/convert.{ABBR}.js`, where `{ABBR}` stands for the abbreviation of the data source. Each module exports a function which takes two arguments: the path to the data source and optionally the path where you would like the converted data saved (this should have a `.ndjson` extension). Each module returns an array of the converted entries as well.
 
 ## Tests
 
