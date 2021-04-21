@@ -22,12 +22,16 @@
   },
   "type": "module",
   "scripts": {
-    "test": "mocha lib/**/*.test.js"
+    "build":      "node bin/buildDatabase.js",
+    "clear":      "node bin/clearDatabase.js",
+    "test":       "mocha lib/**/*.test.js",
+    "test:build": "mocha lib/testBuild.js"
   },
   "bin": {
     "convert-cw": "./bin/convert-CW.js",
     "convert-md": "./bin/convert-MD.js",
-    "import-cw": "./bin/import-CW.js"
+    "import-cw": "./bin/import-CW.js",
+    "import-md": "./bin/import-MD.js"
   },
   "devDependencies": {
     "@digitallinguistics/toolbox2json": "^2.0.0",
@@ -37,7 +41,8 @@
     "eslint": "^7.22.0",
     "eslint-plugin-chai-friendly": "^0.6.0",
     "mocha": "^8.3.2",
-    "ndjson": "^2.0.0"
+    "ndjson": "^2.0.0",
+    "ora": "^5.4.0"
   },
   "contributors": [
     {
