@@ -44,11 +44,6 @@ This database lives in the ALTLab repo at `/crk/dicts/Wolvengrey.toolbox`. Do **
 * `{curly brackets}`: inflectional morphemes
 * `/slashes/`: derivational morphemes
 * Some morphemes may be either inflectional or derivational.
-* Some fields in the database wrap onto the next line. This _seems_ to happen only with the `\gl` field.
-  - `\gl Cree\nNation`
-  - `\gl icebox\nrefrigerator`
-  - `\gl oh\ngl\hah` (no backslash on second `gl`)
-  - entry for 'broth'
 
 ## `\??` **question**
 
