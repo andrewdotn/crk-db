@@ -39,7 +39,7 @@ This database lives in the ALTLab repo at `/crk/dicts/Wolvengrey.toolbox`. Do **
 ## General Notes
 
 * The data is an export from software called [Toolbox][Toolbox], used by linguists to create lexical databases. Toolbox databases have a flat structure (they are not relational or document databases), and users can specify the fields in an open-ended fashion using line markers (codes with initial backslashes, **ex:** `\def` for 'definition'). Toolbox does not support hierarchy or nesting, so users will frequently create non-unique fields, or assume relationships between fields which are not otherwise linked.
-* There are no unique identifiers in the database. For our purposes, the headword + part of speech fields can function as a multi-key ID.
+* There are no unique identifiers for records in the database. For our purposes, the headword + part of speech fields can function as a multi-key ID.
 * Fields marked `[multiple]` may appear multiple times within the same entry.
 * `{curly brackets}`: inflectional morphemes
 * `/slashes/`: derivational morphemes
