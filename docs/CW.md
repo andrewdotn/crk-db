@@ -130,10 +130,12 @@ Abbreviation | Dialect              | Glottocode | ISO 639-3
 A list of forms showing the derivational breakdown of the word, each separated by ` + `.
 
 * Unclear why there can sometimes be multiple derivation fields.
-* Only shows the topmost layer of derivational structure (**ex:** primary stem + secondary derivation).
+* Only shows the topmost layer of derivational structure.
 * Almost always contains a reference to another entry, except for TI-2 stems (see [part of speech](#\ps-part-of-speech) below).
 * `/word-/` indicates a stem (primary or secondary), to which inflection is added.
 * `/-affix/` indicates a derivational suffix (primary or secondary).
+* If the entry is a primary derivation, this field contains the components.
+* If the entry is a secondary derivation, it shows the topmost stem + the secondary derivational affix.
 
 ## `\dt` **date**
 
@@ -147,9 +149,11 @@ The gloss fields are really just used for English reversal entries. The FST reli
 
 A structured field containing information about the grammatical categories of the entry, **ex:** `singular`, `diminutive`. Entries with different sets of grammatical information should be separated into distinct entries (i.e. this field should never appear twice in an entry).
 
+* The information in this field is used to garner inflectional information, specifically whether the word can take _‑im_ POSS or _‑is_ DIM.
 * `N`: `singular` | `plural` (occasionally other values)
 * secondary derivation: `reciprocal` | `diminutive` | etc.
-* The information in this field is used to garner inflectional information, specifically whether the word can take _‑im_ POSS or _‑is_ DIM.
+* Almost all verbs will have `independent, {person}` in this field.
+* A following semicolon indicates other information.
 
 ## `\gr2` **grammatical information (freeform)**
 
@@ -162,6 +166,8 @@ Historical notes about the entry. Currently this field can occur multiple times,
 ## `\mrp` **morphemes** [multiple]
 
 Each `\mrp` field shows one of the morphemes contained in the entry, regardless of whether that morpheme is part of the primary or secondary stem, or derivational or inflectional.
+
+This field allows for nesting, where an `\mrp` field can be followed immediately by an `\mrp2` field, so that the `\mrp2` field indicates the morphemes contained within the `\mrp` field
 
 * `stem-`: "free" stems (like bound nouns)
 * `/initial-/` (also `/stem-/`?)
@@ -241,7 +247,7 @@ The transcription of the lemma in Standard Roman Orthography (SRO).
 
 ## `\stm` **stem** [multiple]
 
-Lists the outermost stem of the word.
+Lists the outermost stem of the word. This is a bare stem, not necessarily a minimal wordform.
 
 * The Plains Cree FST typically uses this field to determine the stem used by the FST. However, there are ~1,000 entries for which the FST stem has to be specified manually. It's important to retain this data, and use it instead of the data in the `\stm` field in these cases.
 * This field is occasionally duplicated (in 22 entries) when the headword is a multi-word phrase (`INM`).
