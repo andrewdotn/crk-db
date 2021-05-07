@@ -1,5 +1,52 @@
 # Database Overview
 
+## Motivation
+
+* Arok's database is a living database. We needed a way to ingest that data without having to manually reannotate or remap those entries every time.
+* We'd like to include additional data sources as well (e.g. AECD, Lacombe). We need a general import process/pipeline.
+
+## What's Been Done
+
+* Combined CW and MD dictionaries into a single database.
+  - The aggregated database is in JSON.
+  - The structure of the JSON data adheres to [DaFoDiL][DaFoDiL] (the Data Format for Digital Linguistics).
+    - Potential interoperability with other DaFoDiL data sources in the future:
+      - Monica Macaulay & Hunter Lockwood's Algonquian Components project
+      - general DLx tools
+
+## The Process
+
+1. convert each individual data source to JSON
+  * This also involves a lot of cleaning of the original data.
+    - Extract literal definitions.
+    - Extract cross-references.
+    - Extract other notes/parentheticals.
+2. import each data source into the ALTLab database
+  * To start, the ALTLab database had 0 entries.
+  * In theory, this process is commutative - the individual data sources can be imported in any order. (Still a work in progress.)
+  * For each entry in the individual data source, I try to match it to a main entry using various pieces of information.
+  * First, transcriptions and definitions are normalized:
+    - transcriptions are quite literally NFC normalized
+    - transcriptions are transliterated to SRO without <ý> or <ń>
+    - definitions are normalized for the purpose of comparison (the underlying data is not changed)
+      - MD: He sees him = CW: s/he sees s.o.
+  * If a match is found, the current entry is saved as a subentry on the main entry.
+  * If no match is found, a new main entry is made, with the current entry as the subentry.
+3. aggregate the subentries into a single canonical main entry
+  * This script looks at whatever subentries are available, and decides on what the main ALTLab entry should look like
+    - what definitions should be included
+    - what the transcription should be
+    - what the POS should be
+
+## Structure of the Database
+
+* main entry: aggregated from individual data sources; this is the canonical ALTLab entry
+  - lemma (in multiple orthographies)
+  - senses: aggregated from individual data sources, without extraneous (repetitive) definitions
+  - subentries: the original data/transcriptions/definitions, for reference (will not appear in itwêwina)
+  - FST stem (sometimes different from the lemma)
+  - unique key, with homograph numbers
+
 ## Converting _Cree: Words_ Toolbox Entries > DLx JSON
 
 * Simple conversion - no matching/aggregating yet.
