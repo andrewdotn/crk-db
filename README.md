@@ -33,6 +33,8 @@ ALTLab's dictionary database is / will be aggregated from the following sources:
 
 Another important data source is @katieschmirler's mappings from MD entries to CW entries.
 
+Also check out the [Plains Cree Grammar Pages][grammar].
+
 ## Project Requirements
 
 * The field data from the original dictionaries should be retained in its original form, and preferably even incorporated into ALTLab's database in an unobtrusive way.
@@ -107,6 +109,7 @@ There is also a special test suite for the database build process. Running this 
 [Cree]:       https://en.wikipedia.org/wiki/Plains_Cree
 [CW]:         https://uofrpress.ca/Books/C/Cree-Words
 [DaFoDiL]:    https://format.digitallinguistics.io/
+[grammar]:    https://plainscree.atlas-ling.ca/grammar/
 [itwewina]:   https://sapir.artsrn.ualberta.ca/cree-dictionary/
 [Lacombe]:    https://en.wikipedia.org/wiki/Albert_Lacombe
 [Maskwacis]:  https://en.wikipedia.org/wiki/Maskwacis
