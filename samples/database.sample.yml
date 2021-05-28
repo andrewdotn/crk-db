@@ -1,0 +1,670 @@
+# Mappings to SQLLite Database
+#
+# FST lemma             = lemma.cw
+# FST stem              = fstStem
+# homograph key         = key
+# head                  = lemma.sro
+# inflectional category = senses > sense.category
+
+- fstStem:          kinêpiko-maskotêw
+  generalWordClass: N
+  key:              kinêpiko-maskotêhk
+  lemma:
+    sro: kinêpiko-maskotêhk
+    cw:  kinêpiko-maskotêhk
+  literalMeaning: at snake plain
+  senses:
+    - category:   INM
+      definition: Mistawasis Reserve, Mistawasis First Nation, SK
+    - category:   INM
+      definition: Plains Cree community
+  specificWordClass: INM
+
+- generalWordClass: Part
+  key:              piskihci
+  lemma:
+    sro: piskihci
+    cw:  piskihci
+  senses:
+    - category:   IPC
+      definition: separate
+    - category:   IPC
+      definition: by itself
+  specificWordClass: IPC
+
+- generalWordClass: Part
+  key:              anohc kâ-kîsikâk
+  lemma:
+    sro: anohc kâ-kîsikâk
+    cw:  anohc kâ-kîsikâk
+  senses:
+    - category:   IPH
+      definition: today
+  specificWordClass: IPH
+
+- generalWordClass: Part
+  key:              kitatamihin
+  lemma:
+    sro: kitatamihin
+    cw:  kitatamihin
+  senses:
+    - category:   IPJ
+      definition: thank you, you make me smile, you please me
+  specificWordClass: IPJ
+
+- fstStem:          okakihcimosk
+  generalWordClass: N
+  key:              okakihcimosk
+  lemma:
+    sro: okakihcimosk
+    cw:  okakihcimosk
+  senses:
+    - category:   NA-1
+      definition: boaster, braggart
+  specificWordClass: NA
+
+- fstStem:          opîkopicikêw
+  generalWordClass: N
+  key:              opîkopicikêw
+  lemma:
+    sro: opîkopicikêw
+    cw:  opîkopicikêw
+  senses:
+    - category:   NA-2
+      definition: one who ploughs
+  specificWordClass: NA
+
+- fstStem:          kiskinwahamâtôtâpânâskw
+  generalWordClass: N
+  key:              kiskinwahamâtôtâpânâsk
+  lemma:
+    sro: kiskinwahamâtôtâpânâsk
+    cw:  kiskinwahamâtôtâpânâsk
+  senses:
+    - category:   NA-3
+      definition: school bus
+  specificWordClass: NA
+
+- fstStem:          oski-ây
+  generalWordClass: N
+  key:              oski-âya
+  lemma:
+    sro: oski-âya
+    cw:  oski-âya
+  senses:
+    - category:   NA-4
+      definition: young one, young person, young creature
+    - category:   NA-4
+      definition: the young
+  specificWordClass: NA
+
+- fstStem:          wâpi-maskw
+  generalWordClass: N
+  key:              wâpi-maskwa
+  lemma:
+    sro: wâpi-maskwa
+    cw:  wâpi-maskwa
+  senses:
+    - category:   NA-4w
+      definition: White Bear
+      notes:
+        - noteType: encyclopedic
+          text:     personal name of Cree chief, signatory to Treaty 4
+  specificWordClass: NA
+
+- fstStem:          wiýihkos
+  generalWordClass: N
+  key:              wiyihkosa
+  lemma:
+    sro: wiyihkosa
+    cw:  wiýihkosa
+  senses:
+    - category:   NDA-1
+      definition: his/her glands
+    - category:   NDA-1
+      definition: his/her tonsils
+  specificWordClass: NDA
+
+- fstStem:          tihtihkosiy
+  generalWordClass: N
+  key:              nitihtihkosiy
+  lemma:
+    sro: nitihtihkosiy
+    cw:  nitihtihkosiy
+  senses:
+    - category:   NDA-2
+      definition: my kidney
+  specificWordClass: NDA
+
+- fstStem:          iýihkw
+  generalWordClass: N
+  key:              miyihkwak
+  lemma:
+    sro: miyihkwak
+    cw:  miýihkwak
+  senses:
+    - category:   NDA-3
+      definition: glands
+  specificWordClass: NDA
+
+- fstStem:          îw
+  generalWordClass: N
+  key:              nîwa
+  lemma:
+    sro: nîwa
+    cw:  nîwa
+  senses:
+    - category:   NDA-4
+      definition: my wife
+  specificWordClass: NDA
+
+- fstStem:          îskw
+  generalWordClass: N
+  key:              nîskwa
+  lemma:
+    sro: nîskwa
+    cw:  nîskwa
+  senses:
+    - category:   NDA-4w
+      definition: my husband's former wife, my husband's ex
+  specificWordClass: NDA
+
+- fstStem:          têýikom
+  generalWordClass: N
+  key:              nitêyikom
+  lemma:
+    sro: nitêyikom
+    cw:  nitêýikom
+  senses:
+    - category:   NDI-1
+      definition: my nostril
+  specificWordClass: NDI
+
+- fstStem:          têýaniyâpiy
+  generalWordClass: N
+  key:              nitêyaniyâpiy
+  lemma:
+    sro: nitêyaniyâpiy
+    cw:  nitêýaniyâpiy
+  senses:
+    - category:   NDI-2
+      definition: my tongue string
+  specificWordClass: NDI
+
+- fstStem:          aýakaskw
+  generalWordClass: N
+  key:              nayakask
+  lemma:
+    sro: nayakask
+    cw:  naýakask
+  senses:
+    - category:   NDI-3
+      definition: my palate
+  specificWordClass: NDI
+
+- fstStem:          îk
+  generalWordClass: N
+  key:              nîki
+  lemma:
+    sro: nîki
+    cw:  nîki
+  senses:
+    - category:   NDI-4
+      definition: my home, my dwelling, my house
+  specificWordClass: NDI
+
+- fstStem:          îwat
+  generalWordClass: N
+  key:              nîwas
+  lemma:
+    sro: nîwas
+    cw:  nîwas
+  senses:
+    - category:   NDI-5
+      definition: my sacred pack, my sacred bundle, my medicine-bundle
+  specificWordClass: NDI
+
+- fstStem:          kipokwâcikan
+  generalWordClass: N
+  key:              kipokwâcikan
+  lemma:
+    sro: kipokwâcikan
+    cw:  kipokwâcikan
+  senses:
+    - category:   NI-1
+      definition: thing sewn closed or together
+    - category:   NI-1
+      definition: thing sewn shut
+  specificWordClass: NI
+
+- fstStem:          ispatinaw
+  generalWordClass: N
+  key:              ispatinaw
+  lemma:
+    sro: ispatinaw
+    cw:  ispatinaw
+  senses:
+    - category:   NI-2
+      definition: hill
+    - category:   NI-2
+      definition: hilly region
+  specificWordClass: NI
+
+- fstStem:          pêhowikamikw
+  generalWordClass: N
+  key:              pêhowikamik
+  lemma:
+    sro: pêhowikamik
+    cw:  pêhowikamik
+  senses:
+    - category:   NI-3
+      definition: railway station
+    - category:   NI-3
+      definition: waiting room
+  specificWordClass: NI
+
+- fstStem:          askâw
+  generalWordClass: N
+  key:              askâwi
+  lemma:
+    sro: askâwi
+    cw:  askâwi
+  senses:
+    - category:   NI-4
+      definition: raw egg
+  specificWordClass: NI
+
+- fstStem:          pâstâhowi-mihkw
+  generalWordClass: N
+  key:              pâstâhowi-mihko
+  lemma:
+    sro: pâstâhowi-mihko
+    cw:  pâstâhowi-mihko
+  senses:
+    - category:   NI-4w
+      definition: blood tainted by a breach of the natural order
+    - category:   NI-4w
+      definition: blood tainted by deicide, sinful blood
+  specificWordClass: NI
+
+- fstStem:          ôs
+  generalWordClass: N
+  key:              ôsi
+  lemma:
+    sro: ôsi
+    cw:  ôsi
+  senses:
+    - category:   NI-5
+      definition: boat
+    - category:   NI-5
+      definition: canoe
+  specificWordClass: NI
+
+- generalWordClass: Pro
+  key:              awa
+  lemma:
+    sro: awa
+    cw:  awa
+  paradigm: personal-pronouns
+  senses:
+    - category:   PrA
+      definition: this, this one
+  specificWordClass: PrA
+
+- fstStem:          âcimo
+  generalWordClass: V
+  key:              âcimow
+  lemma:
+    sro: âcimow
+    cw:  âcimow
+  senses:
+    - category:   VAI
+      definition: s/he tells, s/he tells a story
+    - category:   VAI
+      definition: s/he tells news, s/he gives an account, s/he narrates
+    - category:   VAI
+      definition: s/he tells his/her own story
+  specificWordClass: VAI
+
+- fstStem:          âpahikâso
+  generalWordClass: V
+  key:              âpahikâsow
+  lemma:
+    sro: âpahikâsow
+    cw:  âpahikâsow
+  senses:
+    - category:   VAI-1
+      definition: s/he is freed, s/he is untied
+  specificWordClass: VAI
+
+- fstStem:          nêstosin
+  generalWordClass: V
+  key:              nêstosin
+  lemma:
+    sro: nêstosin
+    cw:  nêstosin
+  senses:
+    - category:   VAI-2
+      definition: s/he is tired of lying about
+  specificWordClass: VAI
+
+- fstStem:          ostostot
+  generalWordClass: V
+  key:              ostostotam
+  lemma:
+    sro: ostostotam
+    cw:  ostostotam
+  senses:
+    - category:   VAI-3
+      definition: s/he coughs, s/he has a coughing spell
+    - category:   VAI-3
+      definition: s/he coughs s.t. up, s/he coughs s.t. out
+  specificWordClass: VAI
+
+- fstStem:          mispon
+  generalWordClass: V
+  key:              mispon
+  lemma:
+    sro: mispon
+    cw:  mispon
+  senses:
+    - category:   VII-1n
+      definition: it snows, it is snowing, there is falling snow, there is a snow-fall
+  specificWordClass: VII
+
+- fstStem:          nîso-tipiskâ
+  generalWordClass:
+  key:              nîso-tipiskâw c
+  lemma:
+    sro: nîso-tipiskâw
+    cw:  nîso-tipiskâw
+  literalMeaning: (it is) the second night
+  senses:
+    - category:   VII-1v
+      definition: it is Tuesday night
+  specificWordClass: VII
+
+- fstStem:          sôniyâwan
+  generalWordClass: V
+  key:              sôniyâwan
+  lemma:
+    sro: sôniyâwan
+    cw:  sôniyâwan
+  senses:
+    - category:   VII-2n
+      definition: it is worth money
+    - category:   VII-2n
+      definition: it consists of money
+  specificWordClass: VII
+
+- fstStem:          nôtimâ
+  generalWordClass: V
+  key:              nôtimâw
+  lemma:
+    sro: nôtimâw
+    cw:  nôtimâw
+  senses:
+    - category:   VII-2v
+      definition: it is round
+  specificWordClass: VII
+
+- fstStem:          wâsêyâsin
+  generalWordClass: V
+  key:              wâsêyâsin
+  lemma:
+    sro: wâsêyâsin
+    cw:  wâsêyâsin
+  senses:
+    - category:   VII-2n
+      definition: there is brightness showing, it is a little bright
+  specificWordClass: VII
+
+- fstStem:          kwêtipipaýi
+  generalWordClass: V
+  key:              kwêtipipayiw
+  lemma:
+    sro: kwêtipipayiw
+    cw:  kwêtipipaýiw
+  senses:
+    - category:   VII-v
+      definition: it rolls over by itself
+  specificWordClass: VII
+
+- fstStem:          atamih
+  generalWordClass: V
+  key:              atamihêw
+  lemma:
+    sro: atamihêw
+    cw:  atamihêw
+  senses:
+    - category:   VTA-1
+      definition: s/he makes s.o. smile
+    - category:   VTA-1
+      definition: s/he pleases s.o., s/he makes s.o. glad
+    - category:   VTA-1
+      definition: s/he makes s.o. grateful, s/he makes s.o. indebted
+    - category:   VTA-1
+      definition: s/he treats s.o. well
+  specificWordClass: VTA
+
+- fstStem:          wâsênamaw
+  generalWordClass: V
+  key:              wâsênamawêw
+  lemma:
+    sro: wâsênamawêw
+    cw:  wâsênamawêw
+  senses:
+    - category:   VTA-2
+      definition: s/he puts the lights on for s.o.
+    - category:   VTA-2
+      definition: s/he lights (it/him) for s.o.
+  specificWordClass: VTA
+
+- fstStem:          mâcisw
+  generalWordClass: V
+  key:              mâciswêw
+  lemma:
+    sro: mâciswêw
+    cw:  mâciswêw
+  senses:
+    - category:   VTA-3
+      definition: s/he cuts s.o. open
+  specificWordClass: VTA
+
+- fstStem:          kispêwât
+  generalWordClass: V
+  key:              kispêwâtêw
+  lemma:
+    sro: kispêwâtêw
+    cw:  kispêwâtêw
+  senses:
+    - category:   VTA-4
+      definition: s/he defends s.o., s/he is overprotective of s.o.
+  specificWordClass: VTA
+
+- fstStem:          ay-it
+  generalWordClass: V
+  key:              ay-itêw
+  lemma:
+    sro: ay-itêw
+    cw:  ay-itêw
+  senses:
+    - category:   VTA-5
+      definition: s/he says so to s.o, s/he says so of s.o.
+  specificWordClass: VTA
+
+- fstStem:          kâhtin
+  generalWordClass: V
+  key:              kâhtinam
+  lemma:
+    sro: kâhtinam
+    cw:  kâhtinam
+  senses:
+    - category:   VTI-1
+      definition: s/he obtains s.t., s/he attains s.t., s/he procures s.t.
+    - category:   VTI-1
+      definition: s/he pushes s.t.
+  specificWordClass: VTI
+
+- fstStem:          nahêkâcihtâ
+  generalWordClass: V
+  key:              nahêkâcihtâw
+  lemma:
+    sro: nahêkâcihtâw
+    cw:  nahêkâcihtâw
+  senses:
+    - category:   VTI-2
+      definition: s/he is sparing of s.t.
+  specificWordClass: VTI
+
+- fstStem:          oscoscocasi
+  generalWordClass: V
+  key:              oscoscocasiw
+  lemma:
+    sro: oscoscocasiw
+    cw:  oscoscocasiw
+  senses:
+    - category:   VTI-3
+      definition: s/he coughs a little
+    - category:   VTI-3
+      definition: s/he coughs up a little of something
+  specificWordClass: VTI
+
+- fstStem:          atimw
+  generalWordClass: N
+  key:              atim
+  lemma:
+    sro: atim
+    cw:  atim
+  senses:
+    - category:   NA-3
+      definition: dog
+    - category:   NA-3
+      definition: horse
+    - category:   NA-3
+      definition: beast of burden
+  forms:
+    - transcription:
+        sro: têm
+        cw:  têm
+    - transcription:
+        sro: atimw
+        cw:  atimw
+  specificWordClass: NA
+
+- fstStem:          atâhkw
+  generalWordClass: N
+  key:              atâhk
+  lemma:
+    sro: atâhk
+    cw:  atâhk
+  senses:
+    - category:   NA-3
+      definition: star
+  specificWordClass: NA
+
+- fstStem:          acâhkos
+  generalWordClass: N
+  key:              acâhkos
+  lemma:
+    sro: acâhkos
+    cw:  acâhkos
+  senses:
+    - category:   NA-1
+      definition: star, little star
+  specificWordClass: NA
+
+- fstStem:          nîmi
+  generalWordClass: V
+  key:              nîmiw
+  lemma:
+    sro: nîmiw
+    cw:  nîmiw
+  senses:
+    - category:   VAI-1
+      definition: s/he dances
+  specificWordClass: VAI
+
+- generalWordClass: N
+  key:              nîminâniwan
+  lemma:
+    sro: nîminâniwan
+    cw:  nîminâniwan
+  senses:
+    - category:   VAI-1 # INM?
+      definition: there is a dance, it is a time of dancing
+  specificWordClass: VAI
+
+- fstStem:          api
+  generalWordClass: V
+  key:              apiw
+  lemma:
+    sro: apiw
+    cw:  apiw
+  senses:
+    - category:   VAI-1
+      definition: s/he sits, s/he sits down, s/he is present
+    - category:   VAI-1
+      definition: s/he is available
+    - category:   VAI-1
+      definition: s/he is there, s/he is situated
+  specificWordClass: VAI
+
+- fstStem:          ay-api
+  generalWordClass: V
+  key:              ay-apiw
+  lemma:
+    sro: ay-apiw
+    cw:  ay-apiw
+  senses:
+    - category:   VAI-1
+      definition: s/he sits, s/he is seated
+    - category:   VAI-1
+      definition: s/he stays seated
+  specificWordClass: VAI
+
+- fstStem:          nipâ
+  generalWordClass: V
+  key:              nipâw
+  lemma:
+    sro: nipâw
+    cw:  nipâw
+  senses:
+    - category:   VAI-1
+      definition: s/he sleeps, s/he is asleep
+  specificWordClass: VAI
+
+- fstStem:          têýaniy
+  generalWordClass: N
+  key:              mitêyaniy
+  lemma:
+    sro: mitêyaniy
+    cw:  mitêýaniy
+  senses:
+    - category:   NDI-2
+      definition: tongue
+  specificWordClass: NDI
+
+- fstStem:          miýâsk
+  generalWordClass: V
+  key:              miyâskam1
+  lemma:
+    sro: miyâskam
+    cw:  miýâskam
+  senses:
+    - category:   VTI-1
+      definition: s/he passes s.t., s/he passes s.t. walking, s/he passes around s.t., s/he bypasses s.t.
+    - category:   VTI-1
+      definition: s/he transgresses s.t.
+  specificWordClass: VTI
+
+- generalWordClass: Part
+  key:              miyâskam2
+  lemma:
+    sro: miyâskam
+    cw:  miýâskam
+  senses:
+    - category:   IPC
+      definition: past
+    - category:   IPC
+      definition: gone beyond (e.g. the hour)
