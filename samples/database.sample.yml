@@ -1,12 +1,16 @@
-# Key to Fields
+# Key to Entry Fields
 #
-# FST:
-#   lemma: The lemma used by the FST.
-#   stem:  The stem used by the FST.
+# Each object represents a *dictionary entry*.
+#
+# FST:                                              # Object containing information for the FST.
+#   lemma:                                          # The lemma used by the FST.
+#   stem:                                           # The stem used by the FST.
+# paradigm: <static> | <dynamic> | "unknown" | null # Indicates the paradigm used by this entry. null = non-inflecting / don't show a paradigm. "unknown" indicates that additional work is needed by linguists; don't show a paradigm (or maybe shown "unknown paradigm" or something).
 
 - FST:
     lemma: kinêpiko-maskotêhk
     stem:  kinêpiko-maskotêw
+  paradigm:         INM
   generalWordClass: N
   key:              kinêpiko-maskotêhk
   lemma:
@@ -18,9 +22,9 @@
       definition: Mistawasis Reserve, Mistawasis First Nation, SK
     - category:   INM
       definition: Plains Cree community
-  specificWordClass: INM
 
-- generalWordClass: Part
+- paradigm:         null
+  generalWordClass: Part
   key:              piskihci
   lemma:
     sro: piskihci
@@ -30,9 +34,9 @@
       definition: separate
     - category:   IPC
       definition: by itself
-  specificWordClass: IPC
 
-- generalWordClass: Part
+- paradigm:         null
+  generalWordClass: Part
   key:              anohc kâ-kîsikâk
   lemma:
     sro: anohc kâ-kîsikâk
@@ -40,9 +44,9 @@
   senses:
     - category:   IPH
       definition: today
-  specificWordClass: IPH
 
-- generalWordClass: Part
+- paradigm:         null
+  generalWordClass: Part
   key:              kitatamihin
   lemma:
     sro: kitatamihin
@@ -50,11 +54,11 @@
   senses:
     - category:   IPJ
       definition: thank you, you make me smile, you please me
-  specificWordClass: IPJ
 
 - FST:
     lemma: okakihcimosk
     stem:  okakihcimosk
+  paradigm:         NA
   generalWordClass: N
   key:              okakihcimosk
   lemma:
@@ -63,11 +67,11 @@
   senses:
     - category:   NA-1
       definition: boaster, braggart
-  specificWordClass: NA
 
 - FST:
     lemma: opîkopicikêw
     stem:  opîkopicikêw
+  paradigm:         NA
   generalWordClass: N
   key:              opîkopicikêw
   lemma:
@@ -76,11 +80,11 @@
   senses:
     - category:   NA-2
       definition: one who ploughs
-  specificWordClass: NA
 
 - FST:
     lemma: kiskinwahamâtôtâpânâsk
     stem:  kiskinwahamâtôtâpânâskw
+  paradigm:         NA
   generalWordClass: N
   key:              kiskinwahamâtôtâpânâsk
   lemma:
@@ -89,11 +93,11 @@
   senses:
     - category:   NA-3
       definition: school bus
-  specificWordClass: NA
 
 - FST:
     lemma: oski-âya
     stem:  oski-ây
+  paradigm:         NA
   generalWordClass: N
   key:              oski-âya
   lemma:
@@ -104,11 +108,11 @@
       definition: young one, young person, young creature
     - category:   NA-4
       definition: the young
-  specificWordClass: NA
 
 - FST:
     lemma: wâpi-maskwa
     stem:  wâpi-maskw
+  paradigm:         NA
   generalWordClass: N
   key:              wâpi-maskwa
   lemma:
@@ -120,11 +124,11 @@
       notes:
         - noteType: encyclopedic
           text:     personal name of Cree chief, signatory to Treaty 4
-  specificWordClass: NA
 
 - FST:
     lemma: wiýihkosa
     stem:  wiýihkos
+  paradigm:         NDA
   generalWordClass: N
   key:              wiyihkosa
   lemma:
@@ -135,11 +139,11 @@
       definition: his/her glands
     - category:   NDA-1
       definition: his/her tonsils
-  specificWordClass: NDA
 
 - FST:
     lemma: nitihtihkosiy
     stem:  tihtihkosiy
+  paradigm:         NDA
   generalWordClass: N
   key:              nitihtihkosiy
   lemma:
@@ -148,11 +152,11 @@
   senses:
     - category:   NDA-2
       definition: my kidney
-  specificWordClass: NDA
 
 - FST:
     lemma: miýihkwak
     stem:  iýihkw
+  paradigm:         NDA
   generalWordClass: N
   key:              miyihkwak
   lemma:
@@ -161,11 +165,11 @@
   senses:
     - category:   NDA-3
       definition: glands
-  specificWordClass: NDA
 
 - FST:
     lemma: nîwa
     stem:  îw
+  paradigm:         NDA
   generalWordClass: N
   key:              nîwa
   lemma:
@@ -174,11 +178,11 @@
   senses:
     - category:   NDA-4
       definition: my wife
-  specificWordClass: NDA
 
 - FST:
     lemma: nîskwa
     stem:  îskw
+  paradigm:         NDA
   generalWordClass: N
   key:              nîskwa
   lemma:
@@ -187,11 +191,11 @@
   senses:
     - category:   NDA-4w
       definition: my husband's former wife, my husband's ex
-  specificWordClass: NDA
 
 - FST:
     lemma: nitêýikom
     stem:  têýikom
+  paradigm:         NDI
   generalWordClass: N
   key:              nitêyikom
   lemma:
@@ -200,11 +204,11 @@
   senses:
     - category:   NDI-1
       definition: my nostril
-  specificWordClass: NDI
 
 - FST:
     lemma: nitêýaniyâpiy
     stem:  têýaniyâpiy
+  paradigm:         NDI
   generalWordClass: N
   key:              nitêyaniyâpiy
   lemma:
@@ -213,11 +217,11 @@
   senses:
     - category:   NDI-2
       definition: my tongue string
-  specificWordClass: NDI
 
 - FST:
     lemma: naýakask
     stem:  aýakaskw
+  paradigm:         NDI
   generalWordClass: N
   key:              nayakask
   lemma:
@@ -226,11 +230,11 @@
   senses:
     - category:   NDI-3
       definition: my palate
-  specificWordClass: NDI
 
 - FST:
     lemma: nîki
     stem:  îk
+  paradigm:         NDI
   generalWordClass: N
   key:              nîki
   lemma:
@@ -239,11 +243,11 @@
   senses:
     - category:   NDI-4
       definition: my home, my dwelling, my house
-  specificWordClass: NDI
 
 - FST:
     lemma: nîwas
     stem:  îwat
+  paradigm:         NDI
   generalWordClass: N
   key:              nîwas
   lemma:
@@ -252,11 +256,11 @@
   senses:
     - category:   NDI-5
       definition: my sacred pack, my sacred bundle, my medicine-bundle
-  specificWordClass: NDI
 
 - FST:
     lemma: kipokwâcikan
     stem:  kipokwâcikan
+  paradigm:         NI
   generalWordClass: N
   key:              kipokwâcikan
   lemma:
@@ -267,11 +271,11 @@
       definition: thing sewn closed or together
     - category:   NI-1
       definition: thing sewn shut
-  specificWordClass: NI
 
 - FST:
     lemma: ispatinaw
     stem:  ispatinaw
+  paradigm:         NI
   generalWordClass: N
   key:              ispatinaw
   lemma:
@@ -282,11 +286,11 @@
       definition: hill
     - category:   NI-2
       definition: hilly region
-  specificWordClass: NI
 
 - FST:
     lemma: pêhowikamik
     stem:  pêhowikamikw
+  paradigm:         NI
   generalWordClass: N
   key:              pêhowikamik
   lemma:
@@ -297,11 +301,11 @@
       definition: railway station
     - category:   NI-3
       definition: waiting room
-  specificWordClass: NI
 
 - FST:
     lemma: askâwi
     stem:  askâw
+  paradigm:         NI
   generalWordClass: N
   key:              askâwi
   lemma:
@@ -310,11 +314,11 @@
   senses:
     - category:   NI-4
       definition: raw egg
-  specificWordClass: NI
 
 - FST:
     lemma: pâstâhowi-mihko
     stem:  pâstâhowi-mihkw
+  paradigm:         NI
   generalWordClass: N
   key:              pâstâhowi-mihko
   lemma:
@@ -325,11 +329,11 @@
       definition: blood tainted by a breach of the natural order
     - category:   NI-4w
       definition: blood tainted by deicide, sinful blood
-  specificWordClass: NI
 
 - FST:
     lemma: ôsi
     stem:  ôs
+  paradigm:         NI
   generalWordClass: N
   key:              ôsi
   lemma:
@@ -340,22 +344,21 @@
       definition: boat
     - category:   NI-5
       definition: canoe
-  specificWordClass: NI
 
 - generalWordClass: Pro
   key:              awa
   lemma:
     sro: awa
     cw:  awa
-  paradigm: personal-pronouns
+  paradigm: personal-pronouns # QUESTION: Is this the actual name of the layout?
   senses:
     - category:   PrA
       definition: this, this one
-  specificWordClass: PrA
 
 - FST:
     lemma: âcimow
     stem:  âcimo
+  paradigm:         VAI
   generalWordClass: V
   key:              âcimow
   lemma:
@@ -368,11 +371,11 @@
       definition: s/he tells news, s/he gives an account, s/he narrates
     - category:   VAI
       definition: s/he tells his/her own story
-  specificWordClass: VAI
 
 - FST:
     lemma: âpahikâsow
     stem:  âpahikâso
+  paradigm:         VAI
   generalWordClass: V
   key:              âpahikâsow
   lemma:
@@ -381,11 +384,11 @@
   senses:
     - category:   VAI-1
       definition: s/he is freed, s/he is untied
-  specificWordClass: VAI
 
 - FST:
     lemma: nêstosin
     stem:  nêstosin
+  paradigm:         VAI
   generalWordClass: V
   key:              nêstosin
   lemma:
@@ -394,11 +397,11 @@
   senses:
     - category:   VAI-2
       definition: s/he is tired of lying about
-  specificWordClass: VAI
 
 - FST:
     lemma: ostostotam
     stem:  ostostot
+  paradigm:         VAI
   generalWordClass: V
   key:              ostostotam
   lemma:
@@ -409,11 +412,11 @@
       definition: s/he coughs, s/he has a coughing spell
     - category:   VAI-3
       definition: s/he coughs s.t. up, s/he coughs s.t. out
-  specificWordClass: VAI
 
 - FST:
     lemma: mispon
     stem:  mispon
+  paradigm:         VII
   generalWordClass: V
   key:              mispon
   lemma:
@@ -422,12 +425,12 @@
   senses:
     - category:   VII-1n
       definition: it snows, it is snowing, there is falling snow, there is a snow-fall
-  specificWordClass: VII
 
 - FST:
     lemma: nîso-tipiskâw
     stem:  nîso-tipiskâ
-  generalWordClass:
+  paradigm:         VII
+  generalWordClass: V
   key:              nîso-tipiskâw
   lemma:
     sro: nîso-tipiskâw
@@ -436,11 +439,11 @@
   senses:
     - category:   VII-1v
       definition: it is Tuesday night
-  specificWordClass: VII
 
 - FST:
     lemma: sôniyâwan
     stem:  sôniyâwan
+  paradigm:         VII
   generalWordClass: V
   key:              sôniyâwan
   lemma:
@@ -451,11 +454,11 @@
       definition: it is worth money
     - category:   VII-2n
       definition: it consists of money
-  specificWordClass: VII
 
 - FST:
     lemma: nôtimâw
     stem:  nôtimâ
+  paradigm:         VII
   generalWordClass: V
   key:              nôtimâw
   lemma:
@@ -464,11 +467,11 @@
   senses:
     - category:   VII-2v
       definition: it is round
-  specificWordClass: VII
 
 - FST:
     lemma: wâsêyâsin
     stem:  wâsêyâsin
+  paradigm:         VII
   generalWordClass: V
   key:              wâsêyâsin
   lemma:
@@ -477,11 +480,11 @@
   senses:
     - category:   VII-2n
       definition: there is brightness showing, it is a little bright
-  specificWordClass: VII
 
 - FST:
     lemma: kwêtipipaýiw
     stem:  kwêtipipaýi
+  paradigm:         VII
   generalWordClass: V
   key:              kwêtipipayiw
   lemma:
@@ -490,11 +493,11 @@
   senses:
     - category:   VII-v
       definition: it rolls over by itself
-  specificWordClass: VII
 
 - FST:
     lemma: atamihêw
     stem:  atamih
+  paradigm:         VTA
   generalWordClass: V
   key:              atamihêw
   lemma:
@@ -509,11 +512,11 @@
       definition: s/he makes s.o. grateful, s/he makes s.o. indebted
     - category:   VTA-1
       definition: s/he treats s.o. well
-  specificWordClass: VTA
 
 - FST:
     lemma: wâsênamawêw
     stem:  wâsênamaw
+  paradigm:         VTA
   generalWordClass: V
   key:              wâsênamawêw
   lemma:
@@ -524,11 +527,11 @@
       definition: s/he puts the lights on for s.o.
     - category:   VTA-2
       definition: s/he lights (it/him) for s.o.
-  specificWordClass: VTA
 
 - FST:
     lemma: mâciswêw
     stem:  mâcisw
+  paradigm:         VTA
   generalWordClass: V
   key:              mâciswêw
   lemma:
@@ -537,11 +540,11 @@
   senses:
     - category:   VTA-3
       definition: s/he cuts s.o. open
-  specificWordClass: VTA
 
 - FST:
     lemma: kispêwâtêw
     stem:  kispêwât
+  paradigm:         VTA
   generalWordClass: V
   key:              kispêwâtêw
   lemma:
@@ -550,11 +553,11 @@
   senses:
     - category:   VTA-4
       definition: s/he defends s.o., s/he is overprotective of s.o.
-  specificWordClass: VTA
 
 - FST:
     lemma: ay-itêw
     stem:  ay-it
+  paradigm:         VTA
   generalWordClass: V
   key:              ay-itêw
   lemma:
@@ -563,11 +566,11 @@
   senses:
     - category:   VTA-5
       definition: s/he says so to s.o, s/he says so of s.o.
-  specificWordClass: VTA
 
 - FST:
     lemma: kâhtinam
     stem:  kâhtin
+  paradigm:         VTI
   generalWordClass: V
   key:              kâhtinam
   lemma:
@@ -578,11 +581,11 @@
       definition: s/he obtains s.t., s/he attains s.t., s/he procures s.t.
     - category:   VTI-1
       definition: s/he pushes s.t.
-  specificWordClass: VTI
 
 - FST:
     lemma: nahêkâcihtâw
     stem:  nahêkâcihtâ
+  paradigm:         VTI
   generalWordClass: V
   key:              nahêkâcihtâw
   lemma:
@@ -591,11 +594,11 @@
   senses:
     - category:   VTI-2
       definition: s/he is sparing of s.t.
-  specificWordClass: VTI
 
 - FST:
     lemma: oscoscocasiw
     stem:  oscoscocasi
+  paradigm:         VTI
   generalWordClass: V
   key:              oscoscocasiw
   lemma:
@@ -606,11 +609,11 @@
       definition: s/he coughs a little
     - category:   VTI-3
       definition: s/he coughs up a little of something
-  specificWordClass: VTI
 
 - FST:
     lemma: atim
     stem:  atimw
+  paradigm:         NA
   generalWordClass: N
   key:              atim
   lemma:
@@ -630,11 +633,11 @@
     - transcription:
         sro: atimw
         cw:  atimw
-  specificWordClass: NA
 
 - FST:
     lemma: atâhk
     stem:  atâhkw
+  paradigm:         NA
   generalWordClass: N
   key:              atâhk
   lemma:
@@ -643,11 +646,11 @@
   senses:
     - category:   NA-3
       definition: star
-  specificWordClass: NA
 
 - FST:
     lemma: acâhkos
     stem:  acâhkos
+  paradigm:         NA
   generalWordClass: N
   key:              acâhkos
   lemma:
@@ -656,11 +659,11 @@
   senses:
     - category:   NA-1
       definition: star, little star
-  specificWordClass: NA
 
 - FST:
     lemma: nîmiw
     stem:  nîmi
+  paradigm:         VAI
   generalWordClass: V
   key:              nîmiw
   lemma:
@@ -669,10 +672,10 @@
   senses:
     - category:   VAI-1
       definition: s/he dances
-  specificWordClass: VAI
 
 # nîminâniwan does not (and should not) have a LEXC entry
-- generalWordClass: V
+- paradigm:         VAI
+  generalWordClass: V
   key:              nîminâniwan
   lemma:
     sro: nîminâniwan
@@ -680,11 +683,11 @@
   senses:
     - category:   VAI-1
       definition: there is a dance, it is a time of dancing
-  specificWordClass: VAI
 
 - FST:
     lemma: apiw
     stem:  api
+  paradigm:         VAI
   generalWordClass: V
   key:              apiw
   lemma:
@@ -697,11 +700,11 @@
       definition: s/he is available
     - category:   VAI-1
       definition: s/he is there, s/he is situated
-  specificWordClass: VAI
 
 - FST:
     lemma: ay-apiw
     stem:  ay-api
+  paradigm:         VAI
   generalWordClass: V
   key:              ay-apiw
   lemma:
@@ -712,11 +715,11 @@
       definition: s/he sits, s/he is seated
     - category:   VAI-1
       definition: s/he stays seated
-  specificWordClass: VAI
 
 - FST:
     lemma: nipâw
     stem:  nipâ
+  paradigm:         VAI
   generalWordClass: V
   key:              nipâw
   lemma:
@@ -725,11 +728,11 @@
   senses:
     - category:   VAI-1
       definition: s/he sleeps, s/he is asleep
-  specificWordClass: VAI
 
 - FST:
     lemma: mitêýaniy
     stem:  têýaniy
+  paradigm:         NDI
   generalWordClass: N
   key:              mitêyaniy
   lemma:
@@ -738,11 +741,11 @@
   senses:
     - category:   NDI-2
       definition: tongue
-  specificWordClass: NDI
 
 - FST:
     lemma: miýâskam
     stem:  miýâsk
+  paradigm:         VTI
   generalWordClass: V
   key:              miyâskam1
   lemma:
@@ -753,9 +756,9 @@
       definition: s/he passes s.t., s/he passes s.t. walking, s/he passes around s.t., s/he bypasses s.t.
     - category:   VTI-1
       definition: s/he transgresses s.t.
-  specificWordClass: VTI
 
-- generalWordClass: Part
+- paradigm:         null
+  generalWordClass: Part
   key:              miyâskam2
   lemma:
     sro: miyâskam
