@@ -5,13 +5,14 @@
 # FST:                                              # Object containing information for the FST.
 #   lemma:                                          # The lemma used by the FST.
 #   stem:                                           # The stem used by the FST.
-# paradigm: <static> | <dynamic> | "unknown" | null # Indicates the paradigm used by this entry. null = non-inflecting / don't show a paradigm. "unknown" indicates that additional work is needed by linguists; don't show a paradigm (or maybe shown "unknown paradigm" or something).
+# paradigm: <static> | <dynamic> | "unknown" | null # Indicates the paradigm  used by this entry. null = non-inflecting / don't show a paradigm. "unknown" indicates that additional work is needed by linguists; don't show a paradigm (or maybe shown "unknown paradigm" or something).
+# POS: N | V | Part | (others?)                     # The general word class / part of speech. Used for emojis and ...?
 
 - FST:
     lemma: kinêpiko-maskotêhk
     stem:  kinêpiko-maskotêw
-  paradigm:         INM
-  generalWordClass: N
+  paradigm: INM
+  POS:      N
   key:              kinêpiko-maskotêhk
   lemma:
     sro: kinêpiko-maskotêhk
@@ -23,8 +24,8 @@
     - category:   INM
       definition: Plains Cree community
 
-- paradigm:         null
-  generalWordClass: Part
+- paradigm: null
+  POS:      Part
   key:              piskihci
   lemma:
     sro: piskihci
@@ -35,8 +36,8 @@
     - category:   IPC
       definition: by itself
 
-- paradigm:         null
-  generalWordClass: Part
+- paradigm: null
+  POS:      Part
   key:              anohc kâ-kîsikâk
   lemma:
     sro: anohc kâ-kîsikâk
@@ -45,8 +46,8 @@
     - category:   IPH
       definition: today
 
-- paradigm:         null
-  generalWordClass: Part
+- paradigm: null
+  POS:      Part
   key:              kitatamihin
   lemma:
     sro: kitatamihin
@@ -58,8 +59,8 @@
 - FST:
     lemma: okakihcimosk
     stem:  okakihcimosk
-  paradigm:         NA
-  generalWordClass: N
+  paradigm: NA
+  POS:      N
   key:              okakihcimosk
   lemma:
     sro: okakihcimosk
@@ -71,8 +72,8 @@
 - FST:
     lemma: opîkopicikêw
     stem:  opîkopicikêw
-  paradigm:         NA
-  generalWordClass: N
+  paradigm: NA
+  POS:      N
   key:              opîkopicikêw
   lemma:
     sro: opîkopicikêw
@@ -84,8 +85,8 @@
 - FST:
     lemma: kiskinwahamâtôtâpânâsk
     stem:  kiskinwahamâtôtâpânâskw
-  paradigm:         NA
-  generalWordClass: N
+  paradigm: NA
+  POS:      N
   key:              kiskinwahamâtôtâpânâsk
   lemma:
     sro: kiskinwahamâtôtâpânâsk
@@ -97,8 +98,8 @@
 - FST:
     lemma: oski-âya
     stem:  oski-ây
-  paradigm:         NA
-  generalWordClass: N
+  paradigm: NA
+  POS:      N
   key:              oski-âya
   lemma:
     sro: oski-âya
@@ -112,8 +113,8 @@
 - FST:
     lemma: wâpi-maskwa
     stem:  wâpi-maskw
-  paradigm:         NA
-  generalWordClass: N
+  paradigm: NA
+  POS:      N
   key:              wâpi-maskwa
   lemma:
     sro: wâpi-maskwa
@@ -128,8 +129,8 @@
 - FST:
     lemma: wiýihkosa
     stem:  wiýihkos
-  paradigm:         NDA
-  generalWordClass: N
+  paradigm: NDA
+  POS:      N
   key:              wiyihkosa
   lemma:
     sro: wiyihkosa
@@ -143,8 +144,8 @@
 - FST:
     lemma: nitihtihkosiy
     stem:  tihtihkosiy
-  paradigm:         NDA
-  generalWordClass: N
+  paradigm: NDA
+  POS:      N
   key:              nitihtihkosiy
   lemma:
     sro: nitihtihkosiy
@@ -156,8 +157,8 @@
 - FST:
     lemma: miýihkwak
     stem:  iýihkw
-  paradigm:         NDA
-  generalWordClass: N
+  paradigm: NDA
+  POS:      N
   key:              miyihkwak
   lemma:
     sro: miyihkwak
@@ -169,8 +170,8 @@
 - FST:
     lemma: nîwa
     stem:  îw
-  paradigm:         NDA
-  generalWordClass: N
+  paradigm: NDA
+  POS:      N
   key:              nîwa
   lemma:
     sro: nîwa
@@ -182,8 +183,8 @@
 - FST:
     lemma: nîskwa
     stem:  îskw
-  paradigm:         NDA
-  generalWordClass: N
+  paradigm: NDA
+  POS:      N
   key:              nîskwa
   lemma:
     sro: nîskwa
@@ -195,8 +196,8 @@
 - FST:
     lemma: nitêýikom
     stem:  têýikom
-  paradigm:         NDI
-  generalWordClass: N
+  paradigm: NDI
+  POS:      N
   key:              nitêyikom
   lemma:
     sro: nitêyikom
@@ -208,8 +209,8 @@
 - FST:
     lemma: nitêýaniyâpiy
     stem:  têýaniyâpiy
-  paradigm:         NDI
-  generalWordClass: N
+  paradigm: NDI
+  POS:      N
   key:              nitêyaniyâpiy
   lemma:
     sro: nitêyaniyâpiy
@@ -221,8 +222,8 @@
 - FST:
     lemma: naýakask
     stem:  aýakaskw
-  paradigm:         NDI
-  generalWordClass: N
+  paradigm: NDI
+  POS:      N
   key:              nayakask
   lemma:
     sro: nayakask
@@ -234,8 +235,8 @@
 - FST:
     lemma: nîki
     stem:  îk
-  paradigm:         NDI
-  generalWordClass: N
+  paradigm: NDI
+  POS:      N
   key:              nîki
   lemma:
     sro: nîki
@@ -247,8 +248,8 @@
 - FST:
     lemma: nîwas
     stem:  îwat
-  paradigm:         NDI
-  generalWordClass: N
+  paradigm: NDI
+  POS:      N
   key:              nîwas
   lemma:
     sro: nîwas
@@ -260,8 +261,8 @@
 - FST:
     lemma: kipokwâcikan
     stem:  kipokwâcikan
-  paradigm:         NI
-  generalWordClass: N
+  paradigm: NI
+  POS:      N
   key:              kipokwâcikan
   lemma:
     sro: kipokwâcikan
@@ -275,8 +276,8 @@
 - FST:
     lemma: ispatinaw
     stem:  ispatinaw
-  paradigm:         NI
-  generalWordClass: N
+  paradigm: NI
+  POS:      N
   key:              ispatinaw
   lemma:
     sro: ispatinaw
@@ -290,8 +291,8 @@
 - FST:
     lemma: pêhowikamik
     stem:  pêhowikamikw
-  paradigm:         NI
-  generalWordClass: N
+  paradigm: NI
+  POS:      N
   key:              pêhowikamik
   lemma:
     sro: pêhowikamik
@@ -305,8 +306,8 @@
 - FST:
     lemma: askâwi
     stem:  askâw
-  paradigm:         NI
-  generalWordClass: N
+  paradigm: NI
+  POS:      N
   key:              askâwi
   lemma:
     sro: askâwi
@@ -318,8 +319,8 @@
 - FST:
     lemma: pâstâhowi-mihko
     stem:  pâstâhowi-mihkw
-  paradigm:         NI
-  generalWordClass: N
+  paradigm: NI
+  POS:      N
   key:              pâstâhowi-mihko
   lemma:
     sro: pâstâhowi-mihko
@@ -333,8 +334,8 @@
 - FST:
     lemma: ôsi
     stem:  ôs
-  paradigm:         NI
-  generalWordClass: N
+  paradigm: NI
+  POS:      N
   key:              ôsi
   lemma:
     sro: ôsi
@@ -345,12 +346,12 @@
     - category:   NI-5
       definition: canoe
 
-- generalWordClass: Pro
-  key:              awa
+- paradigm: personal-pronouns # QUESTION: Is this the actual name of the layout?
+  POS:      Pro
+  key: awa
   lemma:
     sro: awa
     cw:  awa
-  paradigm: personal-pronouns # QUESTION: Is this the actual name of the layout?
   senses:
     - category:   PrA
       definition: this, this one
@@ -358,8 +359,8 @@
 - FST:
     lemma: âcimow
     stem:  âcimo
-  paradigm:         VAI
-  generalWordClass: V
+  paradigm: VAI
+  POS:      V
   key:              âcimow
   lemma:
     sro: âcimow
@@ -375,8 +376,8 @@
 - FST:
     lemma: âpahikâsow
     stem:  âpahikâso
-  paradigm:         VAI
-  generalWordClass: V
+  paradigm: VAI
+  POS:      V
   key:              âpahikâsow
   lemma:
     sro: âpahikâsow
@@ -388,8 +389,8 @@
 - FST:
     lemma: nêstosin
     stem:  nêstosin
-  paradigm:         VAI
-  generalWordClass: V
+  paradigm: VAI
+  POS:      V
   key:              nêstosin
   lemma:
     sro: nêstosin
@@ -401,8 +402,8 @@
 - FST:
     lemma: ostostotam
     stem:  ostostot
-  paradigm:         VAI
-  generalWordClass: V
+  paradigm: VAI
+  POS:      V
   key:              ostostotam
   lemma:
     sro: ostostotam
@@ -416,8 +417,8 @@
 - FST:
     lemma: mispon
     stem:  mispon
-  paradigm:         VII
-  generalWordClass: V
+  paradigm: VII
+  POS:      V
   key:              mispon
   lemma:
     sro: mispon
@@ -429,8 +430,8 @@
 - FST:
     lemma: nîso-tipiskâw
     stem:  nîso-tipiskâ
-  paradigm:         VII
-  generalWordClass: V
+  paradigm: VII
+  POS:      V
   key:              nîso-tipiskâw
   lemma:
     sro: nîso-tipiskâw
@@ -443,8 +444,8 @@
 - FST:
     lemma: sôniyâwan
     stem:  sôniyâwan
-  paradigm:         VII
-  generalWordClass: V
+  paradigm: VII
+  POS:      V
   key:              sôniyâwan
   lemma:
     sro: sôniyâwan
@@ -458,8 +459,8 @@
 - FST:
     lemma: nôtimâw
     stem:  nôtimâ
-  paradigm:         VII
-  generalWordClass: V
+  paradigm: VII
+  POS:      V
   key:              nôtimâw
   lemma:
     sro: nôtimâw
@@ -471,8 +472,8 @@
 - FST:
     lemma: wâsêyâsin
     stem:  wâsêyâsin
-  paradigm:         VII
-  generalWordClass: V
+  paradigm: VII
+  POS:      V
   key:              wâsêyâsin
   lemma:
     sro: wâsêyâsin
@@ -484,8 +485,8 @@
 - FST:
     lemma: kwêtipipaýiw
     stem:  kwêtipipaýi
-  paradigm:         VII
-  generalWordClass: V
+  paradigm: VII
+  POS:      V
   key:              kwêtipipayiw
   lemma:
     sro: kwêtipipayiw
@@ -497,8 +498,8 @@
 - FST:
     lemma: atamihêw
     stem:  atamih
-  paradigm:         VTA
-  generalWordClass: V
+  paradigm: VTA
+  POS:      V
   key:              atamihêw
   lemma:
     sro: atamihêw
@@ -516,8 +517,8 @@
 - FST:
     lemma: wâsênamawêw
     stem:  wâsênamaw
-  paradigm:         VTA
-  generalWordClass: V
+  paradigm: VTA
+  POS:      V
   key:              wâsênamawêw
   lemma:
     sro: wâsênamawêw
@@ -531,8 +532,8 @@
 - FST:
     lemma: mâciswêw
     stem:  mâcisw
-  paradigm:         VTA
-  generalWordClass: V
+  paradigm: VTA
+  POS:      V
   key:              mâciswêw
   lemma:
     sro: mâciswêw
@@ -544,8 +545,8 @@
 - FST:
     lemma: kispêwâtêw
     stem:  kispêwât
-  paradigm:         VTA
-  generalWordClass: V
+  paradigm: VTA
+  POS:      V
   key:              kispêwâtêw
   lemma:
     sro: kispêwâtêw
@@ -557,8 +558,8 @@
 - FST:
     lemma: ay-itêw
     stem:  ay-it
-  paradigm:         VTA
-  generalWordClass: V
+  paradigm: VTA
+  POS:      V
   key:              ay-itêw
   lemma:
     sro: ay-itêw
@@ -570,8 +571,8 @@
 - FST:
     lemma: kâhtinam
     stem:  kâhtin
-  paradigm:         VTI
-  generalWordClass: V
+  paradigm: VTI
+  POS:      V
   key:              kâhtinam
   lemma:
     sro: kâhtinam
@@ -585,8 +586,8 @@
 - FST:
     lemma: nahêkâcihtâw
     stem:  nahêkâcihtâ
-  paradigm:         VTI
-  generalWordClass: V
+  paradigm: VTI
+  POS:      V
   key:              nahêkâcihtâw
   lemma:
     sro: nahêkâcihtâw
@@ -598,8 +599,8 @@
 - FST:
     lemma: oscoscocasiw
     stem:  oscoscocasi
-  paradigm:         VTI
-  generalWordClass: V
+  paradigm: VTI
+  POS:      V
   key:              oscoscocasiw
   lemma:
     sro: oscoscocasiw
@@ -613,8 +614,8 @@
 - FST:
     lemma: atim
     stem:  atimw
-  paradigm:         NA
-  generalWordClass: N
+  paradigm: NA
+  POS:      N
   key:              atim
   lemma:
     sro: atim
@@ -637,8 +638,8 @@
 - FST:
     lemma: atâhk
     stem:  atâhkw
-  paradigm:         NA
-  generalWordClass: N
+  paradigm: NA
+  POS:      N
   key:              atâhk
   lemma:
     sro: atâhk
@@ -650,8 +651,8 @@
 - FST:
     lemma: acâhkos
     stem:  acâhkos
-  paradigm:         NA
-  generalWordClass: N
+  paradigm: NA
+  POS:      N
   key:              acâhkos
   lemma:
     sro: acâhkos
@@ -663,8 +664,8 @@
 - FST:
     lemma: nîmiw
     stem:  nîmi
-  paradigm:         VAI
-  generalWordClass: V
+  paradigm: VAI
+  POS:      V
   key:              nîmiw
   lemma:
     sro: nîmiw
@@ -674,8 +675,8 @@
       definition: s/he dances
 
 # nîminâniwan does not (and should not) have a LEXC entry
-- paradigm:         VAI
-  generalWordClass: V
+- paradigm: VAI
+  POS:      V
   key:              nîminâniwan
   lemma:
     sro: nîminâniwan
@@ -687,8 +688,8 @@
 - FST:
     lemma: apiw
     stem:  api
-  paradigm:         VAI
-  generalWordClass: V
+  paradigm: VAI
+  POS:      V
   key:              apiw
   lemma:
     sro: apiw
@@ -704,8 +705,8 @@
 - FST:
     lemma: ay-apiw
     stem:  ay-api
-  paradigm:         VAI
-  generalWordClass: V
+  paradigm: VAI
+  POS:      V
   key:              ay-apiw
   lemma:
     sro: ay-apiw
@@ -719,8 +720,8 @@
 - FST:
     lemma: nipâw
     stem:  nipâ
-  paradigm:         VAI
-  generalWordClass: V
+  paradigm: VAI
+  POS:      V
   key:              nipâw
   lemma:
     sro: nipâw
@@ -732,8 +733,8 @@
 - FST:
     lemma: mitêýaniy
     stem:  têýaniy
-  paradigm:         NDI
-  generalWordClass: N
+  paradigm: NDI
+  POS:      N
   key:              mitêyaniy
   lemma:
     sro: mitêyaniy
@@ -745,8 +746,8 @@
 - FST:
     lemma: miýâskam
     stem:  miýâsk
-  paradigm:         VTI
-  generalWordClass: V
+  paradigm: VTI
+  POS:      V
   key:              miyâskam1
   lemma:
     sro: miyâskam
@@ -757,8 +758,8 @@
     - category:   VTI-1
       definition: s/he transgresses s.t.
 
-- paradigm:         null
-  generalWordClass: Part
+- paradigm: null
+  POS:      Part
   key:              miyâskam2
   lemma:
     sro: miyâskam
@@ -768,3 +769,16 @@
       definition: past
     - category:   IPC
       definition: gone beyond (e.g. the hour)
+
+# This entry does not have a mapping to CW, so its exact inflectional class and paradigm are unknown.
+- FST:
+    lemma: ahasow
+    stem:  ahasow
+  paradigm: unknown
+  POS:      N
+  lemma:
+    md: ahasow
+  senses:
+    - definition: a crow
+      sources:
+        - MD
