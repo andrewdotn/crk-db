@@ -1,12 +1,12 @@
-# Mappings to SQLLite Database
+# Key to Fields
 #
-# FST lemma             = lemma.cw
-# FST stem              = fstStem
-# homograph key         = key
-# head                  = lemma.sro
-# inflectional category = senses > sense.category
+# FST:
+#   lemma: The lemma used by the FST.
+#   stem:  The stem used by the FST.
 
-- fstStem:          kinêpiko-maskotêw
+- FST:
+    lemma: kinêpiko-maskotêhk
+    stem:  kinêpiko-maskotêw
   generalWordClass: N
   key:              kinêpiko-maskotêhk
   lemma:
@@ -52,7 +52,9 @@
       definition: thank you, you make me smile, you please me
   specificWordClass: IPJ
 
-- fstStem:          okakihcimosk
+- FST:
+    lemma: okakihcimosk
+    stem:  okakihcimosk
   generalWordClass: N
   key:              okakihcimosk
   lemma:
@@ -63,7 +65,9 @@
       definition: boaster, braggart
   specificWordClass: NA
 
-- fstStem:          opîkopicikêw
+- FST:
+    lemma: opîkopicikêw
+    stem:  opîkopicikêw
   generalWordClass: N
   key:              opîkopicikêw
   lemma:
@@ -74,7 +78,9 @@
       definition: one who ploughs
   specificWordClass: NA
 
-- fstStem:          kiskinwahamâtôtâpânâskw
+- FST:
+    lemma: kiskinwahamâtôtâpânâsk
+    stem:  kiskinwahamâtôtâpânâskw
   generalWordClass: N
   key:              kiskinwahamâtôtâpânâsk
   lemma:
@@ -85,7 +91,9 @@
       definition: school bus
   specificWordClass: NA
 
-- fstStem:          oski-ây
+- FST:
+    lemma: oski-âya
+    stem:  oski-ây
   generalWordClass: N
   key:              oski-âya
   lemma:
@@ -98,7 +106,9 @@
       definition: the young
   specificWordClass: NA
 
-- fstStem:          wâpi-maskw
+- FST:
+    lemma: wâpi-maskwa
+    stem:  wâpi-maskw
   generalWordClass: N
   key:              wâpi-maskwa
   lemma:
@@ -112,7 +122,9 @@
           text:     personal name of Cree chief, signatory to Treaty 4
   specificWordClass: NA
 
-- fstStem:          wiýihkos
+- FST:
+    lemma: wiýihkosa
+    stem:  wiýihkos
   generalWordClass: N
   key:              wiyihkosa
   lemma:
@@ -125,7 +137,9 @@
       definition: his/her tonsils
   specificWordClass: NDA
 
-- fstStem:          tihtihkosiy
+- FST:
+    lemma: nitihtihkosiy
+    stem:  tihtihkosiy
   generalWordClass: N
   key:              nitihtihkosiy
   lemma:
@@ -136,7 +150,9 @@
       definition: my kidney
   specificWordClass: NDA
 
-- fstStem:          iýihkw
+- FST:
+    lemma: miýihkwak
+    stem:  iýihkw
   generalWordClass: N
   key:              miyihkwak
   lemma:
@@ -147,7 +163,9 @@
       definition: glands
   specificWordClass: NDA
 
-- fstStem:          îw
+- FST:
+    lemma: nîwa
+    stem:  îw
   generalWordClass: N
   key:              nîwa
   lemma:
@@ -158,7 +176,9 @@
       definition: my wife
   specificWordClass: NDA
 
-- fstStem:          îskw
+- FST:
+    lemma: nîskwa
+    stem:  îskw
   generalWordClass: N
   key:              nîskwa
   lemma:
@@ -169,7 +189,9 @@
       definition: my husband's former wife, my husband's ex
   specificWordClass: NDA
 
-- fstStem:          têýikom
+- FST:
+    lemma: nitêýikom
+    stem:  têýikom
   generalWordClass: N
   key:              nitêyikom
   lemma:
@@ -180,7 +202,9 @@
       definition: my nostril
   specificWordClass: NDI
 
-- fstStem:          têýaniyâpiy
+- FST:
+    lemma: nitêýaniyâpiy
+    stem:  têýaniyâpiy
   generalWordClass: N
   key:              nitêyaniyâpiy
   lemma:
@@ -191,7 +215,9 @@
       definition: my tongue string
   specificWordClass: NDI
 
-- fstStem:          aýakaskw
+- FST:
+    lemma: naýakask
+    stem:  aýakaskw
   generalWordClass: N
   key:              nayakask
   lemma:
@@ -202,7 +228,9 @@
       definition: my palate
   specificWordClass: NDI
 
-- fstStem:          îk
+- FST:
+    lemma: nîki
+    stem:  îk
   generalWordClass: N
   key:              nîki
   lemma:
@@ -213,7 +241,9 @@
       definition: my home, my dwelling, my house
   specificWordClass: NDI
 
-- fstStem:          îwat
+- FST:
+    lemma: nîwas
+    stem:  îwat
   generalWordClass: N
   key:              nîwas
   lemma:
@@ -224,7 +254,9 @@
       definition: my sacred pack, my sacred bundle, my medicine-bundle
   specificWordClass: NDI
 
-- fstStem:          kipokwâcikan
+- FST:
+    lemma: kipokwâcikan
+    stem:  kipokwâcikan
   generalWordClass: N
   key:              kipokwâcikan
   lemma:
@@ -237,7 +269,9 @@
       definition: thing sewn shut
   specificWordClass: NI
 
-- fstStem:          ispatinaw
+- FST:
+    lemma: ispatinaw
+    stem:  ispatinaw
   generalWordClass: N
   key:              ispatinaw
   lemma:
@@ -250,7 +284,9 @@
       definition: hilly region
   specificWordClass: NI
 
-- fstStem:          pêhowikamikw
+- FST:
+    lemma: pêhowikamik
+    stem:  pêhowikamikw
   generalWordClass: N
   key:              pêhowikamik
   lemma:
@@ -263,7 +299,9 @@
       definition: waiting room
   specificWordClass: NI
 
-- fstStem:          askâw
+- FST:
+    lemma: askâwi
+    stem:  askâw
   generalWordClass: N
   key:              askâwi
   lemma:
@@ -274,7 +312,9 @@
       definition: raw egg
   specificWordClass: NI
 
-- fstStem:          pâstâhowi-mihkw
+- FST:
+    lemma: pâstâhowi-mihko
+    stem:  pâstâhowi-mihkw
   generalWordClass: N
   key:              pâstâhowi-mihko
   lemma:
@@ -287,7 +327,9 @@
       definition: blood tainted by deicide, sinful blood
   specificWordClass: NI
 
-- fstStem:          ôs
+- FST:
+    lemma: ôsi
+    stem:  ôs
   generalWordClass: N
   key:              ôsi
   lemma:
@@ -311,7 +353,9 @@
       definition: this, this one
   specificWordClass: PrA
 
-- fstStem:          âcimo
+- FST:
+    lemma: âcimow
+    stem:  âcimo
   generalWordClass: V
   key:              âcimow
   lemma:
@@ -326,7 +370,9 @@
       definition: s/he tells his/her own story
   specificWordClass: VAI
 
-- fstStem:          âpahikâso
+- FST:
+    lemma: âpahikâsow
+    stem:  âpahikâso
   generalWordClass: V
   key:              âpahikâsow
   lemma:
@@ -337,7 +383,9 @@
       definition: s/he is freed, s/he is untied
   specificWordClass: VAI
 
-- fstStem:          nêstosin
+- FST:
+    lemma: nêstosin
+    stem:  nêstosin
   generalWordClass: V
   key:              nêstosin
   lemma:
@@ -348,7 +396,9 @@
       definition: s/he is tired of lying about
   specificWordClass: VAI
 
-- fstStem:          ostostot
+- FST:
+    lemma: ostostotam
+    stem:  ostostot
   generalWordClass: V
   key:              ostostotam
   lemma:
@@ -361,7 +411,9 @@
       definition: s/he coughs s.t. up, s/he coughs s.t. out
   specificWordClass: VAI
 
-- fstStem:          mispon
+- FST:
+    lemma: mispon
+    stem:  mispon
   generalWordClass: V
   key:              mispon
   lemma:
@@ -372,9 +424,11 @@
       definition: it snows, it is snowing, there is falling snow, there is a snow-fall
   specificWordClass: VII
 
-- fstStem:          nîso-tipiskâ
+- FST:
+    lemma: nîso-tipiskâw
+    stem:  nîso-tipiskâ
   generalWordClass:
-  key:              nîso-tipiskâw c
+  key:              nîso-tipiskâw
   lemma:
     sro: nîso-tipiskâw
     cw:  nîso-tipiskâw
@@ -384,7 +438,9 @@
       definition: it is Tuesday night
   specificWordClass: VII
 
-- fstStem:          sôniyâwan
+- FST:
+    lemma: sôniyâwan
+    stem:  sôniyâwan
   generalWordClass: V
   key:              sôniyâwan
   lemma:
@@ -397,7 +453,9 @@
       definition: it consists of money
   specificWordClass: VII
 
-- fstStem:          nôtimâ
+- FST:
+    lemma: nôtimâw
+    stem:  nôtimâ
   generalWordClass: V
   key:              nôtimâw
   lemma:
@@ -408,7 +466,9 @@
       definition: it is round
   specificWordClass: VII
 
-- fstStem:          wâsêyâsin
+- FST:
+    lemma: wâsêyâsin
+    stem:  wâsêyâsin
   generalWordClass: V
   key:              wâsêyâsin
   lemma:
@@ -419,7 +479,9 @@
       definition: there is brightness showing, it is a little bright
   specificWordClass: VII
 
-- fstStem:          kwêtipipaýi
+- FST:
+    lemma: kwêtipipaýiw
+    stem:  kwêtipipaýi
   generalWordClass: V
   key:              kwêtipipayiw
   lemma:
@@ -430,7 +492,9 @@
       definition: it rolls over by itself
   specificWordClass: VII
 
-- fstStem:          atamih
+- FST:
+    lemma: atamihêw
+    stem:  atamih
   generalWordClass: V
   key:              atamihêw
   lemma:
@@ -447,7 +511,9 @@
       definition: s/he treats s.o. well
   specificWordClass: VTA
 
-- fstStem:          wâsênamaw
+- FST:
+    lemma: wâsênamawêw
+    stem:  wâsênamaw
   generalWordClass: V
   key:              wâsênamawêw
   lemma:
@@ -460,7 +526,9 @@
       definition: s/he lights (it/him) for s.o.
   specificWordClass: VTA
 
-- fstStem:          mâcisw
+- FST:
+    lemma: mâciswêw
+    stem:  mâcisw
   generalWordClass: V
   key:              mâciswêw
   lemma:
@@ -471,7 +539,9 @@
       definition: s/he cuts s.o. open
   specificWordClass: VTA
 
-- fstStem:          kispêwât
+- FST:
+    lemma: kispêwâtêw
+    stem:  kispêwât
   generalWordClass: V
   key:              kispêwâtêw
   lemma:
@@ -482,7 +552,9 @@
       definition: s/he defends s.o., s/he is overprotective of s.o.
   specificWordClass: VTA
 
-- fstStem:          ay-it
+- FST:
+    lemma: ay-itêw
+    stem:  ay-it
   generalWordClass: V
   key:              ay-itêw
   lemma:
@@ -493,7 +565,9 @@
       definition: s/he says so to s.o, s/he says so of s.o.
   specificWordClass: VTA
 
-- fstStem:          kâhtin
+- FST:
+    lemma: kâhtinam
+    stem:  kâhtin
   generalWordClass: V
   key:              kâhtinam
   lemma:
@@ -506,7 +580,9 @@
       definition: s/he pushes s.t.
   specificWordClass: VTI
 
-- fstStem:          nahêkâcihtâ
+- FST:
+    lemma: nahêkâcihtâw
+    stem:  nahêkâcihtâ
   generalWordClass: V
   key:              nahêkâcihtâw
   lemma:
@@ -517,7 +593,9 @@
       definition: s/he is sparing of s.t.
   specificWordClass: VTI
 
-- fstStem:          oscoscocasi
+- FST:
+    lemma: oscoscocasiw
+    stem:  oscoscocasi
   generalWordClass: V
   key:              oscoscocasiw
   lemma:
@@ -530,7 +608,9 @@
       definition: s/he coughs up a little of something
   specificWordClass: VTI
 
-- fstStem:          atimw
+- FST:
+    lemma: atim
+    stem:  atimw
   generalWordClass: N
   key:              atim
   lemma:
@@ -552,7 +632,9 @@
         cw:  atimw
   specificWordClass: NA
 
-- fstStem:          atâhkw
+- FST:
+    lemma: atâhk
+    stem:  atâhkw
   generalWordClass: N
   key:              atâhk
   lemma:
@@ -563,7 +645,9 @@
       definition: star
   specificWordClass: NA
 
-- fstStem:          acâhkos
+- FST:
+    lemma: acâhkos
+    stem:  acâhkos
   generalWordClass: N
   key:              acâhkos
   lemma:
@@ -574,7 +658,9 @@
       definition: star, little star
   specificWordClass: NA
 
-- fstStem:          nîmi
+- FST:
+    lemma: nîmiw
+    stem:  nîmi
   generalWordClass: V
   key:              nîmiw
   lemma:
@@ -585,6 +671,7 @@
       definition: s/he dances
   specificWordClass: VAI
 
+# nîminâniwan does not (and should not) have a LEXC entry
 - generalWordClass: V
   key:              nîminâniwan
   lemma:
@@ -595,7 +682,9 @@
       definition: there is a dance, it is a time of dancing
   specificWordClass: VAI
 
-- fstStem:          api
+- FST:
+    lemma: apiw
+    stem:  api
   generalWordClass: V
   key:              apiw
   lemma:
@@ -610,7 +699,9 @@
       definition: s/he is there, s/he is situated
   specificWordClass: VAI
 
-- fstStem:          ay-api
+- FST:
+    lemma: ay-apiw
+    stem:  ay-api
   generalWordClass: V
   key:              ay-apiw
   lemma:
@@ -623,7 +714,9 @@
       definition: s/he stays seated
   specificWordClass: VAI
 
-- fstStem:          nipâ
+- FST:
+    lemma: nipâw
+    stem:  nipâ
   generalWordClass: V
   key:              nipâw
   lemma:
@@ -634,7 +727,9 @@
       definition: s/he sleeps, s/he is asleep
   specificWordClass: VAI
 
-- fstStem:          têýaniy
+- FST:
+    lemma: mitêýaniy
+    stem:  têýaniy
   generalWordClass: N
   key:              mitêyaniy
   lemma:
@@ -645,7 +740,9 @@
       definition: tongue
   specificWordClass: NDI
 
-- fstStem:          miýâsk
+- FST:
+    lemma: miýâskam
+    stem:  miýâsk
   generalWordClass: V
   key:              miyâskam1
   lemma:
