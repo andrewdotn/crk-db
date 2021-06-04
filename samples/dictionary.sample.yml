@@ -14,7 +14,8 @@
 #   - definition:                                   # The definition for this sense.
 #     sources:                                      # An array of data sources for this sense.
 
-- category: INM
+- category:       INM
+  dictionaryStem: kinêpiko-maskotêw-
   FST:
     lemma: kinêpiko-maskotêhk
     stem:  kinêpiko-maskotêw-
@@ -28,37 +29,41 @@
     - definition: Plains Cree community
       sources:    [CW]
 
-- category: IPC
-  head:     piskihci
-  paradigm: null
-  POS:      Part
-  key:      piskihci
+- category:       IPC
+  dictionaryStem: piskihci
+  head:           piskihci
+  paradigm:       null
+  POS:            Part
+  key:            piskihci
   senses:
     - definition: separate
       sources:    [CW, MD]
     - definition: by itself
       sources:    [CW]
 
-- category: IPH
-  head:     anohc kâ-kîsikâk
-  paradigm: null
-  POS:      Part
-  key:      anohc kâ-kîsikâk
+- category:      IPH
+  dictionarytem: anohc kâ-kîsikâk
+  head:          anohc kâ-kîsikâk
+  paradigm:      null
+  POS:           Part
+  key:           anohc kâ-kîsikâk
   senses:
     - definition: today
       sources:    [CW]
 
-- category: IPJ
-  head:     kitatamihin
-  paradigm: null
-  POS:      Part
-  key:      kitatamihin
+- category:       IPJ
+  dictionaryStem: kitatamihin
+  head:           kitatamihin
+  paradigm:       null
+  POS:            Part
+  key:            kitatamihin
   senses:
     - definition: thank you, you make me smile, you please me
       sources:    [CW]
 
-- category: NA-1
-  head:     okakihcimosk
+- category:       NA-1
+  head:           okakihcimosk
+  dictionaryStem: okakihcimosk-
   FST:
     lemma: okakihcimosk
     stem:  okakihcimosk-
@@ -69,7 +74,8 @@
     - definition: boaster, braggart
       sources:    [CW, MD]
 
-- category: NA-2
+- category:       NA-2
+  dictionaryStem: opîkopicikêw-
   FST:
     lemma: opîkopicikêw
     stem:  opîkopicikêw-
@@ -81,7 +87,8 @@
     - definition: one who ploughs
       sources:    [CW, MD]
 
-- category: NA-3
+- category:       NA-3
+  dictionaryStem: kiskinwahamâtôtâpânâskw-
   FST:
     lemma: kiskinwahamâtôtâpânâsk
     stem:  kiskinwahamâtôtâpânâskw-
@@ -93,7 +100,8 @@
     - definition: school bus
       sources:    [CW]
 
-- category: NA-4
+- category:       NA-4
+  dictionaryStem: oski-ây-
   FST:
     lemma: oski-âya
     stem:  oski-ây-
@@ -107,7 +115,8 @@
     - definition: the young
       sources:    [CW]
 
-- category: NA-4w
+- category:       NA-4w
+  dictionaryStem: wâpi-maskw-
   FST:
     lemma: wâpi-maskwa
     stem:  wâpi-maskw-
@@ -119,7 +128,8 @@
     - definition: White Bear
       sources:    [CW]
 
-- category: NDA-1
+- category:       NDA-1
+  dictionaryStem: wiýihkos-
   FST:
     lemma: wiýihkosa
     stem:  wiýihkos-
@@ -133,7 +143,8 @@
     - definition: his/her tonsils
       sources:    [CW]
 
-- category: NDA-2
+- category:       NDA-2
+  dictionaryStem: -tihtihkosiy-
   FST:
     lemma: nitihtihkosiy
     stem:  -tihtihkosiy-
@@ -145,7 +156,8 @@
     - definition: my kidney
       sources:    [CW]
 
-- category: NDA-3
+- category:       NDA-3
+  dictionaryStem: -iýihkw-
   FST:
     lemma: miýihkwak
     stem:  -iýihkw-
@@ -157,7 +169,8 @@
     - definition: glands
       sources:    [CW]
 
-- category: NDA-4
+- category:       NDA-4
+  dictionaryStem: -îw-
   FST:
     lemma: nîwa
     stem:  -îw-
@@ -169,7 +182,8 @@
     - definition: my wife
       sources:    [CW, MD]
 
-- category: NDA-4w
+- category:       NDA-4w
+  dictionaryStem: -îskw-
   FST:
     lemma: nîskwa
     stem:  -îskw-
@@ -181,7 +195,8 @@
     - definition: my husband's former wife, my husband's ex
       sources:    [CW]
 
-- category: NDI
+- category:       NDI
+  dictionaryStem: -têýikom-
   FST:
     lemma: nitêýikom
     stem:  -têýikom-
@@ -193,7 +208,8 @@
     - definition: my nostril
       sources:    [CW]
 
-- category: NDI-2
+- category:       NDI-2
+  dictionaryStem: -têýaniyâpiy-
   FST:
     lemma: nitêýaniyâpiy
     stem:  -têýaniyâpiy-
@@ -205,7 +221,8 @@
     - definition: my tongue string
       sources:    [CW]
 
-- category: NDI-3
+- category:       NDI-3
+  dictionaryStem: -aýakaskw-
   FST:
     lemma: naýakask
     stem:  -aýakaskw-
@@ -217,7 +234,8 @@
     - definition: my palate
       sources:    [CW]
 
-- category: NDI-4
+- category:       NDI-4
+  dictionaryStem: -îk-
   FST:
     lemma: nîki
     stem:  -îk-
@@ -229,7 +247,8 @@
     - definition: my home, my dwelling, my house
       sources:    [CW]
 
-- category: NDI-5
+- category:       NDI-5
+  dictionaryStem: -îwat-
   FST:
     lemma: nîwas
     stem:  -îwat-
@@ -241,7 +260,8 @@
     - definition: my sacred pack, my sacred bundle, my medicine-bundle
       sources:    [CW]
 
-- category: NI-1
+- category:       NI-1
+  dictionaryStem: kipokwâcikan-
   FST:
     lemma: kipokwâcikan
     stem:  kipokwâcikan-
@@ -255,7 +275,8 @@
     - definition: thing sewn shut
       sources:    [CW]
 
-- category: NI-2
+- category:       NI-2
+  dictionaryStem: ispatinaw-
   FST:
     lemma: ispatinaw
     stem:  ispatinaw-
@@ -269,7 +290,8 @@
     - definition: hilly region
       sources:    [CW]
 
-- category: NI-3
+- category:       NI-3
+  dictionaryStem: pêhowikamikw-
   FST:
     lemma: pêhowikamik
     stem:  pêhowikamikw-
@@ -283,7 +305,8 @@
     - definition: waiting room
       sources:    [CW]
 
-- category: NI-4
+- category:       NI-4
+  dictionaryStem: askâw-
   FST:
     lemma: askâwi
     stem:  askâw-
@@ -295,7 +318,8 @@
     - definition: raw egg
       sources:    [CW]
 
-- category: NI-4w
+- category:       NI-4w
+  dictionaryStem: pâstâhowi-mihkw-
   FST:
     lemma: pâstâhowi-mihko
     stem:  pâstâhowi-mihkw-
@@ -309,7 +333,8 @@
     - definition: blood tainted by deicide, sinful blood
       sources:    [CW]
 
-- category: NI-5
+- category:       NI-5
+  dictionaryStem: ôs-
   FST:
     lemma: ôsi
     stem:  ôs-
@@ -332,7 +357,8 @@
     - definition: this, this one
       sources:    [CW, MD]
 
-- category: VAI # QUESTION: Should this have a trailing number? VAI-???
+- category:       VAI # QUESTION: Should this have a trailing number? VAI-???
+  dictionaryStem: âcimo-
   FST:
     lemma: âcimow
     stem:  âcimo-
@@ -348,7 +374,8 @@
     - definition: s/he tells his/her own story
       sources:    [CW]
 
-- category: VAI-1
+- category:       VAI-1
+  dictionaryStem: âpahikâso-
   FST:
     lemma: âpahikâsow
     stem:  âpahikâso-
@@ -360,7 +387,8 @@
     - definition: s/he is freed, s/he is untied
       sources:    [CW]
 
-- category: VAI-2
+- category:       VAI-2
+  dictionaryStem: nêstosin-
   FST:
     lemma: nêstosin
     stem:  nêstosin-
@@ -372,7 +400,8 @@
     - definition: s/he is tired of lying about
       sources:    [CW]
 
-- category: VAI-3
+- category:       VAI-3
+  dictionaryStem: ostostot-
   FST:
     lemma: ostostotam
     stem:  ostostot-
@@ -386,7 +415,8 @@
     - definition: s/he coughs s.t. up, s/he coughs s.t. out
       sources:    [CW]
 
-- category: VII-1n
+- category:       VII-1n
+  dictionaryStem: mispon-
   FST:
     lemma: mispon
     stem:  mispon-
@@ -398,7 +428,8 @@
     - definition: it snows, it is snowing, there is falling snow, there is a snow-fall
       sources:    [CW, MD]
 
-- category: VII-1v
+- category:       VII-1v
+  dictionaryStem: nîso-tipiskâ-
   FST:
     lemma: nîso-tipiskâw
     stem:  nîso-tipiskâ-
@@ -410,7 +441,8 @@
     - definition: it is Tuesday night
       sources:    [CW]
 
-- category: VII-2n
+- category:       VII-2n
+  dictionaryStem: sôniyâwan-
   FST:
     lemma: sôniyâwan
     stem:  sôniyâwan-
@@ -424,7 +456,8 @@
     - definition: it consists of money
       sources:    [CW]
 
-- category: VII-2v
+- category:       VII-2v
+  dictionaryStem: nôtimâ-
   FST:
     lemma: nôtimâw
     stem:  nôtimâ-
@@ -436,7 +469,8 @@
     - definition: it is round
       sources:    [CW]
 
-- category: VII-2n
+- category:       VII-2n
+  dictionaryStem: wâsêyâsin-
   FST:
     lemma: wâsêyâsin
     stem:  wâsêyâsin-
@@ -448,7 +482,8 @@
     - definition: there is brightness showing, it is a little bright
       sources:    [CW]
 
-- category: VII-v
+- category:       VII-v
+  dictionaryStem: kwêtipipaýi-
   FST:
     lemma: kwêtipipaýiw
     stem:  kwêtipipaýi-
@@ -460,7 +495,8 @@
     - definition: it rolls over by itself
       sources:    [CW, MD]
 
-- category: VTA-1
+- category:       VTA-1
+  dictionaryStem: atamih-
   FST:
     lemma: atamihêw
     stem:  atamih-
@@ -478,7 +514,8 @@
     - definition: s/he treats s.o. well
       sources:    [CW]
 
-- category: VTA-2
+- category:       VTA-2
+  dictionaryStem: wâsênamaw-
   FST:
     lemma: wâsênamawêw
     stem:  wâsênamaw-
@@ -492,7 +529,8 @@
     - definition: s/he lights (it/him) for s.o.
       sources:    [CW]
 
-- category: VTA-3
+- category:       VTA-3
+  dictionaryStem: mâcisw-
   FST:
     lemma: mâciswêw
     stem:  mâcisw-
@@ -504,7 +542,8 @@
     - definition: s/he cuts s.o. open
       sources:    [CW]
 
-- category: VTA-4
+- category:       VTA-4
+  dictionaryStem: kispêwât-
   FST:
     lemma: kispêwâtêw
     stem:  kispêwât-
@@ -516,7 +555,8 @@
     - definition: s/he defends s.o., s/he is overprotective of s.o.
       sources:    [CW, MD]
 
-- category: VTA-5
+- category:       VTA-5
+  dictionaryStem: ay-it-
   FST:
     lemma: ay-itêw
     stem:  ay-it-
@@ -528,7 +568,8 @@
     - definition: s/he says so to s.o, s/he says so of s.o.
       sources:    [CW]
 
-- category: VTI-1
+- category:       VTI-1
+  dictionaryStem: kâhtin-
   FST:
     lemma: kâhtinam
     stem:  kâhtin-
@@ -542,7 +583,8 @@
     - definition: s/he pushes s.t.
       sources:    [CW]
 
-- category: VTI-2
+- category:       VTI-2
+  dictionaryStem: nahêkâcihtâ-
   FST:
     lemma: nahêkâcihtâw
     stem:  nahêkâcihtâ-
@@ -554,7 +596,8 @@
     - definition: s/he is sparing of s.t.
       sources:    [CW]
 
-- category: VTI-3
+- category:       VTI-3
+  dictionaryStem: oscoscocasi-
   FST:
     lemma: oscoscocasiw
     stem:  oscoscocasi-
@@ -568,7 +611,8 @@
     - definition: s/he coughs up a little of something
       sources:    [CW]
 
-- category: NA-3
+- category:       NA-3
+  dictionaryStem: atimw-
   FST:
     lemma: atim
     stem:  atimw-
@@ -587,7 +631,8 @@
     - transcription: têm
     - transcription: atimw
 
-- category: NA-3
+- category:       NA-3
+  dictionaryStem: atâhkw-
   FST:
     lemma: atâhk
     stem:  atâhkw-
@@ -599,7 +644,8 @@
     - definition: star
       sources:    [CW, MD]
 
-- category: NA-1
+- category:       NA-1
+  dictionaryStem: acâhkos-
   FST:
     lemma: acâhkos
     stem:  acâhkos-
@@ -611,7 +657,8 @@
     - definition: star, little star
       sources:    [CW, MD]
 
-- category: VAI-1
+- category:       VAI-1
+  dictionaryStem: nîmi-
   FST:
     lemma: nîmiw
     stem:  nîmi-
@@ -633,7 +680,8 @@
     - definition: there is a dance, it is a time of dancing
       sources:    [CW]
 
-- category: VAI-1
+- category:       VAI-1
+  dictionaryStem: api-
   FST:
     lemma: apiw
     stem:  api-
@@ -651,7 +699,8 @@
     - definition: He sits. Also means he is at home.
       sources:    [MD]
 
-- category: VAI-1
+- category:       VAI-1
+  dictionaryStem: ay-api-
   FST:
     lemma: ay-apiw
     stem:  ay-api-
@@ -667,7 +716,8 @@
     - definition: He is sitting there, also he is at home.
       sources:    [MD]
 
-- category: VAI-1
+- category:       VAI-1
+  dictionaryStem: nipâ-
   FST:
     lemma: nipâw
     stem:  nipâ-
@@ -679,7 +729,8 @@
     - definition: s/he sleeps, s/he is asleep
       sources:    [CW, MD]
 
-- category: NDI-2
+- category:       NDI-2
+  dictionaryStem: -têýaniy-
   FST:
     lemma: mitêýaniy
     stem:  -têýaniy-
@@ -691,7 +742,8 @@
     - definition: tongue
       sources:    [CW]
 
-- category: VTI-1
+- category:       VTI-1
+  dictionaryStem: miýâsk-
   FST:
     lemma: miýâskam
     stem:  miýâsk-
@@ -717,7 +769,8 @@
       sources:    [CW]
 
 # This entry does not have a mapping to CW, so its exact inflectional class and paradigm are unknown.
-- category: N # QUESTION: Can there be just `N`, or does this need to be `NA` or something similar.
+- category:       N # QUESTION: Can there be just `N`, or does this need to be `NA` or something similar.
+  dictionaryStem: ahaso-
   FST:
     lemma: ahasow
     stem:  ahaso-
@@ -738,7 +791,8 @@
     - definition: Calgary
       sources:    [CW]
 
-- category: NDI-1
+- category:       NDI-1
+  dictionaryStem: otôskwanihk-
   FST:
     lemma: otôskwanihk
     stem:  otôskwanihk-
@@ -750,7 +804,8 @@
     - definition: at his/her elbow
       sources:    [CW]
 
-- category: INM
+- category:       INM
+  dictionaryStem: acâhkos kâ-osôsit
   FST:
     lemma: acâhkos kâ-osôsit
     stem:  acâhkos kâ-osôsit
