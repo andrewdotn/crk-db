@@ -2,14 +2,14 @@
 #
 # Each object represents a *dictionary entry*.
 #
-# category:                                         # The inflectional class / category for the entry. (The entire string contained in CW's `\ps` field, with hyphen and number if present.) For now, each entry may only have one inflectional category. This is displayed to the end user, but also used by the dictionary app for ...?
+# category:                                         # The lexical category for the entry. This is displayed to the end user as-is, but it is also used by the dictionary app for ...? For Plains Cree, the value of this field is whatever is in Arok's `\ps` field in the Toolbox file. For now, each entry may only have one lexical category.
 # FST:                                              # Object containing information for the FST.
-#   lemma:                                          # The lemma used by the FST.
-#   stem:                                           # The stem used by the FST.
-# head:                                             # The head(word|morpheme|phrase) displayed to the user, in SRO. Will get transliterated to other orthographies in the dictionary app depending on which orthography the user selects. In some languages this may be capitalized as compared to the FST lemma.
+#   lemma:                                          # The lemma used by the FST, in the proto-orthography.
+#   stem:                                           # The stem used by the FST, in the proto-orthography.
+# head:                                             # The head(word|morpheme|phrase) displayed to the user, in the proto-orthography. Will get transliterated to other orthographies in the dictionary app depending on which orthography the user selects.
 # key:                                              # A unique key for this entry. Includes a trailing homograph number if the form is a homograph.
-# paradigm: <static> | <dynamic> | "unknown" | null # Indicates the paradigm  used by this entry. null = non-inflecting / don't show a paradigm. "unknown" indicates that additional work is needed by linguists; don't show a paradigm (or maybe shown "unknown paradigm" or something).
-# POS: N | V | Part | Pro | (others?)               # The general word class / part of speech. Used for emojis and ...?
+# paradigm: <static> | <dynamic> | "unknown" | null # Indicates the paradigm used by this entry. null = non-inflecting / don't show a paradigm. "unknown" indicates that additional work is needed by linguists---don't show a paradigm (or maybe show "unknown paradigm" or something).
+# POS: N | V | Part | Pro | (others?)               # The general word class / part of speech. Displayed to the user as-is. Used by the dictionary app for emojis and ...?
 # senses:                                           # An array of serses / definitions for this entry.
 #   - definition:                                   # The definition for this sense.
 #     sources:                                      # An array of data sources for this sense.
@@ -118,9 +118,6 @@
   senses:
     - definition: White Bear
       sources:    [CW]
-      notes:
-        - noteType: encyclopedic
-          text:     personal name of Cree chief, signatory to Treaty 4
 
 - category: NDA-1
   FST:
