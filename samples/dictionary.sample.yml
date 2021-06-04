@@ -10,7 +10,7 @@
 # key:                                              # A unique key for this entry. Includes a trailing homograph number if the form is a homograph.
 # paradigm: <static> | <dynamic> | "unknown" | null # Indicates the paradigm used by this entry. null = non-inflecting / don't show a paradigm. "unknown" indicates that additional work is needed by linguists---don't show a paradigm (or maybe show "unknown paradigm" or something).
 # POS: N | V | Part | Pro | (others?)               # The general word class / part of speech. Displayed to the user as-is. Used by the dictionary app for emojis and ...?
-# senses:                                           # An array of serses / definitions for this entry.
+# senses:                                           # An array of senses / definitions for this entry.
 #   - definition:                                   # The definition for this sense.
 #     sources:                                      # An array of data sources for this sense.
 
