@@ -2,17 +2,23 @@
 #
 # Each object represents a *dictionary entry*.
 #
-# category:                                         # The lexical category for the entry. This is displayed to the end user as-is, but it is also used by the dictionary app for ...? For Plains Cree, the value of this field is whatever is in Arok's `\ps` field in the Toolbox file. For now, each entry may only have one lexical category.
-# FST:                                              # Object containing information for the FST.
-#   lemma:                                          # The lemma used by the FST, in the proto-orthography.
-# head:                                             # The head(word|morpheme|phrase) displayed to the user, in the proto-orthography. Will get transliterated to other orthographies in the dictionary app depending on which orthography the user selects.
-# key:                                              # A unique key for this entry. Includes a trailing homograph number if the form is a homograph.
-# paradigm: <static> | <dynamic> | "unknown" | null # Indicates the paradigm used by this entry. null = non-inflecting / don't show a paradigm. "unknown" indicates that additional work is needed by linguists---don't show a paradigm (or maybe show "unknown paradigm" or something).
-# POS: N | V | Part | Pro | (others?)               # The general word class / part of speech. Displayed to the user as-is. Used by the dictionary app for emojis and ...?
+# entryType: lexeme | morpheme | phrase | wordform  # The type of entry.
+# fstAnalysis:                                      # The FST analysis for this entry.
+# fstLemma:                                         # The lemma used by the FST, in the internal orthography.
+# generalWordClass: N | V | Part | Pro | (etc.)     # The general word class / part of speech. Used by the dictionary to identify N/V etc. for phrase translation. The two values that the app needs are `N` and `V`---the others are just for display places.
+# head:                                             # The head(word|morpheme|phrase) displayed to the user, in the internal orthography. Will get transliterated to other orthographies in the dictionary app depending on which orthography the user selects.
+# linguistInfo:
+#   category:                                       # The lexical category for the entry. This is displayed to the end user as-is. For Plains Cree, the value of this field is whatever is in Arok's `\ps` field in the Toolbox file. For now, each entry may only have one lexical category.
+#   stem:                                           # The stem displayed to the user in the linguistic popup. Stored in the internal orthography. This field is not used for any other purpose than being displayed to the user.
+# paradigm: <static> | <dynamic> | null             # Indicates the paradigm used by this entry. null = don't show a paradigm. This could be because the form is non-inflecting, or because more work is needed by linguists.
 # senses:                                           # An array of senses / definitions for this entry.
 #   - definition:                                   # The definition for this sense.
 #     sources:                                      # An array of data sources for this sense.
-# stem:                                             # The stem displayed to the user in the linguistic popup, in the proto-orthography. This field is not used for any other purpose than being displayed to the user.
+# slug:                                             # The key that appears in the URL for the entry. This should include a homograph number when needed.
+
+# Internal Orthography = This is the internal orthography used by the app. May or may not be displayed to the user.
+# - Plains Cree: SRO orthography with circumflexes and plain <y> (NFC normalized)
+# - Woods Cree: SRO orthography with macrons and <th> (NFC normalized)
 
 - category: INM
   FST:
@@ -625,15 +631,13 @@
   stem: nîmi-
 
 # nîminâniwan does not (and should not) have a LEXC entry
-- category: VAI-1
-  head:     nîminâniwan
-  paradigm: VAI
-  POS:      V
-  key:      nîminâniwan
+- entryType:   wordform
+  fstAnalysis: nîmiw+V+AI+Ind+X
+  head:        nîminâniwan
+  lemmaSlug:   nîmiw
   senses:
     - definition: there is a dance, it is a time of dancing
       sources:    [CW]
-  stem: nîmi-
 
 - category: VAI-1
   FST:
