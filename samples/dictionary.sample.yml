@@ -13,12 +13,11 @@
 # senses:                                           # An array of senses / definitions for this entry.
 #   - definition:                                   # The definition for this sense.
 #     sources:                                      # An array of data sources for this sense.
-# stem:                                             # The stem displayed to the user in the linguistic popup. This field is not used for any other purpose.
+# stem:                                             # The stem displayed to the user in the linguistic popup, in the proto-orthography. This field is not used for any other purpose than being displayed to the user.
 
 - category: INM
   FST:
     lemma: kinêpiko-maskotêhk
-    stem:  kinêpiko-maskotêw-
   head:     kinêpiko-maskotêhk
   paradigm: null
   POS:      N
@@ -66,7 +65,6 @@
   head:     okakihcimosk
   FST:
     lemma: okakihcimosk
-    stem:  okakihcimosk-
   paradigm: NA
   POS:      N
   key:      okakihcimosk
@@ -78,7 +76,6 @@
 - category: NA-2
   FST:
     lemma: opîkopicikêw
-    stem:  opîkopicikêw-
   head:     opîkopicikêw
   paradigm: NA
   POS:      N
@@ -91,7 +88,6 @@
 - category: NA-3
   FST:
     lemma: kiskinwahamâtôtâpânâsk
-    stem:  kiskinwahamâtôtâpânâskw-
   head:     kiskinwahamâtôtâpânâsk
   paradigm: NA
   POS:      N
@@ -104,7 +100,6 @@
 - category: NA-4
   FST:
     lemma: oski-âya
-    stem:  oski-ây-
   head:     oski-âya
   paradigm: NA
   POS:      N
@@ -119,7 +114,6 @@
 - category: NA-4w
   FST:
     lemma: wâpi-maskwa
-    stem:  wâpi-maskw-
   head:     wâpi-maskwa
   paradigm: NA
   POS:      N
@@ -132,7 +126,6 @@
 - category: NDA-1
   FST:
     lemma: wiýihkosa
-    stem:  wiýihkos-
   head:     wiyihkosa
   paradigm: NDA
   POS:      N
@@ -147,7 +140,6 @@
 - category: NDA-2
   FST:
     lemma: nitihtihkosiy
-    stem:  -tihtihkosiy-
   head:     nitihtihkosiy
   paradigm: NDA
   POS:      N
@@ -160,7 +152,6 @@
 - category: NDA-3
   FST:
     lemma: miýihkwak
-    stem:  -iýihkw-
   head:     miyihkwak
   paradigm: NDA
   POS:      N
@@ -173,7 +164,6 @@
 - category: NDA-4
   FST:
     lemma: nîwa
-    stem:  -îw-
   head:     nîwa
   paradigm: NDA
   POS:      N
@@ -186,7 +176,6 @@
 - category: NDA-4w
   FST:
     lemma: nîskwa
-    stem:  -îskw-
   head:     nîskwa
   paradigm: NDA
   POS:      N
@@ -199,7 +188,6 @@
 - category: NDI
   FST:
     lemma: nitêýikom
-    stem:  -têýikom-
   head:     nitêyikom
   paradigm: NDI
   POS:      N
@@ -212,7 +200,6 @@
 - category: NDI-2
   FST:
     lemma: nitêýaniyâpiy
-    stem:  -têýaniyâpiy-
   head:     nitêyaniyâpiy
   paradigm: NDI
   POS:      N
@@ -225,7 +212,6 @@
 - category: NDI-3
   FST:
     lemma: naýakask
-    stem:  -aýakaskw-
   head:     nayakask
   paradigm: NDI
   POS:      N
@@ -238,7 +224,6 @@
 - category: NDI-4
   FST:
     lemma: nîki
-    stem:  -îk-
   head:     nîki
   paradigm: NDI
   POS:      N
@@ -251,7 +236,6 @@
 - category: NDI-5
   FST:
     lemma: nîwas
-    stem:  -îwat-
   head:     nîwas
   paradigm: NDI
   POS:      N
@@ -264,7 +248,6 @@
 - category: NI-1
   FST:
     lemma: kipokwâcikan
-    stem:  kipokwâcikan-
   head:     kipokwâcikan
   paradigm: NI
   POS:      N
@@ -279,7 +262,6 @@
 - category: NI-2
   FST:
     lemma: ispatinaw
-    stem:  ispatinaw-
   head:     ispatinaw
   paradigm: NI
   POS:      N
@@ -294,7 +276,6 @@
 - category: NI-3
   FST:
     lemma: pêhowikamik
-    stem:  pêhowikamikw-
   head:     pêhowikamik
   paradigm: NI
   POS:      N
@@ -309,7 +290,6 @@
 - category: NI-4
   FST:
     lemma: askâwi
-    stem:  askâw-
   head:     askâwi
   paradigm: NI
   POS:      N
@@ -322,7 +302,6 @@
 - category: NI-4w
   FST:
     lemma: pâstâhowi-mihko
-    stem:  pâstâhowi-mihkw-
   head:     pâstâhowi-mihko
   paradigm: NI
   POS:      N
@@ -337,7 +316,6 @@
 - category: NI-5
   FST:
     lemma: ôsi
-    stem:  ôs-
   head:     ôsi
   paradigm: NI
   POS:      N
@@ -362,7 +340,6 @@
 - category: VAI # QUESTION: Should this have a trailing number? VAI-???
   FST:
     lemma: âcimow
-    stem:  âcimo-
   head:     âcimow
   paradigm: VAI
   POS:      V
@@ -379,7 +356,6 @@
 - category: VAI-1
   FST:
     lemma: âpahikâsow
-    stem:  âpahikâso-
   head:     âpahikâsow
   paradigm: VAI
   POS:      V
@@ -392,7 +368,6 @@
 - category: VAI-2
   FST:
     lemma: nêstosin
-    stem:  nêstosin-
   head:     nêstosin
   paradigm: VAI
   POS:      V
@@ -405,7 +380,6 @@
 - category: VAI-3
   FST:
     lemma: ostostotam
-    stem:  ostostot-
   head:     ostostotam
   paradigm: VAI
   POS:      V
@@ -420,7 +394,6 @@
 - category: VII-1n
   FST:
     lemma: mispon
-    stem:  mispon-
   head:     mispon
   paradigm: VII
   POS:      V
@@ -433,7 +406,6 @@
 - category: VII-1v
   FST:
     lemma: nîso-tipiskâw
-    stem:  nîso-tipiskâ-
   head:     nîso-tipiskâw
   paradigm: VII
   POS:      V
@@ -446,7 +418,6 @@
 - category: VII-2n
   FST:
     lemma: sôniyâwan
-    stem:  sôniyâwan-
   head:     sôniyâwan
   paradigm: VII
   POS:      V
@@ -461,7 +432,6 @@
 - category: VII-2v
   FST:
     lemma: nôtimâw
-    stem:  nôtimâ-
   head:     nôtimâw
   paradigm: VII
   POS:      V
@@ -474,7 +444,6 @@
 - category: VII-2n
   FST:
     lemma: wâsêyâsin
-    stem:  wâsêyâsin-
   head:     wâsêyâsin
   paradigm: VII
   POS:      V
@@ -487,7 +456,6 @@
 - category: VII-v
   FST:
     lemma: kwêtipipaýiw
-    stem:  kwêtipipaýi-
   head:     kwêtipipayiw
   paradigm: VII
   POS:      V
@@ -500,7 +468,6 @@
 - category: VTA-1
   FST:
     lemma: atamihêw
-    stem:  atamih-
   head:     atamihêw
   paradigm: VTA
   POS:      V
@@ -519,7 +486,6 @@
 - category: VTA-2
   FST:
     lemma: wâsênamawêw
-    stem:  wâsênamaw-
   head:     wâsênamawêw
   paradigm: VTA
   POS:      V
@@ -534,7 +500,6 @@
 - category: VTA-3
   FST:
     lemma: mâciswêw
-    stem:  mâcisw-
   head:     mâciswêw
   paradigm: VTA
   POS:      V
@@ -547,7 +512,6 @@
 - category: VTA-4
   FST:
     lemma: kispêwâtêw
-    stem:  kispêwât-
   head:     kispêwâtêw
   paradigm: VTA
   POS:      V
@@ -560,7 +524,6 @@
 - category: VTA-5
   FST:
     lemma: ay-itêw
-    stem:  ay-it-
   head:     ay-itêw
   paradigm: VTA
   POS:      V
@@ -573,7 +536,6 @@
 - category: VTI-1
   FST:
     lemma: kâhtinam
-    stem:  kâhtin-
   head:     kâhtinam
   paradigm: VTI
   POS:      V
@@ -588,7 +550,6 @@
 - category: VTI-2
   FST:
     lemma: nahêkâcihtâw
-    stem:  nahêkâcihtâ-
   head:     nahêkâcihtâw
   paradigm: VTI
   POS:      V
@@ -601,7 +562,6 @@
 - category: VTI-3
   FST:
     lemma: oscoscocasiw
-    stem:  oscoscocasi-
   head:     oscoscocasiw
   paradigm: VTI
   POS:      V
@@ -616,7 +576,6 @@
 - category: NA-3
   FST:
     lemma: atim
-    stem:  atimw-
   head:     atim
   paradigm: NA
   POS:      N
@@ -633,7 +592,6 @@
 - category: NA-3
   FST:
     lemma: atâhk
-    stem:  atâhkw-
   head:     atâhk
   paradigm: NA
   POS:      N
@@ -646,7 +604,6 @@
 - category: NA-1
   FST:
     lemma: acâhkos
-    stem:  acâhkos-
   head:     acâhkos
   paradigm: NA
   POS:      N
@@ -659,7 +616,6 @@
 - category: VAI-1
   FST:
     lemma: nîmiw
-    stem:  nîmi-
   head:     nîmiw
   paradigm: VAI
   POS:      V
@@ -683,7 +639,6 @@
 - category: VAI-1
   FST:
     lemma: apiw
-    stem:  api-
   head:     apiw
   paradigm: VAI
   POS:      V
@@ -702,7 +657,6 @@
 - category: VAI-1
   FST:
     lemma: ay-apiw
-    stem:  ay-api-
   head:     ay-apiw
   paradigm: VAI
   POS:      V
@@ -719,7 +673,6 @@
 - category: VAI-1
   FST:
     lemma: nipâw
-    stem:  nipâ-
   head:     nipâw
   paradigm: VAI
   POS:      V
@@ -732,7 +685,6 @@
 - category: NDI-2
   FST:
     lemma: mitêýaniy
-    stem:  -têýaniy-
   head:     mitêyaniy
   paradigm: NDI
   POS:      N
@@ -745,7 +697,6 @@
 - category: VTI-1
   FST:
     lemma: miýâskam
-    stem:  miýâsk-
   head:     miyâskam
   paradigm: VTI
   POS:      V
@@ -773,7 +724,6 @@
 - category: N # QUESTION: Can there be just `N`, or does this need to be `NA` or something similar.
   FST:
     lemma: ahasow
-    stem:  ahaso-
   head:     ahasow
   key:      ahasow
   paradigm: unknown
@@ -796,7 +746,6 @@
 - category: NDI-1
   FST:
     lemma: otôskwanihk
-    stem:  otôskwanihk-
   head:     otôskwanihk
   key:      otôskwanihk2
   paradigm: NDI
@@ -809,7 +758,6 @@
 - category: INM
   FST:
     lemma: acâhkos kâ-osôsit
-    stem:  acâhkos kâ-osôsit
   head:     acâhkos kâ-osôsit
   key:      acâhkos kâ-osôsit
   paradigm: null
