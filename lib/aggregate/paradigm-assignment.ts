@@ -2,10 +2,12 @@ import { join as joinPath } from "path";
 import { fileURLToPath } from "url";
 import { intersection, isEqual, min, uniqBy } from "lodash-es";
 import { Transducer } from "hfstol";
+import readNDJSON    from '../utilities/readNDJSON.js';
+import writeNDJSON   from '../utilities/writeNDJSON.js';
 
 type Analysis = [string[], string, string[]];
 
-type NdjsonEntry = {
+export type NdjsonEntry = {
   dataSources: {
     [SourceAbbreviation: string]: {
       pos?: string;
@@ -301,7 +303,7 @@ export function matchAnalysis(
   return null;
 }
 
-export default function assignParadigms(entries: NdjsonEntry[]) {
+function doAssignment(entries: NdjsonEntry[]) {
   const unusedPersonalPronouns = new Set(PERSONAL_PRONOUNS);
   const unusedDemonstrativePronouns = new Set(DEMONSTRATIVE_PRONOUNS);
 
@@ -365,3 +367,10 @@ export default function assignParadigms(entries: NdjsonEntry[]) {
     );
   }
 }
+
+export default async function aggregate(dbPath: string, outPath: string) {
+    const entries = await readNDJSON(dbPath);
+    doAssignment(entries);
+    await writeNDJSON(outPath, entries);
+}
+
