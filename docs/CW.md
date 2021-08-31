@@ -61,7 +61,7 @@ Arok has in fact occasionally used `\altsp` (10 times). See below.
 
 ## `\altsp` **spelling alternants**
 
-Alternative spellings of the word.
+Alternative spellings of the word. There is also an `\alt-s` field, used 44 times.
 
 ## `\cat` **usage categories**
 
