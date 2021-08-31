@@ -123,6 +123,7 @@ Wolvengrey.json
 Wolvengrey.ndjson
 Wolvengrey.toolbox
 *.hfstol
+*.toolbox
 
 # generated from typescript source
 lib/aggregate/assignParadigms.js
