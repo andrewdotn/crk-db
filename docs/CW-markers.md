@@ -10,12 +10,12 @@ Markers are in Arok's preferred order.
 * `dl`
 * `gr1`
 * `stm`
-* `drv`
-* morphemes
-  - `mrp`
-  - `mrp2`
+  * `drv`
+  * morphemes
+    - `mrp`
+    - `mrp2`
+* `alt-sp`
 * `alt`
-* `alt-s` | `altsp` | (`alt-sp`)
 * `rel`
 * `sem`
 * `gl`
