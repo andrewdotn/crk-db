@@ -190,6 +190,10 @@ The following idiosyncrasies will need to be handled when parsing this field, wh
 
 This field shows a morpheme breakdown for each of the morphemes in `\mrp`. Each `\mrp2` field corresponds to the `\mrp` field preceding it. Occasionally a morpheme is listed with two leading asterisks; this indicates a tentative form, or forms that are very restricted in their distribution.
 
+## `\mrp3` **morphemes** [not used]
+
+There was originally a plan to use this field, but this is deprecated. It should not appear in the database.
+
 ## `\new` **new since 2001 publication** [multiple]
 
 The value of this field is always `new` (with perhaps one exception; see below). This field indicates that the entry was added after the publication of the 2001 edition of the _Cree: Words_ dictionary was published.
