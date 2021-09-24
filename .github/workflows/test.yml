@@ -22,6 +22,9 @@ jobs:
         with:
           python-version: '3.9'
 
+      - name: install python dependencies
+        run:  pip install requests
+
       - name: set up Node for npm
         uses: actions/setup-node@v1
         with:
